@@ -10,23 +10,25 @@ module.exports = {
     themeConfig: {
         nav: [
             {
-                text: 'Home',
+                text: '首页',
                 link: '/'
             },
             {
-                text: 'chapter',
-                link: '/chapter1/'
+                text: '组件',
+                link: '/components/'
+            },
+            {
+                text: '指南',
+                link: '/guide/'
             }
         ],
-        sidebar: {
-            '/chapter1/': [
-                '',
-                'one'
-            ]
-        }
+        sidebar: 'auto'
     },
     // 需要被注入到 <head> 中的标签
     head: [],
-    plugins: ['demo-container'],
+    plugins: [
+        'demo-container',
+        ["vuepress-plugin-auto-sidebar", {}]
+    ],
     markdown: {}
 }
