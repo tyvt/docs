@@ -2,12 +2,16 @@
 import * as CONFIG from '../../config';
 import AstroLogo from './AstroLogo.astro';
 import SkipToContent from './SkipToContent.astro';
-import ThemeIcon from '../ThemeIcon/ThemeIcon.astro';
+import ThemeIcon from './ThemeIcon.astro';
+import SidebarToggle from './SidebarToggle.astro';
 ---
 
 <header>
 	<SkipToContent />
 	<nav class="nav-wrapper" title="Top Navigation">
+		<div class="menu-toggle">
+			<SidebarToggle client:idle />
+		</div>
 		<div class="logo flex">
 			<a href="/">
 				<AstroLogo size={40} />
