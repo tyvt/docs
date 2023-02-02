@@ -3,23 +3,33 @@ title: Introduction
 layout: ../../../layouts/MainLayout.astro
 ---
 
-**Welcome to Astro!**
+## 我为什么要写作？
 
-This is the `docs` starter template. It contains all of the features that you need to build a Markdown-powered documentation site, including:
+### 1. 加深对知识的理解
 
-- ✅ **Full Markdown support**
-- ✅ **Responsive mobile-friendly design**
-- ✅ **Sidebar navigation**
-- ✅ **Search (powered by Algolia)**
-- ✅ **Multi-language i18n**
-- ✅ **Automatic table of contents**
-- ✅ **Automatic list of contributors**
-- ✅ (and, best of all) **dark mode**
+在工作中，我们每天都会学习新的知识。有官方的文档、他人的文章、社区的问题讨论。
+这些都是他人的知识点。想要变成你的，得通过实践。
+实践成功后，当时是感觉学会了，下次再遇见可能又会忘记。这时候再去翻找之前看的文章，是低效的。
+所以，记录下来学习的过程，自己对知识进行梳理和归纳，后续再碰到类似问题，看着自己的文章补充和完善。
+很久之后，就能看到自己的变化和进步。
 
-## Getting Started
+### 2. 加强沟通能力
 
-To get started with this theme, check out the `README.md` in your new project directory. It provides documentation on how to use and customize this template for your own project. Keep the README around so that you can always refer back to it as you build.
+很多技术工作者不善言辞。程序员 Linus Torvalds 有一句名言 [Talk is cheap. Show me the code.](https://lkml.org/lkml/2000/8/25/132)，
+在开发者中广为流传，也足以表现很多开发者对交流的看法。
+但是，代码绝不应该成为你的全部，你需要在团队中工作，和其他开发者、产品经理或客户沟通。
+写作可以成为你锻炼沟通能力的第一步，因为这种交流是异步的，它不要求你面对面和他人沟通。
+如果是个人笔记式的写作，加强的是表达能力。当你把作品发表到论坛或社区时，就会有其他读者给你反馈。
+这是一个互相切磋学习的好机会。
 
-Found a missing feature that you can't live without? Please suggest it on Discord [(#ideas-and-suggestions channel)](https://astro.build/chat) and even consider adding it yourself on GitHub! Astro is an open source project and contributions from developers like you are how we grow!
+### 3. 增加自己的影响力
 
-Good luck out there, Astronaut. 🧑‍🚀
+若文章质量高，长期以往下去，浏览量慢慢增加，同时又不断有高质量的文章发布，或许能成为大家眼中的技术大牛，有流量就有人关注，合作就找上门来了。
+如果能持续输出高质量的博客，你将在技术道路上认识更多的人，甚至影响更多的人。时间越久，结交的人就会越多，对以后的工作有好处。
+
+### 4. 一份好的简历
+
+在简历上写上自己的博客地址，能让面试官更充分的了解你的能力，好的文章会给面试过程加分。
+大家在找工作时应该会发现很多公司的加分项里面有这一项：有个人博客或者github活跃者。
+因为面试官通过你的简历只能看到你工作上的事情，通过你的博客可以看到你平常都做些啥，更详细的了解你。
+另外，面试官会觉得一个坚持写博客的人，肯定是个学习能力强，做事踏实又有耐心的人。
