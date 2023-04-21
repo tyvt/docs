@@ -5,7 +5,7 @@ set -e
 
 # 生成静态文件
 npm i pnpm -g
-pnpm i
+pnpm i --no-frozen-lockfile
 pnpm build
 
 # 进入生成的文件夹
