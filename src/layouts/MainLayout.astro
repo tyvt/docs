@@ -4,21 +4,11 @@ import HeadSEO from '../components/HeadSEO.astro';
 import Header from '../components/Header/Header.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
-import * as CONFIG from '../config';
-import type { MarkdownHeading } from 'astro';
-import Footer from '../components/Footer/Footer.astro';
+import * as CONFIG from '../config.js';
 
-type Props = {
-	frontmatter: CONFIG.Frontmatter;
-	headings: MarkdownHeading[];
-};
-
-const { frontmatter, headings } = Astro.props as Props;
+const { frontmatter } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
-const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
-const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentPage.replace('/docs/', 'src/pages/')}.md`;
 ---
 
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
@@ -69,9 +59,6 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentPage.replace('/docs/',
 				height: 100%;
 			}
 
-			#grid-right {
-				display: none;
-			}
 
 			@media (min-width: 50em) {
 				.layout {
@@ -96,10 +83,6 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentPage.replace('/docs/',
 					margin: 0 auto;
 				}
 
-				#grid-right {
-					grid-column: 3;
-					display: flex;
-				}
 			}
 		</style>
 		<style is:global>
@@ -126,14 +109,10 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentPage.replace('/docs/',
 				<LeftSidebar currentPage={currentPage} />
 			</aside>
 			<div id="grid-main">
-				<PageContent frontmatter={frontmatter} headings={headings} githubEditUrl={githubEditUrl}>
+				<PageContent frontmatter={frontmatter} >
 					<slot />
 				</PageContent>
 			</div>
-			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
-				<RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
-			</aside>
 		</main>
-		<Footer path={currentFile} />
 	</body>
 </html>

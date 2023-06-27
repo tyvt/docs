@@ -1,15 +1,7 @@
 ---
-import type { Frontmatter } from '../../config';
 // import TableOfContents from '../RightSidebar/TableOfContents';
-import type { MarkdownHeading } from 'astro';
 
-type Props = {
-	frontmatter: Frontmatter;
-	headings: MarkdownHeading[];
-	githubEditUrl: string;
-};
-
-const { frontmatter, headings, githubEditUrl } = Astro.props as Props;
+const { frontmatter } = Astro.props;
 const title = frontmatter.title;
 ---
 

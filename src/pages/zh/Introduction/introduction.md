@@ -15,7 +15,7 @@ layout: ../../../layouts/MainLayout.astro
 
 ### 2. 加强沟通能力
 
-很多技术工作者不善言辞。程序员 Linus Torvalds 有一句名言 [Talk is cheap. Show me the code.](https://lkml.org/lkml/2000/8/25/132)，
+很多技术工作者不善言辞。程序员 Linus Torvalds 有一句名言 [Talk is cheap. Show me the code.](https://lkml.org/lkml/2000/8/25/132)
 在开发者中广为流传，也足以表现很多开发者对交流的看法。
 但是，代码绝不应该成为你的全部，你需要在团队中工作，和其他开发者、产品经理或客户沟通。
 写作可以成为你锻炼沟通能力的第一步，因为这种交流是异步的，它不要求你面对面和他人沟通。

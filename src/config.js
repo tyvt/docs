@@ -13,20 +13,10 @@ export const OPEN_GRAPH = {
 	}
 }
 
-// This is the type of the frontmatter you put in the docs markdown files.
-export type Frontmatter = {
-	title: string
-	description: string
-	layout: string
-	image?: { src: string; alt: string }
-	dir?: 'ltr' | 'rtl'
-	ogLocale?: string
-	lang?: string
-}
 
 export const KNOWN_LANGUAGES = {
 	Chinese: 'zh'
-} as const
+}
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES)
 
 export const GITHUB_EDIT_URL = `https://github.com/javascriptfield/docs/edit/master`
@@ -38,20 +28,16 @@ export const ALGOLIA = {
 	apiKey: 'XXXXXXXXXX',
 }
 
-export type Sidebar = Record<
-	(typeof KNOWN_LANGUAGE_CODES)[number],
-	Record<string, { text: string; link: string }[]>
->
 
-export const SIDEBAR: Sidebar = {
+export const SIDEBAR = {
 	zh: {
-		'Introduction': [{ text: 'Introduction', link: 'docs/zh/Introduction/introduction'}]
+		'Introduction': [{ text: 'Introduction', link: 'docs/zh/Introduction/introduction' }]
 	},
 }
 const files = import.meta.glob('./pages/zh/**')
 for (let i in files) {
 	const category = i.substring(11, i.lastIndexOf('/'))
-	if(category == 'Introduction') continue
+	if (category == 'Introduction') continue
 	const fileName = i.replace(/.\/pages\/zh\/.*\//, '').replace(/.md/, '')
 	if (!SIDEBAR.zh[category]) {
 		SIDEBAR.zh[category] = []

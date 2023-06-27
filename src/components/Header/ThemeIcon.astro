@@ -2,8 +2,7 @@
 ---
 
 <script>
-  import { settings } from "../../stores/app";
-  const theme = settings.get().theme;
+  const theme = 'light';
   switch (theme) {
     case "light":
       document.getElementById("path-light").classList.remove("hide");
@@ -15,17 +14,13 @@
       break;
     default:
       if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        settings.setKey("theme", "dark");
         document.documentElement.classList.add("theme-dark");
         document.getElementById("path-dark").classList.remove("hide");
       } else {
-        settings.setKey("theme", "light");
       }
       break;
   }
   function onThemButtonClick() {
-    const theme = settings.get().theme;
-    settings.setKey("theme", theme === "light" ? "dark" : "light");
     document.documentElement.classList.toggle("theme-dark");
     document.getElementById("path-light").classList.toggle("hide");
     document.getElementById("path-dark").classList.toggle("hide");
