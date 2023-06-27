@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="对象的新增方法 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			对象的新增方法 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">对象的新增方法</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<p>本章介绍 Object 对象的新增方法。</p>
+<h2 id="objectis">Object.is()</h2>
+<p>ES5 比较两个值是否相等，只有两个运算符：相等运算符（<code>==</code>）和严格相等运算符（<code>===</code>）。它们都有缺点，前者会自动转换数据类型，后者的<code>NaN</code>不等于自身，以及<code>+0</code>等于<code>-0</code>。JavaScript 缺乏一种运算，在所有环境中，只要两个值是一样的，它们就应该相等。</p>
+<p>ES6 提出“Same-value equality”（同值相等）算法，用来解决这个问题。<code>Object.is</code>就是部署这个算法的新方法。它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。</p>
+<!-- more -->
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">is</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">is</span><span style="color: #E1E4E8">({}, {});</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>不同之处只有两个：一是<code>+0</code>不等于<code>-0</code>，二是<code>NaN</code>等于自身。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">+</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">-</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">//true</span></span>
+<span class="line"><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">is</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">+</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">-</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">is</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>ES5 可以通过下面的代码，部署<code>Object.is</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(Object, </span><span style="color: #9ECBFF">"is"</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">value</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (x </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> y) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #6A737D">// 针对+0 不等于 -0的情况</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">/</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">/</span><span style="color: #E1E4E8"> y;</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #6A737D">// 针对NaN的情况</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> y </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> y;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  configurable: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  enumerable: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  writable: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<h2 id="objectassign">Object.assign()</h2>
+<h3 id="基本用法">基本用法</h3>
+<p><code>Object.assign</code>方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">target</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { b: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { c: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(target, source1, source2);</span></span>
+<span class="line"><span style="color: #E1E4E8">target; </span><span style="color: #6A737D">// {a:1, b:2, c:3}</span></span></code></pre>
+<p><code>Object.assign</code>方法的第一个参数是目标对象，后面的参数都是源对象。</p>
+<p>注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">target</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, b: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { b: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, c: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { c: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(target, source1, source2);</span></span>
+<span class="line"><span style="color: #E1E4E8">target; </span><span style="color: #6A737D">// {a:1, b:2, c:3}</span></span></code></pre>
+<p>如果只有一个参数，<code>Object.assign</code>会直接返回该参数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(obj) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> obj; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>如果该参数不是对象，则会先转成对象，然后返回。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">typeof</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// "object"</span></span></code></pre>
+<p>由于<code>undefined</code>和<code>null</code>无法转成对象，所以如果它们作为参数，就会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<p>如果非对象参数出现在源对象的位置（即非首参数），那么处理规则有所不同。首先，这些参数都会转成对象，如果无法转成对象，就会跳过。这意味着，如果<code>undefined</code>和<code>null</code>不在首参数，就不会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(obj, </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> obj; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(obj, </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> obj; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>其他类型的值（即数值、字符串和布尔值）不在首参数，也不会报错。但是，除了字符串会以数组形式，拷贝入目标对象，其他值都不会产生效果。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">v1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">v2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">v3</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, v1, v2, v3);</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(obj); </span><span style="color: #6A737D">// { "0": "a", "1": "b", "2": "c" }</span></span></code></pre>
+<p>上面代码中，<code>v1</code>、<code>v2</code>、<code>v3</code>分别是字符串、布尔值和数值，结果只有字符串合入目标对象（以字符数组的形式），数值和布尔值都会被忽略。这是因为只有字符串的包装对象，会产生可枚举属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">Object</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// {[[PrimitiveValue]]: true}</span></span>
+<span class="line"><span style="color: #B392F0">Object</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">//  {[[PrimitiveValue]]: 10}</span></span>
+<span class="line"><span style="color: #B392F0">Object</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// {0: "a", 1: "b", 2: "c", length: 3, [[PrimitiveValue]]: "abc"}</span></span></code></pre>
+<p>上面代码中，布尔值、数值、字符串分别转成对应的包装对象，可以看到它们的原始值都在包装对象的内部属性<code>[[PrimitiveValue]]</code>上面，这个属性是不会被<code>Object.assign</code>拷贝的。只有字符串的包装对象，会产生可枚举的实义属性，那些属性则会被拷贝。</p>
+<p><code>Object.assign</code>拷贝的属性是有限制的，只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（<code>enumerable: false</code>）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  { b: </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8"> },</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">({}, </span><span style="color: #9ECBFF">"invisible"</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">    enumerable: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    value: </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  })</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// { b: 'c' }</span></span></code></pre>
+<p>上面代码中，<code>Object.assign</code>要拷贝的对象只有一个不可枚举属性<code>invisible</code>，这个属性并没有被拷贝进去。</p>
+<p>属性名为 Symbol 值的属性，也会被<code>Object.assign</code>拷贝。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({ a: </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8"> }, { [</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">)]: </span><span style="color: #9ECBFF">"d"</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #6A737D">// { a: 'b', Symbol(c): 'd' }</span></span></code></pre>
+<h3 id="注意点">注意点</h3>
+<p><strong>（1）浅拷贝</strong></p>
+<p><code>Object.assign</code>方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: { b: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> } };</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, obj1);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj1.a.b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">obj2.a.b; </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p>上面代码中，源对象<code>obj1</code>的<code>a</code>属性的值是一个对象，<code>Object.assign</code>拷贝得到的是这个对象的引用。这个对象的任何变化，都会反映到目标对象上面。</p>
+<p><strong>（2）同名属性的替换</strong></p>
+<p>对于这种嵌套的对象，一旦遇到同名属性，<code>Object.assign</code>的处理方法是替换，而不是添加。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">target</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: { b: </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">, d: </span><span style="color: #9ECBFF">"e"</span><span style="color: #E1E4E8"> } };</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: { b: </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8"> } };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(target, source);</span></span>
+<span class="line"><span style="color: #6A737D">// { a: { b: 'hello' } }</span></span></code></pre>
+<p>上面代码中，<code>target</code>对象的<code>a</code>属性被<code>source</code>对象的<code>a</code>属性整个替换掉了，而不会得到<code>{ a: { b: 'hello', d: 'e' } }</code>的结果。这通常不是开发者想要的，需要特别小心。</p>
+<p>一些函数库提供<code>Object.assign</code>的定制版本（比如 Lodash 的<code>_.defaultsDeep</code>方法），可以得到深拷贝的合并。</p>
+<p><strong>（3）数组的处理</strong></p>
+<p><code>Object.assign</code>可以用来处理数组，但是会把数组视为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">], [</span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #6A737D">// [4, 5, 3]</span></span></code></pre>
+<p>上面代码中，<code>Object.assign</code>把数组视为属性名为 0、1、2 的对象，因此源数组的 0 号属性<code>4</code>覆盖了目标数组的 0 号属性<code>1</code>。</p>
+<p><strong>（4）取值函数的处理</strong></p>
+<p><code>Object.assign</code>只能进行值的复制，如果要复制的值是一个取值函数，那么将求值后再复制。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">target</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(target, source);</span></span>
+<span class="line"><span style="color: #6A737D">// { foo: 1 }</span></span></code></pre>
+<p>上面代码中，<code>source</code>对象的<code>foo</code>属性是一个取值函数，<code>Object.assign</code>不会复制这个取值函数，只会拿到值以后，将这个值复制过去。</p>
+<h3 id="常见用途">常见用途</h3>
+<p><code>Object.assign</code>方法有很多用处。</p>
+<p><strong>（1）为对象添加属性</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, { x, y });</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面方法通过<code>Object.assign</code>方法，将<code>x</code>属性和<code>y</code>属性添加到<code>Point</code>类的对象实例。</p>
+<p><strong>（2）为对象添加方法</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">SomeClass</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">someMethod</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">arg1</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">arg2</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    ···</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">anotherMethod</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    ···</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于下面的写法</span></span>
+<span class="line"><span style="color: #79B8FF">SomeClass</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">someMethod</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">arg1</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">arg2</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  ···</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #79B8FF">SomeClass</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">anotherMethod</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  ···</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面代码使用了对象属性的简洁表示法，直接将两个函数放在大括号中，再使用<code>assign</code>方法添加到<code>SomeClass.prototype</code>之中。</p>
+<p><strong>（3）克隆对象</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">clone</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">origin</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, origin);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码将原始对象拷贝到一个空对象，就得到了原始对象的克隆。</p>
+<p>不过，采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值。如果想要保持继承链，可以采用下面的代码。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">clone</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">origin</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> originProto </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(origin);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(originProto), origin);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p><strong>（4）合并多个对象</strong></p>
+<p>将多个对象合并到某个对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">merge</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #FFAB70">sources</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(target, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">sources);</span></span></code></pre>
+<p>如果希望合并后返回一个新对象，可以改写上面函数，对一个空对象合并。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">merge</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">sources</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">sources);</span></span></code></pre>
+<p><strong>（5）为属性指定默认值</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">DEFAULTS</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  logLevel: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  outputFormat: </span><span style="color: #9ECBFF">"html"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">processContent</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">options</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  options </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, </span><span style="color: #79B8FF">DEFAULTS</span><span style="color: #E1E4E8">, options);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(options);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>DEFAULTS</code>对象是默认值，<code>options</code>对象是用户提供的参数。<code>Object.assign</code>方法将<code>DEFAULTS</code>和<code>options</code>合并成一个新对象，如果两者有同名属性，则<code>options</code>的属性值会覆盖<code>DEFAULTS</code>的属性值。</p>
+<p>注意，由于存在浅拷贝的问题，<code>DEFAULTS</code>对象和<code>options</code>对象的所有属性的值，最好都是简单类型，不要指向另一个对象。否则，<code>DEFAULTS</code>对象的该属性很可能不起作用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">DEFAULTS</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  url: {</span></span>
+<span class="line"><span style="color: #E1E4E8">    host: </span><span style="color: #9ECBFF">"example.com"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    port: </span><span style="color: #79B8FF">7070</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">processContent</span><span style="color: #E1E4E8">({ url: { port: </span><span style="color: #79B8FF">8000</span><span style="color: #E1E4E8"> } });</span></span>
+<span class="line"><span style="color: #6A737D">// {</span></span>
+<span class="line"><span style="color: #6A737D">//   url: {port: 8000}</span></span>
+<span class="line"><span style="color: #6A737D">// }</span></span></code></pre>
+<p>上面代码的原意是将<code>url.port</code>改成 8000，<code>url.host</code>不变。实际结果却是<code>options.url</code>覆盖掉<code>DEFAULTS.url</code>，所以<code>url.host</code>就不存在了。</p>
+<h2 id="objectgetownpropertydescriptors">Object.getOwnPropertyDescriptors()</h2>
+<p>ES5 的<code>Object.getOwnPropertyDescriptor()</code>方法会返回某个对象属性的描述对象（descriptor）。ES2017 引入了<code>Object.getOwnPropertyDescriptors()</code>方法，返回指定对象所有自身属性（非继承属性）的描述对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">bar</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #6A737D">// { foo:</span></span>
+<span class="line"><span style="color: #6A737D">//    { value: 123,</span></span>
+<span class="line"><span style="color: #6A737D">//      writable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//      enumerable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//      configurable: true },</span></span>
+<span class="line"><span style="color: #6A737D">//   bar:</span></span>
+<span class="line"><span style="color: #6A737D">//    { get: [Function: get bar],</span></span>
+<span class="line"><span style="color: #6A737D">//      set: undefined,</span></span>
+<span class="line"><span style="color: #6A737D">//      enumerable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//      configurable: true } }</span></span></code></pre>
+<p>上面代码中，<code>Object.getOwnPropertyDescriptors()</code>方法返回一个对象，所有原对象的属性名都是该对象的属性名，对应的属性值就是该属性的描述对象。</p>
+<p>该方法的实现非常容易。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">result</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">ownKeys</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    result[key] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(obj, key);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> result;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>该方法的引入目的，主要是为了解决<code>Object.assign()</code>无法正确拷贝<code>get</code>属性和<code>set</code>属性的问题。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">set</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">target1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(target1, source);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(target1, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// { value: undefined,</span></span>
+<span class="line"><span style="color: #6A737D">//   writable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   enumerable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   configurable: true }</span></span></code></pre>
+<p>上面代码中，<code>source</code>对象的<code>foo</code>属性的值是一个赋值函数，<code>Object.assign</code>方法将这个属性拷贝给<code>target1</code>对象，结果该属性的值变成了<code>undefined</code>。这是因为<code>Object.assign</code>方法总是拷贝一个属性的值，而不会拷贝它背后的赋值方法或取值方法。</p>
+<p>这时，<code>Object.getOwnPropertyDescriptors()</code>方法配合<code>Object.defineProperties()</code>方法，就可以实现正确拷贝。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">source</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">set</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">target2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">defineProperties</span><span style="color: #E1E4E8">(target2, Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(source));</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(target2, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// { get: undefined,</span></span>
+<span class="line"><span style="color: #6A737D">//   set: [Function: set foo],</span></span>
+<span class="line"><span style="color: #6A737D">//   enumerable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   configurable: true }</span></span></code></pre>
+<p>上面代码中，两个对象合并的逻辑可以写成一个函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">shallowMerge</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">source</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">defineProperties</span><span style="color: #E1E4E8">(target, Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(source));</span></span></code></pre>
+<p><code>Object.getOwnPropertyDescriptors()</code>方法的另一个用处，是配合<code>Object.create()</code>方法，将对象属性克隆到一个新对象。这属于浅拷贝。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">clone</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(obj),</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(obj)</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 或者</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">shallowClone</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">    Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(obj),</span></span>
+<span class="line"><span style="color: #E1E4E8">    Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(obj)</span></span>
+<span class="line"><span style="color: #E1E4E8">  );</span></span></code></pre>
+<p>上面代码会克隆对象<code>obj</code>。</p>
+<p>另外，<code>Object.getOwnPropertyDescriptors()</code>方法可以实现一个对象继承另一个对象。以前，继承另一个对象，常常写成下面这样。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  __proto__: prot,</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>ES6 规定<code>__proto__</code>只有浏览器要部署，其他环境不用部署。如果去除<code>__proto__</code>，上面代码就要改成下面这样。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(prot);</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 或者</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(prot), {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>有了<code>Object.getOwnPropertyDescriptors()</code>，我们就有了另一种写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  prot,</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">({</span></span>
+<span class="line"><span style="color: #E1E4E8">    foo: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  })</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span></code></pre>
+<p><code>Object.getOwnPropertyDescriptors()</code>也可以用来实现 Mixin（混入）模式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">mix</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">object</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> ({</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">with</span><span style="color: #E1E4E8">: (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">mixins</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">    mixins.</span><span style="color: #B392F0">reduce</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">      (</span><span style="color: #FFAB70">c</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">mixin</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(c, Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(mixin)),</span></span>
+<span class="line"><span style="color: #E1E4E8">      object</span></span>
+<span class="line"><span style="color: #E1E4E8">    ),</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// multiple mixins example</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { b: </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> c </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { c: </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> d </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">mix</span><span style="color: #E1E4E8">(c).</span><span style="color: #B392F0">with</span><span style="color: #E1E4E8">(a, b);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">d.c; </span><span style="color: #6A737D">// "c"</span></span>
+<span class="line"><span style="color: #E1E4E8">d.b; </span><span style="color: #6A737D">// "b"</span></span>
+<span class="line"><span style="color: #E1E4E8">d.a; </span><span style="color: #6A737D">// "a"</span></span></code></pre>
+<p>上面代码返回一个新的对象<code>d</code>，代表了对象<code>a</code>和<code>b</code>被混入了对象<code>c</code>的操作。</p>
+<p>出于完整性的考虑，<code>Object.getOwnPropertyDescriptors()</code>进入标准以后，以后还会新增<code>Reflect.getOwnPropertyDescriptors()</code>方法。</p>
+<h2 id="__proto__属性objectsetprototypeofobjectgetprototypeof"><code>__proto__</code>属性，Object.setPrototypeOf()，Object.getPrototypeOf()</h2>
+<p>JavaScript 语言的对象继承是通过原型链实现的。ES6 提供了更多原型对象的操作方法。</p>
+<h3 id="__proto__属性"><code>__proto__</code>属性</h3>
+<p><code>__proto__</code>属性（前后各两个下划线），用来读取或设置当前对象的<code>prototype</code>对象。目前，所有浏览器（包括 IE11）都部署了这个属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// es5 的写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">method</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8">() { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8"> }</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> someOtherObj;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// es6 的写法</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(someOtherObj);</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #B392F0">method</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8">() { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8"> };</span></span></code></pre>
+<p>该属性没有写入 ES6 的正文，而是写入了附录，原因是<code>__proto__</code>前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的 API，只是由于浏览器广泛支持，才被加入了 ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性，而是使用下面的<code>Object.setPrototypeOf()</code>（写操作）、<code>Object.getPrototypeOf()</code>（读操作）、<code>Object.create()</code>（生成操作）代替。</p>
+<p>实现上，<code>__proto__</code>调用的是<code>Object.prototype.__proto__</code>，具体实现如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"__proto__"</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> _thisObj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Object</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(_thisObj);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">proto</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">TypeError</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #B392F0">isObject</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #B392F0">isObject</span><span style="color: #E1E4E8">(proto)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> status </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, proto);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #E1E4E8">status) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">TypeError</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">isObject</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Object</span><span style="color: #E1E4E8">(value) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> value;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>如果一个对象本身部署了<code>__proto__</code>属性，该属性的值就是对象的原型。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">({ __proto__: </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #6A737D">// null</span></span></code></pre>
+<h3 id="objectsetprototypeof">Object.setPrototypeOf()</h3>
+<p><code>Object.setPrototypeOf</code>方法的作用与<code>__proto__</code>相同，用来设置一个对象的<code>prototype</code>对象，返回参数对象本身。它是 ES6 正式推荐的设置原型对象的方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 格式</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(object, prototype);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 用法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">o</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">({}, </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>该方法等同于下面的函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">proto</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  obj.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> proto;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> obj;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> proto </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { x: </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(obj, proto);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">proto.y </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">20</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">proto.z </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">40</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj.x; </span><span style="color: #6A737D">// 10</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.y; </span><span style="color: #6A737D">// 20</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.z; </span><span style="color: #6A737D">// 40</span></span></code></pre>
+<p>上面代码将<code>proto</code>对象设为<code>obj</code>对象的原型，所以从<code>obj</code>对象可以读取<code>proto</code>对象的属性。</p>
+<p>如果第一个参数不是对象，会自动转为对象。但是由于返回的还是第一个参数，所以这个操作不会产生任何效果。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, {}) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, {}) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">, {}) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>由于<code>undefined</code>和<code>null</code>无法转为对象，所以如果第一个参数是<code>undefined</code>或<code>null</code>，就会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, {});</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Object.setPrototypeOf called on null or undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, {});</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Object.setPrototypeOf called on null or undefined</span></span></code></pre>
+<h3 id="objectgetprototypeof">Object.getPrototypeOf()</h3>
+<p>该方法与<code>Object.setPrototypeOf</code>方法配套，用于读取一个对象的原型对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(obj);</span></span></code></pre>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Rectangle</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">rec</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Rectangle</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(rec) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Rectangle</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(rec, </span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(rec) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Rectangle</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>如果参数不是对象，会被自动转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 等同于 Object.getPrototypeOf(Number(1))</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// Number {[[PrimitiveValue]]: 0}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于 Object.getPrototypeOf(String('foo'))</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// String {length: 0, [[PrimitiveValue]]: ""}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于 Object.getPrototypeOf(Boolean(true))</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// Boolean {[[PrimitiveValue]]: false}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Number</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">String</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Boolean</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>如果参数是<code>undefined</code>或<code>null</code>，它们无法转为对象，所以会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Cannot convert undefined or null to object</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Cannot convert undefined or null to object</span></span></code></pre>
+<h2 id="objectkeysobjectvaluesobjectentries">Object.keys()，Object.values()，Object.entries()</h2>
+<h3 id="objectkeys">Object.keys()</h3>
+<p>ES5 引入了<code>Object.keys</code>方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, baz: </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #6A737D">// ["foo", "baz"]</span></span></code></pre>
+<p>ES2017 <a href="https://github.com/tc39/proposal-object-values-entries">引入</a>了跟<code>Object.keys</code>配套的<code>Object.values</code>和<code>Object.entries</code>，作为遍历一个对象的补充手段，供<code>for...of</code>循环使用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { keys, values, entries } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, b: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, c: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(key); </span><span style="color: #6A737D">// 'a', 'b', 'c'</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> value </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value); </span><span style="color: #6A737D">// 1, 2, 3</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> [key, value] </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">([key, value]); </span><span style="color: #6A737D">// ['a', 1], ['b', 2], ['c', 3]</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<h3 id="objectvalues">Object.values()</h3>
+<p><code>Object.values</code>方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, baz: </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #6A737D">// ["bar", 42]</span></span></code></pre>
+<p>返回数组的成员顺序，与本章的《属性的遍历》部分介绍的排列规则一致。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #6A737D">// ["b", "c", "a"]</span></span></code></pre>
+<p>上面代码中，属性名为数值的属性，是按照数值大小，从小到大遍历的，因此返回的顺序是<code>b</code>、<code>c</code>、<code>a</code>。</p>
+<p><code>Object.values</code>只返回对象自身的可遍历属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">({}, { p: { value: </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8"> } });</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(obj); </span><span style="color: #6A737D">// []</span></span></code></pre>
+<p>上面代码中，<code>Object.create</code>方法的第二个参数添加的对象属性（属性<code>p</code>），如果不显式声明，默认是不可遍历的，因为<code>p</code>的属性描述对象的<code>enumerable</code>默认是<code>false</code>，<code>Object.values</code>不会返回这个属性。只要把<code>enumerable</code>改成<code>true</code>，<code>Object.values</code>就会返回属性<code>p</code>的值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  {},</span></span>
+<span class="line"><span style="color: #E1E4E8">  {</span></span>
+<span class="line"><span style="color: #E1E4E8">    p: {</span></span>
+<span class="line"><span style="color: #E1E4E8">      value: </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">      enumerable: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    },</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(obj); </span><span style="color: #6A737D">// [42]</span></span></code></pre>
+<p><code>Object.values</code>会过滤属性名为 Symbol 值的属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">({ [</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">()]: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">, foo: </span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #6A737D">// ['abc']</span></span></code></pre>
+<p>如果<code>Object.values</code>方法的参数是一个字符串，会返回各个字符组成的一个数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// ['f', 'o', 'o']</span></span></code></pre>
+<p>上面代码中，字符串会先转成一个类似数组的对象。字符串的每个字符，就是该对象的一个属性。因此，<code>Object.values</code>返回每个属性的键值，就是各个字符组成的一个数组。</p>
+<p>如果参数不是对象，<code>Object.values</code>会先将其转为对象。由于数值和布尔值的包装对象，都不会为实例添加非继承的属性。所以，<code>Object.values</code>会返回空数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// []</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// []</span></span></code></pre>
+<h3 id="objectentries">Object.entries()</h3>
+<p><code>Object.entries()</code>方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, baz: </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #6A737D">// [ ["foo", "bar"], ["baz", 42] ]</span></span></code></pre>
+<p>除了返回值不一样，该方法的行为与<code>Object.values</code>基本一致。</p>
+<p>如果原对象的属性名是一个 Symbol 值，该属性会被忽略。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">({ [</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">()]: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">, foo: </span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #6A737D">// [ [ 'foo', 'abc' ] ]</span></span></code></pre>
+<p>上面代码中，原对象有两个属性，<code>Object.entries</code>只输出属性名非 Symbol 值的属性。将来可能会有<code>Reflect.ownEntries()</code>方法，返回对象自身的所有属性。</p>
+<p><code>Object.entries</code>的基本用途是遍历对象的属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { one: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, two: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> [k, v] </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">`${</span><span style="color: #79B8FF">JSON</span><span style="color: #9ECBFF">.</span><span style="color: #B392F0">stringify</span><span style="color: #9ECBFF">(</span><span style="color: #E1E4E8">k</span><span style="color: #9ECBFF">)</span><span style="color: #9ECBFF">}: ${</span><span style="color: #79B8FF">JSON</span><span style="color: #9ECBFF">.</span><span style="color: #B392F0">stringify</span><span style="color: #9ECBFF">(</span><span style="color: #E1E4E8">v</span><span style="color: #9ECBFF">)</span><span style="color: #9ECBFF">}`</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// "one": 1</span></span>
+<span class="line"><span style="color: #6A737D">// "two": 2</span></span></code></pre>
+<p><code>Object.entries</code>方法的另一个用处是，将对象转为真正的<code>Map</code>结构。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, baz: </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">(Object.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">(obj));</span></span>
+<span class="line"><span style="color: #E1E4E8">map; </span><span style="color: #6A737D">// Map { foo: "bar", baz: 42 }</span></span></code></pre>
+<p>自己实现<code>Object.entries</code>方法，非常简单。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// Generator函数的版本</span></span>
+<span class="line"><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> [key, obj[key]];</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 非Generator函数的版本</span></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> arr </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    arr.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">([key, obj[key]]);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> arr;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<h2 id="objectfromentries">Object.fromEntries()</h2>
+<p><code>Object.fromEntries()</code>方法是<code>Object.entries()</code>的逆操作，用于将一个键值对数组转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">fromEntries</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #6A737D">// { foo: "bar", baz: 42 }</span></span></code></pre>
+<p>该方法的主要目的，是将键值对的数据结构还原为对象，因此特别适合将 Map 结构转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 例一</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">entries</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">42</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">fromEntries</span><span style="color: #E1E4E8">(entries);</span></span>
+<span class="line"><span style="color: #6A737D">// { foo: "bar", baz: 42 }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 例二</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">fromEntries</span><span style="color: #E1E4E8">(map);</span></span>
+<span class="line"><span style="color: #6A737D">// { foo: true, bar: false }</span></span></code></pre>
+<p>该方法的一个用处是配合<code>URLSearchParams</code>对象，将查询字符串转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">fromEntries</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">URLSearchParams</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo=bar&#x26;baz=qux"</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// { foo: "bar", baz: "qux" }</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

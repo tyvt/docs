@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="对象的扩展 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			对象的扩展 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">对象的扩展</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<p>对象（object）是 JavaScript 最重要的数据结构。ES6 对它进行了重大升级，本章介绍数据结构本身的改变，下一章介绍<code>Object</code>对象的新增方法。</p>
+<!-- more -->
+<h2 id="属性的简洁表示法">属性的简洁表示法</h2>
+<p>ES6 允许在大括号里面，<strong>直接写入变量和函数，作为对象的属性和方法</strong>。这样的书写更加简洁。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">baz</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo };</span></span>
+<span class="line"><span style="color: #E1E4E8">baz; </span><span style="color: #6A737D">// {foo: "bar"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">baz</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: foo };</span></span></code></pre>
+<p>上面代码中，变量<code>foo</code>直接写在大括号里面。这时，属性名就是变量名, 属性值就是变量值。下面是另一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> { x, y };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> { x: x, y: y };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// Object {x: 1, y: 2}</span></span></code></pre>
+<p>除了属性简写，方法也可以简写。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">o</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">method</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello!"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">o</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">method</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello!"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>下面是一个实际的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> birth </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"2000/01/01"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Person</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  name: </span><span style="color: #9ECBFF">"张三"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">//等同于birth: birth</span></span>
+<span class="line"><span style="color: #E1E4E8">  birth,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 等同于hello: function ()...</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">hello</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"我的名字是"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.name);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>这种写法用于函数的返回值，将会非常方便。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getPoint</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">y</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> { x, y };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">getPoint</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #6A737D">// {x:1, y:10}</span></span></code></pre>
+<p>CommonJS 模块输出一组变量，就非常合适使用简洁写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> ms </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getItem</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">in</span><span style="color: #E1E4E8"> ms </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> ms[key] </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">setItem</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  ms[key] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> value;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">clear</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  ms </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">module</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">exports</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { getItem, setItem, clear };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #79B8FF">module</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">exports</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  getItem: getItem,</span></span>
+<span class="line"><span style="color: #E1E4E8">  setItem: setItem,</span></span>
+<span class="line"><span style="color: #E1E4E8">  clear: clear,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>属性的赋值器（setter）和取值器（getter），事实上也是采用这种写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">cart</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  _wheels: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">wheels</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">._wheels;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">set</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">wheels</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (value </span><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">._wheels) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"数值太小了！"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">._wheels </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> value;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>简洁写法在打印对象时也很有用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> user </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  name: </span><span style="color: #9ECBFF">"test"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  bar: </span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(user, foo);</span></span>
+<span class="line"><span style="color: #6A737D">// {name: "test"} {bar: "baz"}</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">({ user, foo });</span></span>
+<span class="line"><span style="color: #6A737D">// {user: {name: "test"}, foo: {bar: "baz"}}</span></span></code></pre>
+<p>上面代码中，<code>console.log</code>直接输出<code>user</code>和<code>foo</code>两个对象时，就是两组键值对，可能会混淆。把它们放在大括号里面输出，就变成了对象的简洁表示法，每组键值对前面会打印对象名，这样就比较清晰了。</p>
+<p>注意，<strong>简写的对象方法不能用作构造函数</strong>，会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> obj.</span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<p>上面代码中，<code>f</code>是一个简写的对象方法，所以<code>obj.f</code>不能当作构造函数使用。</p>
+<h2 id="属性名表达式">属性名表达式</h2>
+<p>JavaScript 定义对象的属性，有两种方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 方法一</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 方法二</span></span>
+<span class="line"><span style="color: #E1E4E8">obj[</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"bc"</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>上面代码的方法一是直接用标识符作为属性名，方法二是用表达式作为属性名，这时要将表达式放在方括号之内。</p>
+<p>但是，如果使用字面量方式定义对象（使用大括号），在 ES5 中只能使用方法一（标识符）定义属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  abc: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p><strong>ES6 允许字面量定义对象时，用方法二（表达式）作为对象的属性名</strong>，即把表达式放在方括号内。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> propKey </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [propKey]: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"bc"</span><span style="color: #E1E4E8">]: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>下面是另一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> lastWord </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"last word"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"first word"</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  [lastWord]: </span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">a[</span><span style="color: #9ECBFF">"first word"</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// "hello"</span></span>
+<span class="line"><span style="color: #E1E4E8">a[lastWord]; </span><span style="color: #6A737D">// "world"</span></span>
+<span class="line"><span style="color: #E1E4E8">a[</span><span style="color: #9ECBFF">"last word"</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// "world"</span></span></code></pre>
+<p>表达式还可以用于定义方法名。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"h"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"ello"</span><span style="color: #E1E4E8">]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hi"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #B392F0">hello</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// hi</span></span></code></pre>
+<p>注意，属性名表达式与简洁表示法，不能同时使用，会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'bar'</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">bar</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'abc'</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">baz</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { [foo] };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 正确</span></span>
+<span class="line"><span style="color: #E1E4E8">const foo = 'bar';</span></span>
+<span class="line"><span style="color: #E1E4E8">const baz = { [foo]: </span><span style="color: #9ECBFF">'abc'</span><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>注意，属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串<code>[object Object]</code>，这一点要特别小心。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">keyA</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">keyB</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { b: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myObject</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [keyA]: </span><span style="color: #9ECBFF">"valueA"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  [keyB]: </span><span style="color: #9ECBFF">"valueB"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">myObject; </span><span style="color: #6A737D">// Object {[object Object]: "valueB"}</span></span></code></pre>
+<p>上面代码中，<code>[keyA]</code>和<code>[keyB]</code>得到的都是<code>[object Object]</code>，所以<code>[keyB]</code>会把<code>[keyA]</code>覆盖掉，而<code>myObject</code>最后只有一个<code>[object Object]</code>属性。</p>
+<h2 id="方法的-name-属性">方法的 name 属性</h2>
+<p>函数的<code>name</code>属性，返回函数名。对象方法也是函数，因此也有<code>name</code>属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">person</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">sayName</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello!"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">person.sayName.name; </span><span style="color: #6A737D">// "sayName"</span></span></code></pre>
+<p>上面代码中，方法的<code>name</code>属性返回函数名（即方法名）。</p>
+<p>如果对象的方法使用了取值函数（<code>getter</code>）和存值函数（<code>setter</code>），则<code>name</code>属性不是在该方法上面，而是该方法的属性的描述对象的<code>get</code>和<code>set</code>属性上面，返回值是方法名前加上<code>get</code>和<code>set</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {},</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">set</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) {},</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj.foo.name;</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Cannot read property 'name' of undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">descriptor</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(obj, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">descriptor.get.name; </span><span style="color: #6A737D">// "get foo"</span></span>
+<span class="line"><span style="color: #E1E4E8">descriptor.set.name; </span><span style="color: #6A737D">// "set foo"</span></span></code></pre>
+<p>有两种特殊情况：<code>bind</code>方法创造的函数，<code>name</code>属性返回<code>bound</code>加上原函数的名字；<code>Function</code>构造函数创造的函数，<code>name</code>属性返回<code>anonymous</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Function</span><span style="color: #E1E4E8">().name; </span><span style="color: #6A737D">// "anonymous"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">doSomething</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #E1E4E8">doSomething.</span><span style="color: #B392F0">bind</span><span style="color: #E1E4E8">().name; </span><span style="color: #6A737D">// "bound doSomething"</span></span></code></pre>
+<p>如果对象的方法是一个 Symbol 值，那么<code>name</code>属性返回的是这个 Symbol 值的描述。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">key1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"description"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">key2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [key1]() {},</span></span>
+<span class="line"><span style="color: #E1E4E8">  [key2]() {},</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #E1E4E8">obj[key1].name; </span><span style="color: #6A737D">// "[description]"</span></span>
+<span class="line"><span style="color: #E1E4E8">obj[key2].name; </span><span style="color: #6A737D">// ""</span></span></code></pre>
+<p>上面代码中，<code>key1</code>对应的 Symbol 值有描述，<code>key2</code>没有。</p>
+<h2 id="属性的可枚举性和遍历">属性的可枚举性和遍历</h2>
+<h3 id="可枚举性">可枚举性</h3>
+<p>对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。<code>Object.getOwnPropertyDescriptor</code>方法可以获取该属性的描述对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(obj, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">//  {</span></span>
+<span class="line"><span style="color: #6A737D">//    value: 123,</span></span>
+<span class="line"><span style="color: #6A737D">//    writable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//    enumerable: true,</span></span>
+<span class="line"><span style="color: #6A737D">//    configurable: true</span></span>
+<span class="line"><span style="color: #6A737D">//  }</span></span></code></pre>
+<p>描述对象的<code>enumerable</code>属性，称为“可枚举性”，如果该属性为<code>false</code>，就表示某些操作会忽略当前属性。</p>
+<p>目前，有四个操作会忽略<code>enumerable</code>为<code>false</code>的属性。</p>
+<ul>
+<li><code>for...in</code>循环：只遍历对象自身的和继承的可枚举的属性。</li>
+<li><code>Object.keys()</code>：返回对象自身的所有可枚举的属性的键名。</li>
+<li><code>JSON.stringify()</code>：只串行化对象自身的可枚举的属性。</li>
+<li><code>Object.assign()</code>： 忽略<code>enumerable</code>为<code>false</code>的属性，只拷贝对象自身的可枚举的属性。</li>
+</ul>
+<p>这四个操作之中，前三个是 ES5 就有的，最后一个<code>Object.assign()</code>是 ES6 新增的。其中，只有<code>for...in</code>会返回继承的属性，其他三个方法都会忽略继承的属性，只处理对象自身的属性。实际上，引入“可枚举”（<code>enumerable</code>）这个概念的最初目的，就是让某些属性可以规避掉<code>for...in</code>操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的<code>toString</code>方法，以及数组的<code>length</code>属性，就通过“可枚举性”，从而避免被<code>for...in</code>遍历到。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"toString"</span><span style="color: #E1E4E8">).enumerable;</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">([], </span><span style="color: #9ECBFF">"length"</span><span style="color: #E1E4E8">).enumerable;</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码中，<code>toString</code>和<code>length</code>属性的<code>enumerable</code>都是<code>false</code>，因此<code>for...in</code>不会遍历到这两个继承自原型的属性。</p>
+<p>另外，ES6 规定，所有 Class 的原型的方法都是不可枚举的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">class</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {}</span></span>
+<span class="line"><span style="color: #E1E4E8">  }.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"foo"</span></span>
+<span class="line"><span style="color: #E1E4E8">).enumerable;</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。所以，尽量不要用<code>for...in</code>循环，而用<code>Object.keys()</code>代替。</p>
+<h3 id="属性的遍历">属性的遍历</h3>
+<p>ES6 一共有 5 种方法可以遍历对象的属性。</p>
+<p><strong>（1）for…in</strong></p>
+<p><code>for...in</code>循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</p>
+<p><strong>（2）Object.keys(obj)</strong></p>
+<p><code>Object.keys</code>返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</p>
+<p><strong>（3）Object.getOwnPropertyNames(obj)</strong></p>
+<p><code>Object.getOwnPropertyNames</code>返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</p>
+<p><strong>（4）Object.getOwnPropertySymbols(obj)</strong></p>
+<p><code>Object.getOwnPropertySymbols</code>返回一个数组，包含对象自身的所有 Symbol 属性的键名。</p>
+<p><strong>（5）Reflect.ownKeys(obj)</strong></p>
+<p><code>Reflect.ownKeys</code>返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</p>
+<p>以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p>
+<ul>
+<li>首先遍历所有数值键，按照数值升序排列。</li>
+<li>其次遍历所有字符串键，按照加入时间升序排列。</li>
+<li>最后遍历所有 Symbol 键，按照加入时间升序排列。</li>
+</ul>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">ownKeys</span><span style="color: #E1E4E8">({ [</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">()]: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, b: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, a: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #6A737D">// ['2', '10', 'b', 'a', Symbol()]</span></span></code></pre>
+<p>上面代码中，<code>Reflect.ownKeys</code>方法返回一个数组，包含了参数对象的所有属性。这个数组的属性次序是这样的，首先是数值属性<code>2</code>和<code>10</code>，其次是字符串属性<code>b</code>和<code>a</code>，最后是 Symbol 属性。</p>
+<h2 id="super-关键字">super 关键字</h2>
+<p>我们知道，<code>this</code>关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字<code>super</code>，<strong>指向当前对象的原型对象</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">proto</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">find</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.foo;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(obj, proto);</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #B392F0">find</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// "hello"</span></span></code></pre>
+<p>上面代码中，对象<code>obj.find()</code>方法之中，通过<code>super.foo</code>引用了原型对象<code>proto</code>的<code>foo</code>属性。</p>
+<p>注意，<code>super</code>关键字表示原型对象时，只能用在对象的方法之中，用在其他地方都会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.foo,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">: () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.foo,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.foo;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面三种<code>super</code>的用法都会报错，因为对于 JavaScript 引擎来说，这里的<code>super</code>都没有用在对象的方法之中。第一种写法是<code>super</code>用在属性里面，第二种和第三种写法是<code>super</code>用在一个函数里面，然后赋值给<code>foo</code>属性。目前，只有对象方法的简写法可以让 JavaScript 引擎确认，定义的是对象的方法。</p>
+<p>JavaScript 引擎内部，<code>super.foo</code>等同于<code>Object.getPrototypeOf(this).foo</code>（属性）或<code>Object.getPrototypeOf(this).foo.call(this)</code>（方法）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">proto</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  x: </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  x: </span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(obj, proto);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// "world"</span></span></code></pre>
+<p>上面代码中，<code>super.foo</code>指向原型对象<code>proto</code>的<code>foo</code>方法，但是绑定的<code>this</code>却还是当前对象<code>obj</code>，因此输出的就是<code>world</code>。</p>
+<h2 id="对象的扩展运算符">对象的扩展运算符</h2>
+<p>《数组的扩展》一章中，已经介绍过扩展运算符（<code>...</code>）。ES2018 将这个运算符<a href="https://github.com/sebmarkbage/ecmascript-rest-spread">引入</a>了对象。</p>
+<h3 id="解构赋值">解构赋值</h3>
+<p>对象的解构赋值用于从一个对象取值，相当于将目标对象自身的所有可遍历的（enumerable）、但尚未被读取的属性，分配到指定的对象上面。所有的键和它们的值，都会拷贝到新对象上面。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { x, y, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">z } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, a: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, b: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">x; </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">y; </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">z; </span><span style="color: #6A737D">// { a: 3, b: 4 }</span></span></code></pre>
+<p>上面代码中，变量<code>z</code>是解构赋值所在的对象。它获取等号右边的所有尚未读取的键（<code>a</code>和<code>b</code>），将它们连同值一起拷贝过来。</p>
+<p>由于解构赋值要求等号右边是一个对象，所以如果等号右边是<code>undefined</code>或<code>null</code>，就会报错，因为它们无法转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">z } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 运行时错误</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">z } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 运行时错误</span></span></code></pre>
+<p>解构赋值必须是最后一个参数，否则会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">x, y, z } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> someObject; </span><span style="color: #6A737D">// 句法错误</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { x, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">y, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">z } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> someObject; </span><span style="color: #6A737D">// 句法错误</span></span></code></pre>
+<p>上面代码中，解构赋值不是最后一个参数，所以会报错。</p>
+<p>注意，解构赋值的拷贝是浅拷贝，即如果一个键的值是复合类型的值（数组、对象、函数）、那么解构赋值拷贝的是这个值的引用，而不是这个值的副本。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: { b: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> } };</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">x } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> obj;</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.a.b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">x.a.b; </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p>上面代码中，<code>x</code>是解构赋值所在的对象，拷贝了对象<code>obj</code>的<code>a</code>属性。<code>a</code>属性引用了一个对象，修改这个对象的值，会影响到解构赋值对它的引用。</p>
+<p>另外，扩展运算符的解构赋值，不能复制继承自原型对象的属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> o1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> o2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { b: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">o2.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> o1;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">o3 } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> o2;</span></span>
+<span class="line"><span style="color: #E1E4E8">o3; </span><span style="color: #6A737D">// { b: 2 }</span></span>
+<span class="line"><span style="color: #E1E4E8">o3.a; </span><span style="color: #6A737D">// undefined</span></span></code></pre>
+<p>上面代码中，对象<code>o3</code>复制了<code>o2</code>，但是只复制了<code>o2</code>自身的属性，没有复制它的原型对象<code>o1</code>的属性。</p>
+<p>下面是另一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">o</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">({ x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #E1E4E8">o.z </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { x, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">newObj } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> o;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { y, z } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> newObj;</span></span>
+<span class="line"><span style="color: #E1E4E8">x; </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">y; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #E1E4E8">z; </span><span style="color: #6A737D">// 3</span></span></code></pre>
+<p>上面代码中，变量<code>x</code>是单纯的解构赋值，所以可以读取对象<code>o</code>继承的属性；变量<code>y</code>和<code>z</code>是扩展运算符的解构赋值，只能读取对象<code>o</code>自身的属性，所以变量<code>z</code>可以赋值成功，变量<code>y</code>取不到值。ES6 规定，变量声明语句之中，如果使用解构赋值，扩展运算符后面必须是一个变量名，而不能是一个解构赋值表达式，所以上面代码引入了中间变量<code>newObj</code>，如果写成下面这样会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { x, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">{ y, z } } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> o;</span></span>
+<span class="line"><span style="color: #6A737D">// SyntaxError: ... must be followed by an identifier in declaration contexts</span></span></code></pre>
+<p>解构赋值的一个用处，是扩展某个函数的参数，引入其他操作。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">baseFunction</span><span style="color: #E1E4E8">({ </span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8"> }) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">wrapperFunction</span><span style="color: #E1E4E8">({ </span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #FFAB70">restConfig</span><span style="color: #E1E4E8"> }) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 使用 x 和 y 参数进行操作</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 其余参数传给原始函数</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">baseFunction</span><span style="color: #E1E4E8">(restConfig);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，原始函数<code>baseFunction</code>接受<code>a</code>和<code>b</code>作为参数，函数<code>wrapperFunction</code>在<code>baseFunction</code>的基础上进行了扩展，能够接受多余的参数，并且保留原始函数的行为。</p>
+<h3 id="扩展运算符">扩展运算符</h3>
+<p>对象的扩展运算符（<code>...</code>）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> z </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, b: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> n </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">z };</span></span>
+<span class="line"><span style="color: #E1E4E8">n; </span><span style="color: #6A737D">// { a: 3, b: 4 }</span></span></code></pre>
+<p>由于数组是特殊的对象，所以对象的扩展运算符也可以用于数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">[</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">] };</span></span>
+<span class="line"><span style="color: #E1E4E8">foo;</span></span>
+<span class="line"><span style="color: #6A737D">// {0: "a", 1: "b", 2: "c"}</span></span></code></pre>
+<p>如果扩展运算符后面是一个空对象，则没有任何效果。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">{</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">{}, </span><span style="color: #B392F0">a</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// { a: 1 }</span></span></code></pre>
+<p>如果扩展运算符后面不是对象，则会自动将其转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 等同于 {...Object(1)}</span></span>
+<span class="line"><span style="color: #E1E4E8">{</span><span style="color: #F97583">...</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">} </span><span style="color: #6A737D">// {}</span></span></code></pre>
+<p>上面代码中，扩展运算符后面是整数<code>1</code>，会自动转为数值的包装对象<code>Number{1}</code>。由于该对象没有自身属性，所以返回一个空对象。</p>
+<p>下面的例子都是类似的道理。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 等同于 {...Object(true)}</span></span>
+<span class="line"><span style="color: #E1E4E8">{</span><span style="color: #F97583">...</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">} </span><span style="color: #6A737D">// {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于 {...Object(undefined)}</span></span>
+<span class="line"><span style="color: #E1E4E8">{</span><span style="color: #F97583">...</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">} </span><span style="color: #6A737D">// {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于 {...Object(null)}</span></span>
+<span class="line"><span style="color: #E1E4E8">{</span><span style="color: #F97583">...</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">} </span><span style="color: #6A737D">// {}</span></span></code></pre>
+<p>但是，如果扩展运算符后面是字符串，它会自动转成一个类似数组的对象，因此返回的不是空对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">{</span><span style="color: #F97583">...</span><span style="color: #9ECBFF">'hello'</span><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// {0: "h", 1: "e", 2: "l", 3: "l", 4: "o"}</span></span></code></pre>
+<p>对象的扩展运算符等同于使用<code>Object.assign()</code>方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aClone </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aClone </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, a);</span></span></code></pre>
+<p>上面的例子只是拷贝了对象实例的属性，如果想完整克隆一个对象，还拷贝对象原型的属性，可以采用下面的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 写法一</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">clone1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  __proto__: Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(obj),</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">obj,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 写法二</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">clone2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">(Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(obj)), obj);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 写法三</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">clone3</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(obj),</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">getOwnPropertyDescriptors</span><span style="color: #E1E4E8">(obj)</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码中，写法一的<code>__proto__</code>属性在非浏览器的环境不一定部署，因此推荐使用写法二和写法三。</p>
+<p>扩展运算符可以用于合并两个对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> ab </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">b };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> ab </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, a, b);</span></span></code></pre>
+<p>如果用户自定义的属性，放在扩展运算符后面，则扩展运算符内部的同名属性会被覆盖掉。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithOverrides </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a, x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithOverrides </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">{ x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> } };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  y </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  aWithOverrides </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a, x, y };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithOverrides </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, a, { x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> });</span></span></code></pre>
+<p>上面代码中，<code>a</code>对象的<code>x</code>属性和<code>y</code>属性，拷贝到新对象后会被覆盖掉。</p>
+<p>这用来修改现有对象部分的属性就很方便了。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> newVersion </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">previousVersion,</span></span>
+<span class="line"><span style="color: #E1E4E8">  name: </span><span style="color: #9ECBFF">"New Name"</span><span style="color: #E1E4E8">, </span><span style="color: #6A737D">// Override the name property</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面代码中，<code>newVersion</code>对象自定义了<code>name</code>属性，其他属性全部复制自<code>previousVersion</code>对象。</p>
+<p>如果把自定义属性放在扩展运算符前面，就变成了设置新对象的默认属性值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithDefaults </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a };</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithDefaults </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({}, { x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> }, a);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithDefaults </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">assign</span><span style="color: #E1E4E8">({ x: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, y: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> }, a);</span></span></code></pre>
+<p>与数组的扩展运算符一样，对象的扩展运算符后面可以跟表达式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">(x </span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> { a: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> {}),</span></span>
+<span class="line"><span style="color: #E1E4E8">  b: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>扩展运算符的参数对象之中，如果有取值函数<code>get</code>，这个函数是会执行的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 并不会抛出错误，因为 x 属性只是被定义，但没执行</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> aWithXGetter </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">x</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"not throw yet"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 会抛出错误，因为 x 属性被执行了</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> runtimeError </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">{</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">x</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"throw now"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    },</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<h2 id="链判断运算符">链判断运算符</h2>
+<p>编程实务中，如果读取对象内部的某个属性，往往需要判断一下该对象是否存在。比如，要读取<code>message.body.user.firstName</code>，安全的写法是写成下面这样。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">firstName</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span></span>
+<span class="line"><span style="color: #E1E4E8">  (message </span><span style="color: #F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color: #E1E4E8">    message.body </span><span style="color: #F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color: #E1E4E8">    message.body.user </span><span style="color: #F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color: #E1E4E8">    message.body.user.firstName) </span><span style="color: #F97583">||</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"default"</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>或者使用三元运算符<code>?:</code>，判断一个对象是否存在。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">fooInput</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> myForm.</span><span style="color: #B392F0">querySelector</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"input[name=foo]"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">fooValue</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> fooInput </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> fooInput.value </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>这样的层层判断非常麻烦，因此 <a href="https://github.com/tc39/proposal-optional-chaining">ES2020</a> 引入了“链判断运算符”（optional chaining operator）<code>?.</code>，简化上面的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">firstName</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> message?.body?.user?.firstName </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"default"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">fooValue</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> myForm.</span><span style="color: #B392F0">querySelector</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"input[name=foo]"</span><span style="color: #E1E4E8">)?.value;</span></span></code></pre>
+<p>上面代码使用了<code>?.</code>运算符，直接在链式调用的时候判断，左侧的对象是否为<code>null</code>或<code>undefined</code>。如果是的，就不再往下运算，而是返回<code>undefined</code>。</p>
+<p>链判断运算符有三种用法。</p>
+<ul>
+<li><code>obj?.prop</code> // 对象属性</li>
+<li><code>obj?.[expr]</code> // 同上</li>
+<li><code>func?.(...args)</code> // 函数或对象方法的调用</li>
+</ul>
+<p>下面是判断对象方法是否存在，如果存在就立即执行的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">iterator.</span><span style="color: #B392F0">return</span><span style="color: #E1E4E8">?.();</span></span></code></pre>
+<p>上面代码中，<code>iterator.return</code>如果有定义，就会调用该方法，否则直接返回<code>undefined</code>。</p>
+<p>对于那些可能没有实现的方法，这个运算符尤其有用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (myForm.</span><span style="color: #B392F0">checkValidity</span><span style="color: #E1E4E8">?.() </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 表单校验失败</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，老式浏览器的表单可能没有<code>checkValidity</code>这个方法，这时<code>?.</code>运算符就会返回<code>undefined</code>，判断语句就变成了<code>undefined === false</code>，所以就会跳过下面的代码。</p>
+<p>下面是这个运算符常见的使用形式，以及不使用该运算符时的等价形式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">a?.b;</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> a.b;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">a?.[x];</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> a[x];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">a?.</span><span style="color: #B392F0">b</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> a.</span><span style="color: #B392F0">b</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">a</span><span style="color: #E1E4E8">?.();</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">a</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，特别注意后两种形式，如果<code>a?.b()</code>里面的<code>a.b</code>不是函数，不可调用，那么<code>a?.b()</code>是会报错的。<code>a?.()</code>也是如此，如果<code>a</code>不是<code>null</code>或<code>undefined</code>，但也不是函数，那么<code>a?.()</code>会报错。</p>
+<p>使用这个运算符，有几个注意点。</p>
+<p>（1）短路机制</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">a?.[</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">x];</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> a[</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">x];</span></span></code></pre>
+<p>上面代码中，如果<code>a</code>是<code>undefined</code>或<code>null</code>，那么<code>x</code>不会进行递增运算。也就是说，链判断运算符一旦为真，右侧的表达式就不再求值。</p>
+<p>（2）delete 运算符</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">delete</span><span style="color: #E1E4E8"> a?.b;</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">delete</span><span style="color: #E1E4E8"> a.b;</span></span></code></pre>
+<p>上面代码中，如果<code>a</code>是<code>undefined</code>或<code>null</code>，会直接返回<code>undefined</code>，而不会进行<code>delete</code>运算。</p>
+<p>（3）括号的影响</p>
+<p>如果属性链有圆括号，链判断运算符对圆括号外部没有影响，只对圆括号内部有影响。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">(a?.b).</span><span style="color: #B392F0">c</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 等价于</span></span>
+<span class="line"><span style="color: #E1E4E8">  a </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> a.b</span></span>
+<span class="line"><span style="color: #E1E4E8">).c;</span></span></code></pre>
+<p>上面代码中，<code>?.</code>对圆括号外部没有影响，不管<code>a</code>对象是否存在，圆括号后面的<code>.c</code>总是会执行。</p>
+<p>一般来说，使用<code>?.</code>运算符的场合，不应该使用圆括号。</p>
+<p>（4）报错场合</p>
+<p>以下写法是禁止的，会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 构造函数</span></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">a</span><span style="color: #E1E4E8">?.()</span></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> a?.</span><span style="color: #B392F0">b</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 链判断运算符的右侧有模板字符串</span></span>
+<span class="line"><span style="color: #E1E4E8">a?.</span><span style="color: #9ECBFF">`{b}`</span></span>
+<span class="line"><span style="color: #E1E4E8">a?.</span><span style="color: #B392F0">b</span><span style="color: #9ECBFF">`{c}`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 链判断运算符的左侧是 super</span></span>
+<span class="line"><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">?.()</span></span>
+<span class="line"><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">?.foo</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 链运算符用于赋值运算符左侧</span></span>
+<span class="line"><span style="color: #E1E4E8">a?.b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> c</span></span></code></pre>
+<p>（5）右侧不得为十进制数值</p>
+<p>为了保证兼容以前的代码，允许<code>foo?.3:0</code>被解析成<code>foo ? .3 : 0</code>，因此规定如果<code>?.</code>后面紧跟一个十进制数字，那么<code>?.</code>不再被看成是一个完整的运算符，而会按照三元运算符进行处理，也就是说，那个小数点会归属于后面的十进制数字，形成一个小数。</p>
+<h2 id="null-判断运算符">Null 判断运算符</h2>
+<p>读取对象属性的时候，如果某个属性的值是<code>null</code>或<code>undefined</code>，有时候需要为它们指定默认值。常见做法是通过<code>||</code>运算符指定默认值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">headerText</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings.headerText </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello, world!"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">animationDuration</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings.animationDuration </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">300</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">showSplashScreen</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings.showSplashScreen </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>上面的三行代码都通过<code>||</code>运算符指定默认值，但是这样写是错的。开发者的原意是，只要属性的值为<code>null</code>或<code>undefined</code>，默认值就会生效，但是属性的值如果为空字符串或<code>false</code>或<code>0</code>，默认值也会生效。</p>
+<p>为了避免这种情况，<a href="https://github.com/tc39/proposal-nullish-coalescing">ES2020</a> 引入了一个新的 Null 判断运算符<code>??</code>。它的行为类似<code>||</code>，但是只有运算符左侧的值为<code>null</code>或<code>undefined</code>时，才会返回右侧的值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">headerText</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings.headerText </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello, world!"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">animationDuration</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings.animationDuration </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">300</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">showSplashScreen</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings.showSplashScreen </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>上面代码中，默认值只有在属性值为<code>null</code>或<code>undefined</code>时，才会生效。</p>
+<p>这个运算符的一个目的，就是跟链判断运算符<code>?.</code>配合使用，为<code>null</code>或<code>undefined</code>的值设置默认值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">animationDuration</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> response.settings?.animationDuration </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">300</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>上面代码中，<code>response.settings</code>如果是<code>null</code>或<code>undefined</code>，就会返回默认值 300。</p>
+<p>这个运算符很适合判断函数参数是否赋值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Component</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">props</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">enable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> props.enabled </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// …</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码判断<code>props</code>参数的<code>enabled</code>属性是否赋值，等同于下面的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Component</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">props</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #FFAB70">enabled</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">enable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> props;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// …</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p><code>??</code>有一个运算优先级问题，它与<code>&#x26;&#x26;</code>和<code>||</code>的优先级孰高孰低。现在的规则是，如果多个逻辑运算符一起使用，必须用括号表明优先级，否则会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> middle </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> rhs</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> middle </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> rhs</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> middle </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> rhs</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> middle </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> rhs</span></span></code></pre>
+<p>上面四个表达式都会报错，必须加入表明优先级的括号。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">(lhs </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> middle) </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> rhs;</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> (middle </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> rhs);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">(lhs </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> middle) </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> rhs;</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> (middle </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> rhs);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">(lhs </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> middle) </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> rhs;</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> (middle </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> rhs);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">(lhs </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> middle) </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> rhs;</span></span>
+<span class="line"><span style="color: #E1E4E8">lhs </span><span style="color: #F97583">??</span><span style="color: #E1E4E8"> (middle </span><span style="color: #F97583">||</span><span style="color: #E1E4E8"> rhs);</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

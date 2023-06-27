@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="函数式编程 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			函数式编程 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">函数式编程</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<p>JavaScript 语言从一诞生，就具有函数式编程的烙印。它将函数作为一种独立的数据类型，与其他数据类型处于完全平等的地位。在 JavaScript 语言中，你可以采用面向对象编程，也可以采用函数式编程。有人甚至说，JavaScript 是有史以来第一种被大规模采用的函数式编程语言。</p>
+<!-- more -->
+<p>ES6 的种种新增功能，使得函数式编程变得更方便、更强大。本章介绍 ES6 如何进行函数式编程。</p>
+<h2 id="柯里化">柯里化</h2>
+<p><strong>柯里化（currying）指的是将一个多参数的函数拆分成一系列函数，每个拆分后的函数都只接受一个参数</strong>（unary）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> b;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p>上面代码中，函数<code>add</code>接受两个参数<code>a</code>和<code>b</code>。</p>
+<p>柯里化就是将上面的函数拆分成两个函数，每个函数都只接受一个参数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> b;</span></span>
+<span class="line"><span style="color: #E1E4E8">  };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// 或者采用箭头函数写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> y;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">f</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p>上面代码中，函数<code>add</code>只接受一个参数<code>a</code>，返回一个函数<code>f</code>。函数<code>f</code>也只接受一个参数<code>b</code>。</p>
+<h2 id="函数合成">函数合成</h2>
+<p>函数合成（function composition）指的是，将多个函数合成一个函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">compose</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">f</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">g</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">g</span><span style="color: #E1E4E8">(x));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">f</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">compose</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">)((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 20</span></span></code></pre>
+<p>上面代码中，<code>compose</code>就是一个函数合成器，用于将两个函数合成一个函数。</p>
+<p>可以发现，柯里化与函数合成有着密切的联系。前者用于将一个函数拆成多个函数，后者用于将多个函数合并成一个函数。</p>
+<h2 id="参数倒置">参数倒置</h2>
+<p>参数倒置（flip）指的是改变函数前两个参数的顺序。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">divide</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">/</span><span style="color: #E1E4E8"> b;</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> flip </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">flip</span><span style="color: #E1E4E8">(divide);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">flip</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 0.5</span></span>
+<span class="line"><span style="color: #B392F0">flip</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 10</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">three</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">c</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> [a, b, c];</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> flip </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">flip</span><span style="color: #E1E4E8">(three);</span></span>
+<span class="line"><span style="color: #B392F0">flip</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// => [2, 1, 3]</span></span></code></pre>
+<p>上面代码中，如果按照正常的参数顺序，10 除以 5 等于 2。但是，参数倒置以后得到的新函数，结果就是 5 除以 10，结果得到 0.5。如果原函数有 3 个参数，则只颠倒前两个参数的位置。</p>
+<p>参数倒置的代码非常简单。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> f </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">f.flip </span><span style="color: #F97583">=</span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span><span style="color: #FFAB70">fn</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">fn</span><span style="color: #E1E4E8">(b, a, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">args.</span><span style="color: #B392F0">reverse</span><span style="color: #E1E4E8">());</span></span></code></pre>
+<h2 id="执行边界">执行边界</h2>
+<p>执行边界（until）指的是函数执行到满足条件为止。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">condition</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">inc</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> until </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">until</span><span style="color: #E1E4E8">(condition, inc);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">until</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 101</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">condition</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">until </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">until</span><span style="color: #E1E4E8">(condition, inc);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">until</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 5</span></span></code></pre>
+<p>上面代码中，第一段的条件是执行到<code>x</code>大于 100 为止，所以<code>x</code>初值为 0 时，会一直执行到 101。第二段的条件是执行到等于 5 为止，所以<code>x</code>最后的值是 5。</p>
+<p>执行边界的实现如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> f </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">f.until </span><span style="color: #F97583">=</span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span><span style="color: #FFAB70">condition</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">f</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">var</span><span style="color: #E1E4E8"> r </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, args);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">condition</span><span style="color: #E1E4E8">(r) </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> r </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">until</span><span style="color: #E1E4E8">(condition, f)(r);</span></span>
+<span class="line"><span style="color: #E1E4E8">  };</span></span></code></pre>
+<p>上面代码的关键就是，如果满足条件就返回结果，否则不断递归执行。</p>
+<h2 id="队列操作">队列操作</h2>
+<p>队列（list）操作包括以下几种。</p>
+<ul>
+<li><code>head</code>： 取出队列的第一个非空成员。</li>
+<li><code>last</code>： 取出有限队列的最后一个非空成员。</li>
+<li><code>tail</code>： 取出除了“队列头”以外的其他非空成员。</li>
+<li><code>init</code>： 取出除了“队列尾”以外的其他非空成员。</li>
+</ul>
+<p>下面是例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">head</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">27</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 5</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">last</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">27</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">tail</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">27</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// [27, 3, 1]</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">init</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">27</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// [5, 27, 3]</span></span></code></pre>
+<p>这些方法的实现如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> f </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">head</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> xs[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">last</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> xs.</span><span style="color: #B392F0">slice</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">-</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">tail</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Array</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.slice.</span><span style="color: #B392F0">call</span><span style="color: #E1E4E8">(xs, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">init</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> xs.</span><span style="color: #B392F0">slice</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">-</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<h2 id="合并操作">合并操作</h2>
+<p>合并操作分为<code>concat</code>和<code>concatMap</code>两种。前者就是将多个数组合成一个，后者则是先处理一下参数，然后再将处理结果合成一个数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">], [</span><span style="color: #79B8FF">27</span><span style="color: #E1E4E8">], [</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]); </span><span style="color: #6A737D">// [5, 27, 3]</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">concatMap</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hi "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> x, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, [[</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">]], </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ['hi 1', 'hi 2', 'hi 3']</span></span></code></pre>
+<p>这两种方法的实现代码如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> f </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> xs.</span><span style="color: #B392F0">reduce</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> a.</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(b));</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">concatMap</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">f</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> f.</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(xs.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">(f));</span></span></code></pre>
+<h2 id="配对操作">配对操作</h2>
+<p>配对操作分为<code>zip</code>和<code>zipWith</code>两种方法。<code>zip</code>操作将两个队列的成员，一一配对，合成一个新的队列。如果两个队列不等长，较长的那个队列多出来的成员，会被忽略。<code>zipWith</code>操作的第一个参数是一个函数，然后会将后面的队列成员一一配对，输入该函数，返回值就组成一个新的队列。</p>
+<p>下面是例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> c </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">6</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">8</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">zip</span><span style="color: #E1E4E8">(a, b); </span><span style="color: #6A737D">// [[0, 3], [1, 4], [2, 5]]</span></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">zipWith</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">a</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">b</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> b, a, b, c); </span><span style="color: #6A737D">// [9, 12, 15]</span></span></code></pre>
+<p>上面代码中，<code>zipWith</code>方法的第一个参数是一个求和函数，它将后面三个队列的成员，一一配对进行相加。</p>
+<p>这两个方法的实现如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> f </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">zip</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> r </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> nple </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> length </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Math.min.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    xs.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">)</span></span>
+<span class="line"><span style="color: #E1E4E8">  );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">var</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">; i </span><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> length; i</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    xs.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> nple.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(x[i]));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    r.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(nple);</span></span>
+<span class="line"><span style="color: #E1E4E8">    nple </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> r;</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">f.</span><span style="color: #B392F0">zipWith</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">op</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #FFAB70">xs</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> f.zip.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, xs).</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x.</span><span style="color: #B392F0">reduce</span><span style="color: #E1E4E8">(op));</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

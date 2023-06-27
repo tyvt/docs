@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/CSS/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="从box-sizing属性入手，了解盒子模型 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/CSS/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			从box-sizing属性入手，了解盒子模型 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">从box-sizing属性入手，了解盒子模型</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="背景">背景</h2>
+<p>先声明一下运用的场景，假如项目布局使用的是<strong>自适应</strong>的布局方式，div 给出的宽度是<strong>百分比</strong>的形式，即占窗口宽度的 100%，但边框 <code>border</code> 和内边距 <code>padding</code> 是用像素来表示的，此时就会造成一个问题是 div 总宽度超过窗口宽度。为了避免这种问题，可以使用属性 <code>box-sizing:border-box</code> 来把 <strong>标准盒子模型</strong> 变成 <strong>(IE)盒子模型</strong> ，从而使 div 的总宽度依然是 100%</p>
+<!-- more -->
+<h2 id="什么是-css-盒子模型">什么是 CSS 盒子模型?</h2>
+<p>页面布局中，一个元素的外边距（margin）、 边框（border）、内边距（padding）、内容（content）组成一个盒子模型。盒子模型可分为<strong>标准盒子模型</strong> 和 <strong>代替（IE）盒子模型</strong>。</p>
+<h2 id="标准盒子模型">标准盒子模型</h2>
+<p>在标准模型中，如果你给盒设置 <code>width</code> 和 <code>height</code>，实际设置的是内容区域( <em>content box</em>)的宽高。 <code>padding</code> 和 <code>border</code> 再加上设置的宽高一起决定整个盒子的大小。</p>
+<p><strong>示例：</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">.box</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">width</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">100</span><span style="color: #F97583">px</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">height</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">50</span><span style="color: #F97583">px</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">margin</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">10</span><span style="color: #F97583">px</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">padding</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">25</span><span style="color: #F97583">px</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">border</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">5</span><span style="color: #F97583">px</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">solid</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">black</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>如果使用标准盒子模型，元素总宽度 = 160px（100+25+25+5+5），总高度 = 110px (50 + 25 + 25 + 5 + 5)，即内容区域<code>content box</code>加 <code>padding</code> 和 <code>border</code> 。</p>
+<p><strong>注</strong>: margin 不计入实际大小 —— 当然，它会影响盒子在页面所占空间，但是影响的是盒子外部空间。</p>
+<h2 id="ie盒子模型">（IE）盒子模型</h2>
+<p>你可能会认为盒子的大小还要加上边框和内边距，这样很麻烦。CSS 还有一个 IE 盒子模型。使用这个模型，所有宽度都是可见宽度，所以内容宽度是该宽度减去边框和填充部分。使用上面相同的样式得到总宽高是 width = 100px, height = 50px。</p>
+<p>默认浏览器会使用标准盒子模型。如果需要使用 IE 盒子模型，您可以通过为其设置 <code>box-sizing: border-box</code> 来实现。 这样就可以告诉浏览器使用 <code>border-box</code> 来定义区域，从而设定您想要的大小。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">.box</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">box-sizing</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">border-box</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<h2 id="box-sizing-属性">box-sizing 属性</h2>
+<p>CSS 中的 <strong><code>box-sizing</code></strong> 属性用于告诉浏览器如何计算一个元素是总宽度和总高度</p>
+<iframe class="interactive" frameborder="0" height="400" src="https://interactive-examples.mdn.mozilla.net/pages/css/box-sizing.html" title="MDN Web Docs Interactive Example" width="100%"></iframe>
+<p>在 <a href="https://developer.mozilla.org/zh-CN/docs/CSS/Box_model">CSS 盒子模型</a> 的默认定义里，你对一个元素所设置的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/width"><code>width</code></a> 与 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/height"><code>height</code></a> 只会应用到这个元素的内容区。如果这个元素有任何的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border"><code>border</code></a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding"><code>padding</code></a> ，绘制到屏幕上时的盒子宽度和高度会加上设置的边框和内边距值。这意味着当你调整一个元素的宽度和高度时需要时刻注意到这个元素的边框和内边距。当我们实现响应式布局时，这个特点尤其烦人。</p>
+<p>box-sizing 属性可以被用来调整这些表现:</p>
+<ul>
+<li>
+<p><code>content-box</code> 是默认值。如果你设置一个元素的宽为 100px，那么这个元素的内容区会有 100px 宽，并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。</p>
+<ul>
+<li>
+<p>尺寸计算公式：</p>
+<p><code>width</code> = 内容的宽度</p>
+<p><code>height</code> = 内容的高度</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>border-box</code> 告诉浏览器：你想要设置的边框和内边距的值是包含在 width 内的。也就是说，如果你将一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减去(border + padding)的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。</p>
+<ul>
+<li>
+<p>尺寸计算公式：</p>
+<p><em><code>width</code> = border + padding + 内容的宽度</em></p>
+<p><em><code>height</code> = border + padding + 内容的高度</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>来源：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing">https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing</a></p>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

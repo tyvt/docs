@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="Class 的继承 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			Class 的继承 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">Class 的继承</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="简介">简介</h2>
+<p>Class 可以通过<code>extends</code>关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {}</span></span></code></pre>
+<!-- more -->
+<p>上面代码定义了一个<code>ColorPoint</code>类，该类通过<code>extends</code>关键字，继承了<code>Point</code>类的所有属性和方法。但是由于没有部署任何代码，所以这两个类完全一样，等于复制了一个<code>Point</code>类。下面，我们在<code>ColorPoint</code>内部加上代码。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">color</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(x, y); </span><span style="color: #6A737D">// 调用父类的constructor(x, y)</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.color </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> color;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.color </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">" "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 调用父类的toString()</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>constructor</code>方法和<code>toString</code>方法之中，都出现了<code>super</code>关键字，它在这里表示父类的构造函数，用来新建父类的<code>this</code>对象。</p>
+<p>**子类必须在<code>constructor</code>方法中调用<code>super</code>方法，否则新建实例时会报错。**这是因为子类自己的<code>this</code>对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。<strong>如果不调用<code>super</code>方法，子类就得不到<code>this</code>对象。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {}</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> cp </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// ReferenceError</span></span></code></pre>
+<p>上面代码中，<code>ColorPoint</code>继承了父类<code>Point</code>，但是它的构造函数没有调用<code>super</code>方法，导致新建实例时报错。</p>
+<p>ES5 的继承，实质是先创造子类的实例对象<code>this</code>，然后再将父类的方法添加到<code>this</code>上面（<code>Parent.apply(this)</code>）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到<code>this</code>上面（所以必须先调用<code>super</code>方法），然后再用子类的构造函数修改<code>this</code>。</p>
+<p>如果子类没有定义<code>constructor</code>方法，这个方法会被默认添加，代码如下。也就是说，不管有没有显式定义，任何一个子类都有<code>constructor</code>方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">args);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>另一个需要注意的地方是，**在子类的构造函数中，只有调用<code>super</code>之后，才可以使用<code>this</code>关键字，否则会报错。**这是因为子类实例的构建，基于父类实例，只有<code>super</code>方法才能调用父类实例。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> x;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.y </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> y;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">y</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">color</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.color </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> color; </span><span style="color: #6A737D">// ReferenceError</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(x, y);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.color </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> color; </span><span style="color: #6A737D">// 正确</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，子类的<code>constructor</code>方法没有调用<code>super</code>之前，就使用<code>this</code>关键字，结果报错，而放在<code>super</code>方法之后就是正确的。</p>
+<p>下面是生成子类实例的代码。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> cp </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">25</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">8</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"green"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">cp </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">cp </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，实例对象<code>cp</code>同时是<code>ColorPoint</code>和<code>Point</code>两个类的实例，这与 ES5 的行为完全一致。</p>
+<p>最后，父类的静态方法，也会被子类继承。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">hello</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">hello</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// hello world</span></span></code></pre>
+<p>上面代码中，<code>hello()</code>是<code>A</code>类的静态方法，<code>B</code>继承<code>A</code>，也继承了<code>A</code>的静态方法。</p>
+<h2 id="objectgetprototypeof">Object.getPrototypeOf()</h2>
+<p><code>Object.getPrototypeOf</code>方法可以用来从子类上获取父类。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(ColorPoint) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> Point;</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span></code></pre>
+<p>因此，可以使用这个方法判断，一个类是否继承了另一个类。</p>
+<h2 id="super-关键字">super 关键字</h2>
+<p><strong><code>super</code>这个关键字，既可以当作函数使用，也可以当作对象使用</strong>。在这两种情况下，它的用法完全不同。</p>
+<p>第一种情况，<code>super</code>作为函数调用时，代表父类的构造函数。ES6 要求，子类的构造函数必须执行一次<code>super</code>函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，子类<code>B</code>的构造函数之中的<code>super()</code>，代表调用父类的构造函数。这是必须的，否则 JavaScript 引擎会报错。</p>
+<p>注意，<strong><code>super</code>虽然代表了父类<code>A</code>的构造函数，但是返回的是子类<code>B</code>的实例</strong>，即<code>super</code>内部的<code>this</code>指的是<code>B</code>的实例，因此<code>super()</code>在这里相当于<code>A.prototype.constructor.call(this)</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">target</span><span style="color: #E1E4E8">.name);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// A</span></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// B</span></span></code></pre>
+<p>上面代码中，<code>new.target</code>指向当前正在执行的函数。可以看到，在<code>super()</code>执行时，它指向的是子类<code>B</code>的构造函数，而不是父类<code>A</code>的构造函数。也就是说，<code>super()</code>内部的<code>this</code>指向的是<code>B</code>。</p>
+<p><strong>作为函数时，<code>super()</code>只能用在子类的构造函数之中，用在其他地方就会报错。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">m</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>super()</code>用在<code>B</code>类的<code>m</code>方法之中，就会造成语法错误。</p>
+<p>第二种情况，<strong><code>super</code>作为对象时，在普通方法中，指向父类的原型对象；在静态方法中，指向父类。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">p</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">p</span><span style="color: #E1E4E8">()); </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，子类<code>B</code>当中的<code>super.p()</code>，就是将<code>super</code>当作一个对象使用。这时，<code>super</code>在普通方法之中，指向<code>A.prototype</code>，所以<code>super.p()</code>就相当于<code>A.prototype.p()</code>。</p>
+<p>这里需要注意，由于<code>super</code>指向父类的原型对象，所以定义在父类实例上的方法或属性，是无法通过<code>super</code>调用的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.p </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 这是定于在实例上的属性</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">m</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.p;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">b.m; </span><span style="color: #6A737D">// undefined</span></span></code></pre>
+<p>上面代码中，<code>p</code>是父类<code>A</code>实例的属性，<code>super.p</code>就引用不到它。</p>
+<p>如果属性定义在父类的原型对象上，<code>super</code>就可以取到。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.x); </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，属性<code>x</code>是定义在<code>A.prototype</code>上面的，所以<code>super.x</code>可以取到它的值。</p>
+<p>ES6 规定，<strong>在子类普通方法中通过<code>super</code>调用父类的方法时，方法内部的<code>this</code>指向当前的子类实例</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">print</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">m</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">print</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">b.</span><span style="color: #B392F0">m</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p>上面代码中，<code>super.print()</code>虽然调用的是<code>A.prototype.print()</code>，但是<code>A.prototype.print()</code>内部的<code>this</code>指向子类<code>B</code>的实例，导致输出的是<code>2</code>，而不是<code>1</code>。也就是说，实际上执行的是<code>super.print.call(this)</code>。</p>
+<p>由于<code>this</code>指向子类实例，所以如果通过<code>super</code>对某个属性赋值，这时<code>super</code>就是<code>this</code>，赋值的属性会变成子类实例的属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.x); </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x); </span><span style="color: #6A737D">// 3</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，<code>super.x</code>赋值为<code>3</code>，这时等同于对<code>this.x</code>赋值为<code>3</code>。而当读取<code>super.x</code>的时候，读的是<code>A.prototype.x</code>，所以返回<code>undefined</code>。</p>
+<p><strong>如果<code>super</code>作为对象，用在静态方法之中，这时<code>super</code>将指向父类，而不是父类的原型对象。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Parent</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">msg</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"static"</span><span style="color: #E1E4E8">, msg);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">msg</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"instance"</span><span style="color: #E1E4E8">, msg);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Child</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Parent</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">msg</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(msg);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">msg</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(msg);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Child.</span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// static 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> child </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Child</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">child.</span><span style="color: #B392F0">myMethod</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// instance 2</span></span></code></pre>
+<p>上面代码中，<code>super</code>在静态方法之中指向父类，在普通方法之中指向父类的原型对象。</p>
+<p>另外，<strong>在子类的静态方法中通过<code>super</code>调用父类的方法时，方法内部的<code>this</code>指向当前的子类，而不是子类的实例。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">print</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">m</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">print</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">m</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 3</span></span></code></pre>
+<p>上面代码中，静态方法<code>B.m</code>里面，<code>super.print</code>指向父类的静态方法。这个方法里面的<code>this</code>指向的是<code>B</code>，而不是<code>B</code>的实例。</p>
+<p>注意，使用<code>super</code>的时候，必须显式指定是作为函数、还是作为对象使用，否则会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>console.log(super)</code>当中的<code>super</code>，无法看出是作为函数使用，还是作为对象使用，所以 JavaScript 引擎解析代码的时候就会报错。这时，如果能清晰地表明<code>super</code>的数据类型，就不会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">valueOf</span><span style="color: #E1E4E8">() </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，<code>super.valueOf()</code>表明<code>super</code>是一个对象，因此就不会报错。同时，由于<code>super</code>使得<code>this</code>指向<code>B</code>的实例，所以<code>super.valueOf()</code>返回的是一个<code>B</code>的实例。</p>
+<p>最后，由于对象总是继承其他对象的，所以可以在任意一个对象中，使用<code>super</code>关键字。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"MyObject: "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// MyObject: [object Object]</span></span></code></pre>
+<h2 id="类的-prototype-属性和__proto__属性">类的 prototype 属性和__proto__属性</h2>
+<p>大多数浏览器的 ES5 实现之中，每一个对象都有<code>__proto__</code>属性，指向对应的构造函数的<code>prototype</code>属性。Class 作为构造函数的语法糖，同时有<code>prototype</code>属性和<code>__proto__</code>属性，因此同时存在两条继承链。</p>
+<p>（1）子类的<code>__proto__</code>属性，表示构造函数的继承，总是指向父类。</p>
+<p>（2）子类<code>prototype</code>属性的<code>__proto__</code>属性，表示方法的继承，总是指向父类的<code>prototype</code>属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，子类<code>B</code>的<code>__proto__</code>属性指向父类<code>A</code>，子类<code>B</code>的<code>prototype</code>属性的<code>__proto__</code>属性指向父类<code>A</code>的<code>prototype</code>属性。</p>
+<p>这样的结果是因为，类的继承是按照下面的模式实现的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// B 的实例继承 A 的实例</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// B 继承 A 的静态属性</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">b</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>《对象的扩展》一章给出过<code>Object.setPrototypeOf</code>方法的实现。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">proto</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  obj.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> proto;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> obj;</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>因此，就得到了上面的结果。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>这两条继承链，可以这样理解：作为一个对象，子类（<code>B</code>）的原型（<code>__proto__</code>属性）是父类（<code>A</code>）；作为一个构造函数，子类（<code>B</code>）的原型对象（<code>prototype</code>属性）是父类的原型对象（<code>prototype</code>属性）的实例。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #79B8FF">B</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p><code>extends</code>关键字后面可以跟多种类型的值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">B</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span></code></pre>
+<p>上面代码的<code>A</code>，只要是一个有<code>prototype</code>属性的函数，就能被<code>B</code>继承。由于函数都有<code>prototype</code>属性（除了<code>Function.prototype</code>函数），因此<code>A</code>可以是任意函数。</p>
+<p>下面，讨论两种情况。第一种，子类继承<code>Object</code>类。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Object</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> Object; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>这种情况下，<code>A</code>其实就是构造函数<code>Object</code>的复制，<code>A</code>的实例就是<code>Object</code>的实例。</p>
+<p>第二种情况，不存在任何继承。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Function</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">A</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>这种情况下，<code>A</code>作为一个基类（即不存在任何继承），就是一个普通函数，所以直接继承<code>Function.prototype</code>。但是，<code>A</code>调用后返回一个空对象（即<code>Object</code>实例），所以<code>A.prototype.__proto__</code>指向构造函数（<code>Object</code>）的<code>prototype</code>属性。</p>
+<h3 id="实例的-__proto__-属性">实例的 __proto__ 属性</h3>
+<p>子类实例的<code>__proto__</code>属性的<code>__proto__</code>属性，指向父类实例的<code>__proto__</code>属性。也就是说，子类的原型的原型，是父类的原型。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> p1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Point</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> p2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ColorPoint</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"red"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">p2.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> p1.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">p2.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> p1.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>ColorPoint</code>继承了<code>Point</code>，导致前者原型的原型是后者的原型。</p>
+<p>因此，通过子类实例的<code>__proto__.__proto__</code>属性，可以修改父类实例的行为。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">p2.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">__proto__</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">printName</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Ha"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">p1.</span><span style="color: #B392F0">printName</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// "Ha"</span></span></code></pre>
+<p>上面代码在<code>ColorPoint</code>的实例<code>p2</code>上向<code>Point</code>类添加方法，结果影响到了<code>Point</code>的实例<code>p1</code>。</p>
+<h2 id="原生构造函数的继承">原生构造函数的继承</h2>
+<p>原生构造函数是指语言内置的构造函数，通常用来生成数据结构。ECMAScript 的原生构造函数大致有下面这些。</p>
+<ul>
+<li>Boolean()</li>
+<li>Number()</li>
+<li>String()</li>
+<li>Array()</li>
+<li>Date()</li>
+<li>Function()</li>
+<li>RegExp()</li>
+<li>Error()</li>
+<li>Object()</li>
+</ul>
+<p>以前，这些原生构造函数是无法继承的，比如，不能自己定义一个<code>Array</code>的子类。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  Array.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">arguments</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">MyArray</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">Array</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  constructor: {</span></span>
+<span class="line"><span style="color: #E1E4E8">    value: MyArray,</span></span>
+<span class="line"><span style="color: #E1E4E8">    writable: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    configurable: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    enumerable: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>上面代码定义了一个继承 Array 的<code>MyArray</code>类。但是，这个类的行为与<code>Array</code>完全不一致。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> colors </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">colors[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"red"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">colors.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">colors.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">colors[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// "red"</span></span></code></pre>
+<p>之所以会发生这种情况，是因为子类无法获得原生构造函数的内部属性，通过<code>Array.apply()</code>或者分配给原型对象都不行。原生构造函数会忽略<code>apply</code>方法传入的<code>this</code>，也就是说，原生构造函数的<code>this</code>无法绑定，导致拿不到内部属性。</p>
+<p>ES5 是先新建子类的实例对象<code>this</code>，再将父类的属性添加到子类上，由于父类的内部属性无法获取，导致无法继承原生的构造函数。比如，<code>Array</code>构造函数有一个内部属性<code>[[DefineOwnProperty]]</code>，用来定义新属性时，更新<code>length</code>属性，这个内部属性无法在子类获取，导致子类的<code>length</code>属性行为不正常。</p>
+<p>下面的例子中，我们想让一个普通对象继承<code>Error</code>对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> e </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyNames</span><span style="color: #E1E4E8">(Error.</span><span style="color: #B392F0">call</span><span style="color: #E1E4E8">(e));</span></span>
+<span class="line"><span style="color: #6A737D">// [ 'stack' ]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyNames</span><span style="color: #E1E4E8">(e);</span></span>
+<span class="line"><span style="color: #6A737D">// []</span></span></code></pre>
+<p>上面代码中，我们想通过<code>Error.call(e)</code>这种写法，让普通对象<code>e</code>具有<code>Error</code>对象的实例属性。但是，<code>Error.call()</code>完全忽略传入的第一个参数，而是返回一个新对象，<code>e</code>本身没有任何变化。这证明了<code>Error.call(e)</code>这种写法，无法继承原生构造函数。</p>
+<p>ES6 允许继承原生构造函数定义子类，因为 ES6 是先新建父类的实例对象<code>this</code>，然后再用子类的构造函数修饰<code>this</code>，使得父类的所有行为都可以继承。下面是一个继承<code>Array</code>的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">args);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> arr </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">arr[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">12</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">arr.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">arr.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">arr[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// undefined</span></span></code></pre>
+<p>上面代码定义了一个<code>MyArray</code>类，继承了<code>Array</code>构造函数，因此就可以从<code>MyArray</code>生成数组的实例。这意味着，ES6 可以自定义原生数据结构（比如<code>Array</code>、<code>String</code>等）的子类，这是 ES5 无法做到的。</p>
+<p>上面这个例子也说明，<code>extends</code>关键字不仅可以用来继承类，还可以用来继承原生的构造函数。因此可以在原生数据结构的基础上，定义自己的数据结构。下面就是定义了一个带版本功能的数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">VersionedArray</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.history </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [[]];</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">commit</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.history.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">slice</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">revert</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">splice</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">...</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.history[</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.history.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">-</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">VersionedArray</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">x.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">x.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">x; </span><span style="color: #6A737D">// [1, 2]</span></span>
+<span class="line"><span style="color: #E1E4E8">x.history; </span><span style="color: #6A737D">// [[]]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">x.</span><span style="color: #B392F0">commit</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">x.history; </span><span style="color: #6A737D">// [[], [1, 2]]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">x.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">x; </span><span style="color: #6A737D">// [1, 2, 3]</span></span>
+<span class="line"><span style="color: #E1E4E8">x.history; </span><span style="color: #6A737D">// [[], [1, 2]]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">x.</span><span style="color: #B392F0">revert</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">x; </span><span style="color: #6A737D">// [1, 2]</span></span></code></pre>
+<p>上面代码中，<code>VersionedArray</code>会通过<code>commit</code>方法，将自己的当前状态生成一个版本快照，存入<code>history</code>属性。<code>revert</code>方法用来将数组重置为最新一次保存的版本。除此之外，<code>VersionedArray</code>依然是一个普通数组，所有原生的数组方法都可以在它上面调用。</p>
+<p>下面是一个自定义<code>Error</code>子类的例子，可以用来定制报错时的行为。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ExtendableError</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">message</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.message </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> message;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.stack </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">().stack;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.name </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">constructor</span><span style="color: #E1E4E8">.name;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyError</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">ExtendableError</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">m</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(m);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myerror </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyError</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"ll"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">myerror.message; </span><span style="color: #6A737D">// "ll"</span></span>
+<span class="line"><span style="color: #E1E4E8">myerror </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">myerror.name; </span><span style="color: #6A737D">// "MyError"</span></span>
+<span class="line"><span style="color: #E1E4E8">myerror.stack;</span></span>
+<span class="line"><span style="color: #6A737D">// Error</span></span>
+<span class="line"><span style="color: #6A737D">//     at MyError.ExtendableError</span></span>
+<span class="line"><span style="color: #6A737D">//     ...</span></span></code></pre>
+<p>注意，继承<code>Object</code>的子类，有一个<a href="http://stackoverflow.com/questions/36203614/super-does-not-pass-arguments-when-instantiating-a-class-extended-from-object">行为差异</a>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">NewObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Object</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #79B8FF">arguments</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> o </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">NewObj</span><span style="color: #E1E4E8">({ attr: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #E1E4E8">o.attr </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码中，<code>NewObj</code>继承了<code>Object</code>，但是无法通过<code>super</code>方法向父类<code>Object</code>传参。这是因为 ES6 改变了<code>Object</code>构造函数的行为，一旦发现<code>Object</code>方法不是通过<code>new Object()</code>这种形式调用，ES6 规定<code>Object</code>构造函数会忽略参数。</p>
+<h2 id="mixin-模式的实现">Mixin 模式的实现</h2>
+<p>Mixin 指的是多个对象合成一个新的对象，新对象具有各个组成成员的接口。它的最简单实现如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  a: </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">b</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  b: </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">c</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">b }; </span><span style="color: #6A737D">// {a: 'a', b: 'b'}</span></span></code></pre>
+<p>上面代码中，<code>c</code>对象是<code>a</code>对象和<code>b</code>对象的合成，具有两者的接口。</p>
+<p>下面是一个更完备的实现，将多个类的接口“混入”（mix in）另一个类。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">mix</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #FFAB70">mixins</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Mix</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> mixin </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> mixins) {</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #B392F0">copyProperties</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">mixin</span><span style="color: #E1E4E8">()); </span><span style="color: #6A737D">// 拷贝实例属性</span></span>
+<span class="line"><span style="color: #E1E4E8">      }</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> mixin </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> mixins) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">copyProperties</span><span style="color: #E1E4E8">(Mix, mixin); </span><span style="color: #6A737D">// 拷贝静态属性</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">copyProperties</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">Mix</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">mixin</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 拷贝原型属性</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Mix;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">copyProperties</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">source</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">ownKeys</span><span style="color: #E1E4E8">(source)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (key </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"constructor"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"prototype"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x26;&#x26;</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"name"</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> desc </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(source, key);</span></span>
+<span class="line"><span style="color: #E1E4E8">      Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(target, key, desc);</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码的<code>mix</code>函数，可以将多个对象合成为一个类。使用的时候，只要继承这个类即可。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">DistributedEdit</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">mix</span><span style="color: #E1E4E8">(Loggable, Serializable) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

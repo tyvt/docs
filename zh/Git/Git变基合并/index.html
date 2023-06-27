@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/Git/Git%E5%8F%98%E5%9F%BA%E5%90%88%E5%B9%B6/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="Git变基合并 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/Git/Git%E5%8F%98%E5%9F%BA%E5%90%88%E5%B9%B6/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			Git变基合并 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">Git变基合并</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="说明">说明</h2>
+<p>以下 <code>v2</code> 是某个需求的开发分支， <code>dev</code>是总的开发分支，<code>v2</code> 是基于<code>dev</code>分支签出的。</p>
+<p>当完成<code>v2</code>的开发后，需要把代码合并到<code>dev</code>，我们可以使用<code>rebase</code>进行合并：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D"># 首先将 v2 push到远程仓库</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">add</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">.</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-m</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'xxx'</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">push</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">origin</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 切换到 dev 拉取最新代码</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">checkout</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">dev</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">pull</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">origin</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">dev</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 切换到 v2</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">checkout</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">dev</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 将 v2 的所有[commit] 变基到(应用到) dev</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 切换到 dev</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">checkout</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">dev</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span><span style="color: #E1E4E8">  </span><span style="color: #6A737D"># 将 dev分支 快进合并 （此时 (HEAD -> dev, v2) [commit] 两个分支指向同一个提交）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 查看 原v2的[commit]记录 是否在dev分支的最前面（变基成功会把v2的提交记录应用到dev分支的最前面）</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 如果到这一步发现有问题，尝试使用 git --abort中止变基，如果还是有问题的可以在dev分支上使用《后悔药》操作， 再到v2分支上使用《后悔药》操作，即可使两个分支都回退到 rebase变基 之前的状态</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 试运行项目是否有问题</span></span>
+<span class="line"><span style="color: #B392F0">yarn</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">start</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">status</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 查看状态是否有问题</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">push</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">origin</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">dev</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 推送到远程仓库的 dev</span></span>
+<span class="line"></span></code></pre>
+<h3 id="变基要遵守的准则">变基要遵守的准则</h3>
+<p><strong>几个人同时在一个分支上进行开发和提交时，你不要中途执行变基，只有在大家都完成工作之后才可以执行变基。</strong></p>
+<h3 id="变基的实质">变基的实质</h3>
+<p>变基操作的实质是丢弃一些现有的提交，然后相应地新建一些内容一样但实际上不同的提交。
+因此，<strong>变基操作过后的分支将不要再使用</strong>。</p>
+<h2 id="后悔药">后悔药</h2>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D"># 查看HEAD指针变动记录</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">reflog</span></span>
+<span class="line"><span style="color: #6A737D"># 记录示例(当前分支是v2):</span></span>
+<span class="line"><span style="color: #B392F0">07c398f</span><span style="color: #E1E4E8"> (HEAD -</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8">) HEAD@{</span><span style="color: #B392F0">0}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">checkout:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">moving</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">to</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span></span>
+<span class="line"><span style="color: #B392F0">07c398f</span><span style="color: #E1E4E8"> (HEAD -</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8">) HEAD@{</span><span style="color: #B392F0">1}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> (finish): returning to refs/heads/master</span></span>
+<span class="line"><span style="color: #B392F0">07c398f</span><span style="color: #E1E4E8"> (HEAD -</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8">) HEAD@{</span><span style="color: #B392F0">2}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> (start): checkout v2</span></span>
+<span class="line"><span style="color: #B392F0">15a97d8</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">3</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">reset:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">moving</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">to</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">15</span><span style="color: #9ECBFF">a97d8</span></span>
+<span class="line"><span style="color: #B392F0">07c398f</span><span style="color: #E1E4E8"> (HEAD -</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8">) HEAD@{</span><span style="color: #B392F0">4}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Fast-forward</span></span>
+<span class="line"><span style="color: #B392F0">15a97d8</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">5</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">checkout:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">moving</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">to</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span></span>
+<span class="line"><span style="color: #B392F0">07c398f</span><span style="color: #E1E4E8"> (HEAD -</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8">) HEAD@{</span><span style="color: #B392F0">6}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> (finish): returning to refs/heads/v2</span></span>
+<span class="line"><span style="color: #B392F0">07c398f</span><span style="color: #E1E4E8"> (HEAD -</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8">) HEAD@{</span><span style="color: #B392F0">7}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> (pick): C</span></span>
+<span class="line"><span style="color: #B392F0">15a97d8</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">8</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> (start): checkout master </span><span style="color: #6A737D"># 首次rebase</span></span>
+<span class="line"><span style="color: #B392F0">d278ecd</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">9</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">checkout:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">moving</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">to</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># rebase前的状态</span></span>
+<span class="line"><span style="color: #B392F0">15a97d8</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">10</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">D</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 可见，示例中最初的 rebase 操作是 HEAD@{8}，想回退到变基前的状态需让指针指向 HEAD@{9}</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">reset</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--hard</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">d278ecd</span><span style="color: #E1E4E8">  </span><span style="color: #6A737D"># 重置当前分支的HEAD为指定[commit]，同时重置暂存区和工作区，与指定[commit]一致</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D"># 此时打印 log 查看是否回到之前的状态</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span></span></code></pre>
+<p><strong>注意：此操作只能回退当前的分支，如其他分支也要回退，需要切换到该分支并执行上面操作。</strong></p>
+<h2 id="开发期间的-rebase-操作">开发期间的 rebase 操作</h2>
+<h3 id="背景">背景</h3>
+<p>有两个分支：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">dev</span></span>
+<span class="line"><span style="color: #F97583">*</span><span style="color: #E1E4E8">v2</span></span></code></pre>
+<p><code>2.4-dev</code> 是基于<code>dev</code>切出来的。</p>
+<p>提交记录如下：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #e1e4e8">  dev</span></span>
+<span class="line"><span style="color: #e1e4e8">a - b - c</span></span>
+<span class="line"><span style="color: #e1e4e8">  v2</span></span></code></pre>
+<p>开发期间，两个分支同时有新的 commit ：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #e1e4e8">    dev</span></span>
+<span class="line"><span style="color: #e1e4e8">a - b - c - d - e</span></span>
+<span class="line"><span style="color: #e1e4e8">  \ - f - g</span></span>
+<span class="line"><span style="color: #e1e4e8">    v2</span></span></code></pre>
+<p>当前你正在<code>v2</code>进行开发，<code>dev</code>也同时进行开发，并有重大的改变，你需要把<code>dev</code>的提交同步到<code>v2</code>。</p>
+<p><strong>需求： 把<code>dev</code>中新的提交同步到<code>v2</code>，且不能影响<code>dev</code>分支。</strong></p>
+<h3 id="操作步骤">操作步骤</h3>
+<ol>
+<li>
+<p>基于最新的 <code>dev</code> 切一个新的分支 <code>dev-copy</code></p>
+<blockquote>
+<p><code>dev-copy</code> 和 <code>dev</code> 两者的 commit ID 一致。</p>
+</blockquote>
+</li>
+<li>
+<p>在<code>dev-copy</code>中执行 rebase，将 <code>dev-copy</code> 的提交变基到 <code>v2</code></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 将 dev-copy 的提交[commit] 变基到(应用到) v2</span></span></code></pre>
+</li>
+<li>
+<p>删除原<code>v2</code>分支，将<code>dev-copy</code>分支名改为<code>v2</code></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D"># 当前在 dev-copy 分支</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">branch</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-d</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 删除分支</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">branch</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-m</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">dev-copy</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">v2</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 重命名</span></span></code></pre>
+</li>
+</ol>
+<h3 id="git-cherry-pick">git cherry-pick</h3>
+<p>来源：<a href="http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html">《git cherry-pick 教程》</a></p>
+<p>用于将单个或几个<code>[commit]</code>复制到另一个分支。</p>
+<h4 id="基本应用">基本应用</h4>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">cherry-pick</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">commitHas</span><span style="color: #E1E4E8">h</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># 将commitHash应用于当前分支</span></span></code></pre>
+<p>上面命令就会将指定的提交<code>commitHash</code>，应用于当前分支。这会在当前分支产生一个新的提交，当然它们的<strong>哈希值会不一样</strong>。</p>
+<p>git cherry-pick 命令的参数，不一定是提交的哈希值，分支名也是可以的，表示转移该分支的最新提交。</p>
+<h4 id="转移多个提交">转移多个提交</h4>
+<p>Cherry pick 支持一次转移多个提交。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">cherry-pick</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">Hash</span><span style="color: #E1E4E8">A</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">Hash</span><span style="color: #E1E4E8">B</span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># A和B提交</span></span></code></pre>
+<p>上面的命令将 A 和 B 两个提交应用到当前分支。这会在当前分支生成两个对应的新提交。</p>
+<p>如果想要转移一系列的连续提交，可以使用下面的简便语法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">cherry-pick</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">A..B</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># A到B提交，不包含A</span></span></code></pre>
+<p>上面的命令可以转移从 A 到 B 的所有提交。它们必须按照正确的顺序放置：提交 A 必须早于提交 B，否则命令将失败，但不会报错。</p>
+<p><strong>注意，使用上面的命令，提交 A 将不会包含在 Cherry pick 中。如果要包含提交 A，可以使用下面的语法。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">cherry-pick</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">A^..B</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># A到B提交，包含A</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

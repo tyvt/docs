@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/async%20%E5%87%BD%E6%95%B0/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="async 函数 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/async%20%E5%87%BD%E6%95%B0/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			async 函数 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">async 函数</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="含义">含义</h2>
+<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+<p>async 函数是什么？一句话，它就<strong>是 Generator 函数的语法糖</strong>。</p>
+<p>前文有一个 Generator 函数，依次读取两个文件。</p>
+<!-- more -->
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">fs</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">require</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"fs"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readFile</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">fileName</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    fs.</span><span style="color: #B392F0">readFile</span><span style="color: #E1E4E8">(fileName, </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">error</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">data</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (error) </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">reject</span><span style="color: #E1E4E8">(error);</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(data);</span></span>
+<span class="line"><span style="color: #E1E4E8">    });</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">f1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readFile</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"/etc/fstab"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">f2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readFile</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"/etc/shells"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(f1.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(f2.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面代码的函数<code>gen</code>可以写成<code>async</code>函数，就是下面这样。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">asyncReadFile</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">f1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readFile</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"/etc/fstab"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">f2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readFile</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"/etc/shells"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(f1.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(f2.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>一比较就会发现，<strong><code>async</code>函数就是将 Generator 函数的星号（<code>*</code>）替换成<code>async</code>，将<code>yield</code>替换成<code>await</code>，仅此而已。</strong></p>
+<p><code>async</code>函数对 Generator 函数的改进，体现在以下四点。</p>
+<p>（1）内置执行器。</p>
+<p>Generator 函数的执行必须靠执行器，所以才有了<code>co</code>模块，而<code>async</code>函数自带执行器。也就是说，<code>async</code>函数的执行，与普通函数一模一样，只要一行。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">asyncReadFile</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面的代码调用了<code>asyncReadFile</code>函数，然后它就会自动执行，输出最后结果。这完全不像 Generator 函数，需要调用<code>next</code>方法，或者用<code>co</code>模块，才能真正执行，得到最后结果。</p>
+<p>（2）更好的语义。</p>
+<p><code>async</code>和<code>await</code>，比起星号和<code>yield</code>，语义更清楚了。<code>async</code>表示函数里有异步操作，<code>await</code>表示紧跟在后面的表达式需要等待结果。</p>
+<p>（3）更广的适用性。</p>
+<p><code>co</code>模块约定，<code>yield</code>命令后面只能是 Thunk 函数或 Promise 对象，而<code>async</code>函数的<code>await</code>命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时会自动转成立即 resolved 的 Promise 对象）。</p>
+<p>（4）返回值是 Promise。</p>
+<p><code>async</code>函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用<code>then</code>方法指定下一步的操作。</p>
+<p>进一步说，<strong><code>async</code>函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而<code>await</code>命令就是内部<code>then</code>命令的语法糖。</strong></p>
+<h2 id="基本用法">基本用法</h2>
+<p><strong><code>async</code>函数返回一个 Promise 对象</strong>，可以使用<code>then</code>方法添加回调函数。当函数执行的时候，一旦遇到<code>await</code>就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。</p>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getStockPriceByName</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">symbol</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getStockSymbol</span><span style="color: #E1E4E8">(name);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">stockPrice</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getStockPrice</span><span style="color: #E1E4E8">(symbol);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> stockPrice;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">getStockPriceByName</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"goog"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">result</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(result);</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>上面代码是一个获取股票报价的函数，函数前面的<code>async</code>关键字，表明该函数内部有异步操作。调用该函数时，会立即返回一个<code>Promise</code>对象。</p>
+<p>下面是另一个例子，指定多少毫秒后输出一个值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">timeout</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">ms</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(resolve, ms);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">asyncPrint</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">ms</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">timeout</span><span style="color: #E1E4E8">(ms);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">asyncPrint</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">50</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码指定 50 毫秒以后，输出<code>hello world</code>。</p>
+<p>由于<code>async</code>函数返回的是 Promise 对象，可以作为<code>await</code>命令的参数。所以，上面的例子也可以写成下面的形式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">timeout</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">ms</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(resolve, ms);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">asyncPrint</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">ms</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">timeout</span><span style="color: #E1E4E8">(ms);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">asyncPrint</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">50</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>async 函数有多种使用形式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 函数声明</span></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 函数表达式</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 对象的方法</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {} };</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.</span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// Class 的方法</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Storage</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.cachePromise </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> caches.</span><span style="color: #B392F0">open</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'avatars'</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getAvatar</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">cache</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.cachePromise;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> cache.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">`/avatars/${</span><span style="color: #E1E4E8">name</span><span style="color: #9ECBFF">}.jpg`</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">storage</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Storage</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">storage.</span><span style="color: #B392F0">getAvatar</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'jake'</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(…);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 箭头函数</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {};</span></span></code></pre>
+<h2 id="语法">语法</h2>
+<p><code>async</code>函数的语法规则总体上比较简单，<strong>难点是错误处理机制。</strong></p>
+<h3 id="返回-promise-对象">返回 Promise 对象</h3>
+<p><code>async</code>函数返回一个 Promise 对象。</p>
+<p><strong><code>async</code>函数内部<code>return</code>语句返回的值，会成为<code>then</code>方法回调函数的参数</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v));</span></span>
+<span class="line"><span style="color: #6A737D">// "hello world"</span></span></code></pre>
+<p>上面代码中，函数<code>f</code>内部<code>return</code>命令返回的值，会被<code>then</code>方法回调函数接收到。</p>
+<p><strong><code>async</code>函数内部抛出错误，会导致返回的 Promise 对象变为<code>reject</code>状态</strong>。抛出的错误对象会被<code>catch</code>方法回调函数接收到。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v),</span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span><span style="color: #FFAB70">e</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(e)</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// Error: 出错了</span></span></code></pre>
+<h3 id="promise-对象的状态变化">Promise 对象的状态变化</h3>
+<p><code>async</code>函数返回的 Promise 对象，必须等到内部所有<code>await</code>命令后面的 Promise 对象执行完，才会发生状态改变，除非遇到<code>return</code>语句或者抛出错误。也就是说，<strong>只有<code>async</code>函数内部的异步操作执行完，才会执行<code>then</code>方法指定的回调函数。</strong></p>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getTitle</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">url</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> response </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> html </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> response.</span><span style="color: #B392F0">text</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> html.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">&#x3C;title>(</span><span style="color: #79B8FF">[\s\S]</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)&#x3C;</span><span style="color: #85E89D; font-weight: bold">\/</span><span style="color: #DBEDFF">title></span><span style="color: #9ECBFF">/</span><span style="color: #F97583">i</span><span style="color: #E1E4E8">)[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #B392F0">getTitle</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"https://tc39.github.io/ecma262/"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(console.log);</span></span>
+<span class="line"><span style="color: #6A737D">// "ECMAScript 2017 Language Specification"</span></span></code></pre>
+<p>上面代码中，函数<code>getTitle</code>内部有三个操作：抓取网页、取出文本、匹配页面标题。只有这三个操作全部完成，才会执行<code>then</code>方法里面的<code>console.log</code>。</p>
+<h3 id="await-命令">await 命令</h3>
+<p>正常情况下，<code>await</code>命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// return 123;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v));</span></span>
+<span class="line"><span style="color: #6A737D">// 123</span></span></code></pre>
+<p>上面代码中，<code>await</code>命令的参数是数值<code>123</code>，这时等同于<code>return 123</code>。</p>
+<p>另一种情况是，<code>await</code>命令后面是一个<code>thenable</code>对象（即定义<code>then</code>方法的对象），那么<code>await</code>会将其等同于 Promise 对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Sleep</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">timeout</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.timeout </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> timeout;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">startTime</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Date.</span><span style="color: #B392F0">now</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(Date.</span><span style="color: #B392F0">now</span><span style="color: #E1E4E8">() </span><span style="color: #F97583">-</span><span style="color: #E1E4E8"> startTime), </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.timeout);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">sleepTime</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Sleep</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(sleepTime);</span></span>
+<span class="line"><span style="color: #E1E4E8">})();</span></span>
+<span class="line"><span style="color: #6A737D">// 1000</span></span></code></pre>
+<p>上面代码中，<code>await</code>命令后面是一个<code>Sleep</code>对象的实例。这个实例不是 Promise 对象，但是因为定义了<code>then</code>方法，<code>await</code>会将其视为<code>Promise</code>处理。</p>
+<p>这个例子还演示了如何实现休眠效果。JavaScript 一直没有休眠的语法，但是借助<code>await</code>命令就可以让程序停顿指定的时间。下面给出了一个简化的<code>sleep</code>实现。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">sleep</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">interval</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(resolve, interval);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 用法</span></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">one2FiveInAsync</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">; i </span><span style="color: #F97583">&#x3C;=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">; i</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(i);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">sleep</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">one2FiveInAsync</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p><code>await</code>命令后面的 Promise 对象如果变为<code>reject</code>状态，则<code>reject</code>的参数会被<code>catch</code>方法的回调函数接收到。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">reject</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v))</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">catch</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">e</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(e));</span></span>
+<span class="line"><span style="color: #6A737D">// 出错了</span></span></code></pre>
+<p>注意，上面代码中，<code>await</code>语句前面没有<code>return</code>，但是<code>reject</code>方法的参数依然传入了<code>catch</code>方法的回调函数。这里如果在<code>await</code>前面加上<code>return</code>，效果是一样的。</p>
+<p>任何一个<code>await</code>语句后面的 Promise 对象变为<code>reject</code>状态，那么整个<code>async</code>函数都会中断执行。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">reject</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 不会执行</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，第二个<code>await</code>语句是不会执行的，因为第一个<code>await</code>语句状态变成了<code>reject</code>。</p>
+<p>有时，我们希望即使前一个异步操作失败，也不要中断后面的异步操作。这时可以将第一个<code>await</code>放在<code>try...catch</code>结构里面，这样不管这个异步操作是否成功，第二个<code>await</code>都会执行。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">reject</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {}</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v));</span></span>
+<span class="line"><span style="color: #6A737D">// hello world</span></span></code></pre>
+<p>另一种方法是<code>await</code>后面的 Promise 对象再跟一个<code>catch</code>方法，处理前面可能出现的错误。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">reject</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">catch</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">e</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(e));</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v));</span></span>
+<span class="line"><span style="color: #6A737D">// 出错了</span></span>
+<span class="line"><span style="color: #6A737D">// hello world</span></span></code></pre>
+<h3 id="错误处理">错误处理</h3>
+<p>如果<code>await</code>后面的异步操作出错，那么等同于<code>async</code>函数返回的 Promise 对象被<code>reject</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v))</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">catch</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">e</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(e));</span></span>
+<span class="line"><span style="color: #6A737D">// Error：出错了</span></span></code></pre>
+<p>上面代码中，<code>async</code>函数<code>f</code>执行后，<code>await</code>后面的 Promise 对象会抛出一个错误对象，导致<code>catch</code>方法的回调函数被调用，它的参数就是抛出的错误对象。具体的执行机制，可以参考后文的“async 函数的实现原理”。</p>
+<p>防止出错的方法，也是将其放在<code>try...catch</code>代码块之中。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"出错了"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    });</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {}</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>如果有多个<code>await</code>命令，可以统一放在<code>try...catch</code>结构中。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">main</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">val1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">firstStep</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">val2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">secondStep</span><span style="color: #E1E4E8">(val1);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">val3</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">thirdStep</span><span style="color: #E1E4E8">(val1, val2);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Final: "</span><span style="color: #E1E4E8">, val3);</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">error</span><span style="color: #E1E4E8">(err);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>下面的例子使用<code>try...catch</code>结构，<strong>实现多次重复尝试</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">superagent</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">require</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"superagent"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">NUM_RETRIES</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> i;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (i </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">; i </span><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">NUM_RETRIES</span><span style="color: #E1E4E8">; </span><span style="color: #F97583">++</span><span style="color: #E1E4E8">i) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> superagent.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"http://google.com/this-throws-an-error"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">break</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (err) {}</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(i); </span><span style="color: #6A737D">// 3</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">test</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，如果<code>await</code>操作成功，就会使用<code>break</code>语句退出循环；如果失败，会被<code>catch</code>语句捕捉，然后进入下一轮循环。</p>
+<h3 id="使用注意点">使用注意点</h3>
+<p>第一点，前面已经说过，<code>await</code>命令后面的<code>Promise</code>对象，运行结果可能是<code>rejected</code>，所以<strong>最好把<code>await</code>命令放在<code>try...catch</code>代码块中</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">myFunction</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">somethingThatReturnsAPromise</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(err);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 另一种写法</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">myFunction</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">somethingThatReturnsAPromise</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">catch</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">err</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(err);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>第二点，多个<code>await</code>命令后面的异步操作，<strong>如果不存在继发关系，最好让它们同时触发（并发）</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getFoo</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> bar </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getBar</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>上面代码中，<code>getFoo</code>和<code>getBar</code>是两个独立的异步操作（即互不依赖），被写成继发关系。这样比较耗时，因为只有<code>getFoo</code>完成以后，才会执行<code>getBar</code>，完全可以让它们同时触发。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 写法一</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> [foo, bar] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">all</span><span style="color: #E1E4E8">([</span><span style="color: #B392F0">getFoo</span><span style="color: #E1E4E8">(), </span><span style="color: #B392F0">getBar</span><span style="color: #E1E4E8">()]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 写法二</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> fooPromise </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getFoo</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> barPromise </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getBar</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> fooPromise;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> bar </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> barPromise;</span></span></code></pre>
+<p>上面两种写法，<code>getFoo</code>和<code>getBar</code>都是同时触发，这样就会缩短程序的执行时间。</p>
+<p>第三点，<code>await</code>命令只能用在<code>async</code>函数之中，如果用在普通函数，就会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dbFuc</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">db</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> docs </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [{}, {}, {}];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">  docs.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">doc</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> db.</span><span style="color: #B392F0">post</span><span style="color: #E1E4E8">(doc);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码会报错，因为<code>await</code>用在普通函数之中了。但是，如果将<code>forEach</code>方法的参数改成<code>async</code>函数，也有问题。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dbFuc</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">db</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">//这里不需要 async</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> docs </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [{}, {}, {}];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 可能得到错误结果</span></span>
+<span class="line"><span style="color: #E1E4E8">  docs.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">doc</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> db.</span><span style="color: #B392F0">post</span><span style="color: #E1E4E8">(doc);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码可能不会正常工作，原因是这时三个<code>db.post</code>操作将是并发执行，也就是同时执行，而不是继发执行。正确的写法是采用<code>for</code>循环。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dbFuc</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">db</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> docs </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [{}, {}, {}];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> doc </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> docs) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> db.</span><span style="color: #B392F0">post</span><span style="color: #E1E4E8">(doc);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>如果确实希望多个请求并发执行，可以使用<code>Promise.all</code>方法。当三个请求都会<code>resolved</code>时，下面两种写法效果相同。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dbFuc</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">db</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> docs </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [{}, {}, {}];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> promises </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> docs.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">doc</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> db.</span><span style="color: #B392F0">post</span><span style="color: #E1E4E8">(doc));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> results </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">all</span><span style="color: #E1E4E8">(promises);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(results);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 或者使用下面的写法</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dbFuc</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">db</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> docs </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [{}, {}, {}];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> promises </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> docs.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">doc</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> db.</span><span style="color: #B392F0">post</span><span style="color: #E1E4E8">(doc));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> results </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> promise </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> promises) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    results.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> promise);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(results);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>第四点，async 函数可以保留运行堆栈。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">b</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">c</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面代码中，函数<code>a</code>内部运行了一个异步任务<code>b()</code>。当<code>b()</code>运行的时候，函数<code>a()</code>不会中断，而是继续执行。等到<code>b()</code>运行结束，可能<code>a()</code>早就运行结束了，<code>b()</code>所在的上下文环境已经消失了。如果<code>b()</code>或<code>c()</code>报错，错误堆栈将不包括<code>a()</code>。</p>
+<p>现在将这个例子改成<code>async</code>函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">b</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">c</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面代码中，<code>b()</code>运行的时候，<code>a()</code>是暂停执行，上下文环境都保存着。一旦<code>b()</code>或<code>c()</code>报错，错误堆栈将包括<code>a()</code>。</p>
+<h2 id="async-函数的实现原理">async 函数的实现原理</h2>
+<p>async 函数的实现原理**，就是将 Generator 函数和自动执行器，包装在一个函数里**。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fn</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fn</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">spawn</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>所有的<code>async</code>函数都可以写成上面的第二种形式，其中的<code>spawn</code>函数就是自动执行器。</p>
+<p>下面给出<code>spawn</code>函数的实现，基本就是前文自动执行器的翻版。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">spawn</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">genF</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">gen</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">genF</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">step</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">nextF</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> next;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">        next </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">nextF</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">      } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">reject</span><span style="color: #E1E4E8">(e);</span></span>
+<span class="line"><span style="color: #E1E4E8">      }</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (next.done) {</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(next.value);</span></span>
+<span class="line"><span style="color: #E1E4E8">      }</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(next.value).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">          </span><span style="color: #B392F0">step</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">            </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> gen.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(v);</span></span>
+<span class="line"><span style="color: #E1E4E8">          });</span></span>
+<span class="line"><span style="color: #E1E4E8">        },</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">e</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">          </span><span style="color: #B392F0">step</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">            </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> gen.</span><span style="color: #B392F0">throw</span><span style="color: #E1E4E8">(e);</span></span>
+<span class="line"><span style="color: #E1E4E8">          });</span></span>
+<span class="line"><span style="color: #E1E4E8">        }</span></span>
+<span class="line"><span style="color: #E1E4E8">      );</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">step</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> gen.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    });</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<h2 id="与其他异步处理方法的比较">与其他异步处理方法的比较</h2>
+<p>我们通过一个例子，来看 async 函数与 Promise、Generator 函数的比较。</p>
+<p>假定某个 DOM 元素上面，部署了一系列的动画，前一个动画结束，才能开始后一个。如果当中有一个动画出错，就不再往下执行，返回上一个成功执行的动画的返回值。</p>
+<p>首先是 Promise 的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">chainAnimationsPromise</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">elem</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">animations</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 变量ret用来保存上一个动画的返回值</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> ret </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 新建一个空的Promise</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> p </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 使用then方法，添加所有动画</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> anim </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> animations) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    p </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> p.</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">val</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      ret </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> val;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">anim</span><span style="color: #E1E4E8">(elem);</span></span>
+<span class="line"><span style="color: #E1E4E8">    });</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 返回一个部署了错误捕捉机制的Promise</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> p</span></span>
+<span class="line"><span style="color: #E1E4E8">    .</span><span style="color: #B392F0">catch</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">e</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #6A737D">/* 忽略错误，继续执行 */</span></span>
+<span class="line"><span style="color: #E1E4E8">    })</span></span>
+<span class="line"><span style="color: #E1E4E8">    .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> ret;</span></span>
+<span class="line"><span style="color: #E1E4E8">    });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>虽然 Promise 的写法比回调函数的写法大大改进，但是一眼看上去，代码完全都是 Promise 的 API（<code>then</code>、<code>catch</code>等等），操作本身的语义反而不容易看出来。</p>
+<p>接着是 Generator 函数的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">chainAnimationsGenerator</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">elem</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">animations</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">spawn</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> ret </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> anim </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> animations) {</span></span>
+<span class="line"><span style="color: #E1E4E8">        ret </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">anim</span><span style="color: #E1E4E8">(elem);</span></span>
+<span class="line"><span style="color: #E1E4E8">      }</span></span>
+<span class="line"><span style="color: #E1E4E8">    } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #6A737D">/* 忽略错误，继续执行 */</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> ret;</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码使用 Generator 函数遍历了每个动画，语义比 Promise 写法更清晰，用户定义的操作全部都出现在<code>spawn</code>函数的内部。这个写法的问题在于，必须有一个任务运行器，自动执行 Generator 函数，上面代码的<code>spawn</code>函数就是自动执行器，它返回一个 Promise 对象，而且必须保证<code>yield</code>语句后面的表达式，必须返回一个 Promise。</p>
+<p>最后是 async 函数的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">chainAnimationsAsync</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">elem</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">animations</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> ret </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> anim </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> animations) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      ret </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">anim</span><span style="color: #E1E4E8">(elem);</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #6A737D">/* 忽略错误，继续执行 */</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> ret;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>可以看到 Async 函数的实现最简洁，最符合语义，几乎没有语义不相关的代码。它将 Generator 写法中的自动执行器，改在语言层面提供，不暴露给用户，因此代码量最少。如果使用 Generator 写法，自动执行器需要用户自己提供。</p>
+<h2 id="实例按顺序完成异步操作">实例：按顺序完成异步操作</h2>
+<p>实际开发中，经常遇到一组异步操作，需要按照顺序完成。比如，依次远程读取一组 URL，然后按照读取的顺序输出结果。</p>
+<p>Promise 的写法如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">logInOrder</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">urls</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 远程读取所有URL</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">textPromises</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> urls.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">url</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">response</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> response.</span><span style="color: #B392F0">text</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 按次序输出</span></span>
+<span class="line"><span style="color: #E1E4E8">  textPromises.</span><span style="color: #B392F0">reduce</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">chain</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">textPromise</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> chain.</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> textPromise).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">text</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(text));</span></span>
+<span class="line"><span style="color: #E1E4E8">  }, </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码使用<code>fetch</code>方法，同时远程读取一组 URL。每个<code>fetch</code>操作都返回一个 Promise 对象，放入<code>textPromises</code>数组。然后，<code>reduce</code>方法依次处理每个 Promise 对象，然后使用<code>then</code>，将所有 Promise 对象连起来，因此就可以依次输出结果。</p>
+<p>这种写法不太直观，可读性比较差。下面是 async 函数实现。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">logInOrder</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">urls</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">url</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> urls) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">response</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> response.</span><span style="color: #B392F0">text</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码确实大大简化，问题是所有远程操作都是继发。只有前一个 URL 返回结果，才会去读取下一个 URL，这样做效率很差，非常浪费时间。我们需要的是并发发出远程请求。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">logInOrder</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">urls</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 并发读取远程URL</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">textPromises</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> urls.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">url</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">response</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> response.</span><span style="color: #B392F0">text</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 按次序输出</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">textPromise</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> textPromises) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> textPromise);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<strong>虽然<code>map</code>方法的参数是<code>async</code>函数，但它是并发执行的</strong>，因为只有<code>async</code>函数内部是继发执行，外部不受影响。后面的<code>for..of</code>循环内部使用了<code>await</code>，因此实现了按顺序输出。</p>
+<h2 id="顶层-await">顶层 await</h2>
+<p>根据语法规格，<code>await</code>命令只能出现在 async 函数内部，否则都会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"https://api.example.com"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码中，<code>await</code>命令独立使用，没有放在 async 函数里面，就会报错。</p>
+<p>目前，有一个<a href="https://github.com/tc39/proposal-top-level-await">语法提案</a>，允许在模块的顶层独立使用<code>await</code>命令。这个提案的目的，是借用<code>await</code>解决模块异步加载的问题。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// awaiting.js</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> output;</span></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">main</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">dynamic</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">import</span><span style="color: #E1E4E8">(someMission);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">  output </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">someProcess</span><span style="color: #E1E4E8">(dynamic.default, data);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #B392F0">main</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">export</span><span style="color: #E1E4E8"> { output };</span></span></code></pre>
+<p>上面代码中，模块<code>awaiting.js</code>的输出值<code>output</code>，取决于异步操作。我们把异步操作包装在一个 async 函数里面，然后调用这个函数，只有等里面的异步操作都执行，变量<code>output</code>才会有值，否则就返回<code>undefined</code>。</p>
+<p>上面的代码也可以写成立即执行函数的形式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// awaiting.js</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> output;</span></span>
+<span class="line"><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">main</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">dynamic</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">import</span><span style="color: #E1E4E8">(someMission);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">  output </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">someProcess</span><span style="color: #E1E4E8">(dynamic.default, data);</span></span>
+<span class="line"><span style="color: #E1E4E8">})();</span></span>
+<span class="line"><span style="color: #F97583">export</span><span style="color: #E1E4E8"> { output };</span></span></code></pre>
+<p>下面是加载这个模块的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// usage.js</span></span>
+<span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> { output } </span><span style="color: #F97583">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"./awaiting.js"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) { </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> output </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> value }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">), </span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码中，<code>outputPlusValue()</code>的执行结果，完全取决于执行的时间。如果<code>awaiting.js</code>里面的异步操作没执行完，加载进来的<code>output</code>的值就是<code>undefined</code>。</p>
+<p>目前的解决方法，就是让原始模块输出一个 Promise 对象，从这个 Promise 对象判断异步操作有没有结束。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// awaiting.js</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> output;</span></span>
+<span class="line"><span style="color: #F97583">export</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">default</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">main</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">dynamic</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">import</span><span style="color: #E1E4E8">(someMission);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">  output </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">someProcess</span><span style="color: #E1E4E8">(dynamic.default, data);</span></span>
+<span class="line"><span style="color: #E1E4E8">})();</span></span>
+<span class="line"><span style="color: #F97583">export</span><span style="color: #E1E4E8"> { output };</span></span></code></pre>
+<p>上面代码中，<code>awaiting.js</code>除了输出<code>output</code>，还默认输出一个 Promise 对象（async 函数立即执行后，返回一个 Promise 对象），从这个对象判断异步操作是否结束。</p>
+<p>下面是加载这个模块的新的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// usage.js</span></span>
+<span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> promise, { output } </span><span style="color: #F97583">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"./awaiting.js"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) { </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> output </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> value }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">promise.</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">), </span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>上面代码中，将<code>awaiting.js</code>对象的输出，放在<code>promise.then()</code>里面，这样就能保证异步操作完成以后，才去读取<code>output</code>。</p>
+<p>这种写法比较麻烦，等于要求模块的使用者遵守一个额外的使用协议，按照特殊的方法使用这个模块。一旦你忘了要用 Promise 加载，只使用正常的加载方法，依赖这个模块的代码就可能出错。而且，如果上面的<code>usage.js</code>又有对外的输出，等于这个依赖链的所有模块都要使用 Promise 加载。</p>
+<p><strong>顶层的<code>await</code>命令，就是为了解决这个问题。它保证只有异步操作完成，模块才会输出值</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// awaiting.js</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">dynamic</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">import</span><span style="color: #E1E4E8">(someMission);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #F97583">export</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">output</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">someProcess</span><span style="color: #E1E4E8">((</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> dynamic).default, </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> data);</span></span></code></pre>
+<p>上面代码中，两个异步操作在输出的时候，都加上了<code>await</code>命令。只有等到异步操作完成，这个模块才会输出值。</p>
+<p>加载这个模块的写法如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// usage.js</span></span>
+<span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> { output } </span><span style="color: #F97583">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"./awaiting.js"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) { </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> output </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> value }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">outputPlusValue</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">), </span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码的写法，与普通的模块加载完全一样。也就是说，模块的使用者完全不用关心，依赖模块的内部有没有异步操作，正常加载即可。</p>
+<p>这时，模块的加载会等待依赖模块（上例是<code>awaiting.js</code>）的异步操作完成，才执行后面的代码，有点像暂停在那里。所以，它总是会得到正确的<code>output</code>，不会因为加载时机的不同，而得到不一样的值。</p>
+<p>下面是顶层<code>await</code>的一些使用场景。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// import() 方法加载</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">strings</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">import</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">`/i18n/${</span><span style="color: #E1E4E8">navigator</span><span style="color: #9ECBFF">.</span><span style="color: #E1E4E8">language</span><span style="color: #9ECBFF">}`</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 数据库操作</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">connection</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dbConnector</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 依赖回滚</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> jQuery;</span></span>
+<span class="line"><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  jQuery </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">import</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"https://cdn-a.com/jQuery"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">} </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  jQuery </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">import</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"https://cdn-b.com/jQuery"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>注意，如果加载多个包含顶层<code>await</code>命令的模块，加载命令是同步执行的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// x.js</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"X1"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">r</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(r, </span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"X2"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// y.js</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Y"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// z.js</span></span>
+<span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"./x.js"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"./y.js"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Z"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码有三个模块，最后的<code>z.js</code>加载<code>x.js</code>和<code>y.js</code>，打印结果是<code>X1</code>、<code>Y</code>、<code>X2</code>、<code>Z</code>。这说明，<code>z.js</code>并没有等待<code>x.js</code>加载完成，再去加载<code>y.js</code>。</p>
+<p>顶层的<code>await</code>命令有点像，交出代码的执行权给其他的模块加载，等异步操作完成后，再拿回执行权，继续向下执行。</p>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

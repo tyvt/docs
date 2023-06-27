@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/Reflect/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="Reflect 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/Reflect/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			Reflect 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" aria-current="page" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">Reflect</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="概述">概述</h2>
+<p><code>Reflect</code>对象与<code>Proxy</code>对象一样，也是 ES6 为了操作对象而提供的新 API。<code>Reflect</code>对象的设计目的有这样几个。</p>
+<p>（1） **将<code>Object</code>对象的一些明显属于语言内部的方法（比如<code>Object.defineProperty</code>），放到<code>Reflect</code>对象上。**现阶段，某些方法同时在<code>Object</code>和<code>Reflect</code>对象上部署，未来的新方法将只部署在<code>Reflect</code>对象上。也就是说，从<code>Reflect</code>对象上可以拿到语言内部的方法。</p>
+<!-- more -->
+<p>（2） <strong>修改某些<code>Object</code>方法的返回结果，让其变得更合理</strong>。比如，<code>Object.defineProperty(obj, name, desc)</code>在无法定义属性时，会抛出一个错误，而<code>Reflect.defineProperty(obj, name, desc)</code>则会返回<code>false</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 老写法</span></span>
+<span class="line"><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(target, property, attributes);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// success</span></span>
+<span class="line"><span style="color: #E1E4E8">} </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// failure</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (Reflect.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(target, property, attributes)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// success</span></span>
+<span class="line"><span style="color: #E1E4E8">} </span><span style="color: #F97583">else</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// failure</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>（3） <strong>让<code>Object</code>操作都变成函数行为</strong>。某些<code>Object</code>操作是命令式，比如<code>name in obj</code>和<code>delete obj[name]</code>，而<code>Reflect.has(obj, name)</code>和<code>Reflect.deleteProperty(obj, name)</code>让它们变成了函数行为。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 老写法</span></span>
+<span class="line"><span style="color: #9ECBFF">"assign"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">in</span><span style="color: #E1E4E8"> Object; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(Object, </span><span style="color: #9ECBFF">"assign"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>（4）<code>Reflect</code>对象的方法与<code>Proxy</code>对象的方法一一对应，只要是<code>Proxy</code>对象的方法，就能在<code>Reflect</code>对象上找到对应的方法。这就让<code>Proxy</code>对象可以方便地调用对应的<code>Reflect</code>方法，完成默认行为，作为修改行为的基础。也就是说，<strong>不管<code>Proxy</code>怎么修改默认行为，你总可以在<code>Reflect</code>上获取默认行为</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">Proxy</span><span style="color: #E1E4E8">(target, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">receiver</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">var</span><span style="color: #E1E4E8"> success </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(target, name, value, receiver);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (success) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"property "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> name </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">" on "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> target </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">" set to "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> value);</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> success;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>上面代码中，<code>Proxy</code>方法拦截<code>target</code>对象的属性赋值行为。它采用<code>Reflect.set</code>方法将值赋值给对象的属性，确保完成原有的行为，然后再部署额外的功能。</p>
+<p>下面是另一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> loggedObj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Proxy</span><span style="color: #E1E4E8">(obj, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"get"</span><span style="color: #E1E4E8">, target, name);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(target, name);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">deleteProperty</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"delete"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> name);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">deleteProperty</span><span style="color: #E1E4E8">(target, name);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"has"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> name);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(target, name);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>上面代码中，每一个<code>Proxy</code>对象的拦截操作（<code>get</code>、<code>delete</code>、<code>has</code>），内部都调用对应的<code>Reflect</code>方法，保证原生行为能够正常执行。添加的工作，就是将每一个操作输出一行日志。</p>
+<p>有了<code>Reflect</code>对象以后，很多操作会更易读。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 老写法</span></span>
+<span class="line"><span style="color: #79B8FF">Function</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.apply.</span><span style="color: #B392F0">call</span><span style="color: #E1E4E8">(Math.floor, </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, [</span><span style="color: #79B8FF">1.75</span><span style="color: #E1E4E8">]); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(Math.floor, </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, [</span><span style="color: #79B8FF">1.75</span><span style="color: #E1E4E8">]); </span><span style="color: #6A737D">// 1</span></span></code></pre>
+<h2 id="静态方法">静态方法</h2>
+<p><code>Reflect</code>对象一共有 13 个静态方法。</p>
+<ul>
+<li>Reflect.apply(target, thisArg, args)</li>
+<li>Reflect.construct(target, args)</li>
+<li>Reflect.get(target, name, receiver)</li>
+<li>Reflect.set(target, name, value, receiver)</li>
+<li>Reflect.defineProperty(target, name, desc)</li>
+<li>Reflect.deleteProperty(target, name)</li>
+<li>Reflect.has(target, name)</li>
+<li>Reflect.ownKeys(target)</li>
+<li>Reflect.isExtensible(target)</li>
+<li>Reflect.preventExtensions(target)</li>
+<li>Reflect.getOwnPropertyDescriptor(target, name)</li>
+<li>Reflect.getPrototypeOf(target)</li>
+<li>Reflect.setPrototypeOf(target, prototype)</li>
+</ul>
+<p>上面这些方法的作用，大部分与<code>Object</code>对象的同名方法的作用都是相同的，而且它与<code>Proxy</code>对象的方法是一一对应的。下面是对它们的解释。</p>
+<h3 id="reflectgettarget-name-receiver">Reflect.get(target, name, receiver)</h3>
+<p><code>Reflect.get</code>方法查找并返回<code>target</code>对象的<code>name</code>属性，如果没有该属性，则返回<code>undefined</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  bar: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">baz</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.bar;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 3</span></span></code></pre>
+<p>如果<code>name</code>属性部署了读取函数（getter），则读取函数的<code>this</code>绑定<code>receiver</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  bar: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">baz</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.bar;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myReceiverObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  bar: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">, myReceiverObject); </span><span style="color: #6A737D">// 8</span></span></code></pre>
+<p>如果第一个参数不是对象，<code>Reflect.get</code>方法会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<h3 id="reflectsettarget-name-value-receiver">Reflect.set(target, name, value, receiver)</h3>
+<p><code>Reflect.set</code>方法设置<code>target</code>对象的<code>name</code>属性等于<code>value</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">set</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">bar</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">myObject.foo; </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">myObject.foo; </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">myObject.foo; </span><span style="color: #6A737D">// 3</span></span></code></pre>
+<p>如果<code>name</code>属性设置了赋值函数，则赋值函数的<code>this</code>绑定<code>receiver</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">set</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">bar</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myReceiverObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, myReceiverObject);</span></span>
+<span class="line"><span style="color: #E1E4E8">myObject.foo; </span><span style="color: #6A737D">// 4</span></span>
+<span class="line"><span style="color: #E1E4E8">myReceiverObject.foo; </span><span style="color: #6A737D">// 1</span></span></code></pre>
+<p>注意，如果 <code>Proxy</code>对象和 <code>Reflect</code>对象联合使用，前者拦截赋值操作，后者完成赋值的默认行为，而且传入了<code>receiver</code>，那么<code>Reflect.set</code>会触发<code>Proxy.defineProperty</code>拦截。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> p </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  a: </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> handler </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">receiver</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"set"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(target, key, value, receiver);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">attribute</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"defineProperty"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    Reflect.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(target, key, attribute);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Proxy</span><span style="color: #E1E4E8">(p, handler);</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"A"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// set</span></span>
+<span class="line"><span style="color: #6A737D">// defineProperty</span></span></code></pre>
+<p>上面代码中，<code>Proxy.set</code>拦截里面使用了<code>Reflect.set</code>，而且传入了<code>receiver</code>，导致触发<code>Proxy.defineProperty</code>拦截。这是因为<code>Proxy.set</code>的<code>receiver</code>参数总是指向当前的 <code>Proxy</code>实例（即上例的<code>obj</code>），而<code>Reflect.set</code>一旦传入<code>receiver</code>，就会将属性赋值到<code>receiver</code>上面（即<code>obj</code>），导致触发<code>defineProperty</code>拦截。如果<code>Reflect.set</code>没有传入<code>receiver</code>，那么就不会触发<code>defineProperty</code>拦截。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> p </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  a: </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> handler </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">receiver</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"set"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(target, key, value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">attribute</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"defineProperty"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    Reflect.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(target, key, attribute);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Proxy</span><span style="color: #E1E4E8">(p, handler);</span></span>
+<span class="line"><span style="color: #E1E4E8">obj.a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"A"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// set</span></span></code></pre>
+<p>如果第一个参数不是对象，<code>Reflect.set</code>会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, {}); </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, {}); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<h3 id="reflecthasobj-name">Reflect.has(obj, name)</h3>
+<p><code>Reflect.has</code>方法对应<code>name in obj</code>里面的<code>in</code>运算符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">in</span><span style="color: #E1E4E8"> myObject; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>如果<code>Reflect.has()</code>方法的第一个参数不是对象，会报错。</p>
+<h3 id="reflectdeletepropertyobj-name">Reflect.deleteProperty(obj, name)</h3>
+<p><code>Reflect.deleteProperty</code>方法等同于<code>delete obj[name]</code>，用于删除对象的属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #F97583">delete</span><span style="color: #E1E4E8"> myObj.foo;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">deleteProperty</span><span style="color: #E1E4E8">(myObj, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>该方法返回一个布尔值。如果删除成功，或者被删除的属性不存在，返回<code>true</code>；删除失败，被删除的属性依然存在，返回<code>false</code>。</p>
+<p>如果<code>Reflect.deleteProperty()</code>方法的第一个参数不是对象，会报错。</p>
+<h3 id="reflectconstructtarget-args">Reflect.construct(target, args)</h3>
+<p><code>Reflect.construct</code>方法等同于<code>new target(...args)</code>，这提供了一种不使用<code>new</code>，来调用构造函数的方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Greeting</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">name</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.name </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> name;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// new 的写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">instance</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Greeting</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"张三"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// Reflect.construct 的写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">instance</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">construct</span><span style="color: #E1E4E8">(Greeting, [</span><span style="color: #9ECBFF">"张三"</span><span style="color: #E1E4E8">]);</span></span></code></pre>
+<p>如果<code>Reflect.construct()</code>方法的第一个参数不是函数，会报错。</p>
+<h3 id="reflectgetprototypeofobj">Reflect.getPrototypeOf(obj)</h3>
+<p><code>Reflect.getPrototypeOf</code>方法用于读取对象的<code>__proto__</code>属性，对应<code>Object.getPrototypeOf(obj)</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">FancyThing</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(myObj) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">FancyThing</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(myObj) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">FancyThing</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p><code>Reflect.getPrototypeOf</code>和<code>Object.getPrototypeOf</code>的一个区别是，如果参数不是对象，<code>Object.getPrototypeOf</code>会将这个参数转为对象，然后再运行，而<code>Reflect.getPrototypeOf</code>会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// Number {[[PrimitiveValue]]: 0}</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">getPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<h3 id="reflectsetprototypeofobj-newproto">Reflect.setPrototypeOf(obj, newProto)</h3>
+<p><code>Reflect.setPrototypeOf</code>方法用于设置目标对象的原型（prototype），对应<code>Object.setPrototypeOf(obj, newProto)</code>方法。它返回一个布尔值，表示是否设置成功。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(myObj, </span><span style="color: #79B8FF">Array</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(myObj, </span><span style="color: #79B8FF">Array</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">myObj.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 0</span></span></code></pre>
+<p>如果无法设置目标对象的原型（比如，目标对象禁止扩展），<code>Reflect.setPrototypeOf</code>方法返回<code>false</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">({}, </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(Object.</span><span style="color: #B392F0">freeze</span><span style="color: #E1E4E8">({}), </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>如果第一个参数不是对象，<code>Object.setPrototypeOf</code>会返回第一个参数本身，而<code>Reflect.setPrototypeOf</code>会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, {});</span></span>
+<span class="line"><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, {});</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Reflect.setPrototypeOf called on non-object</span></span></code></pre>
+<p>如果第一个参数是<code>undefined</code>或<code>null</code>，<code>Object.setPrototypeOf</code>和<code>Reflect.setPrototypeOf</code>都会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, {});</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Object.setPrototypeOf called on null or undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">setPrototypeOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, {});</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Reflect.setPrototypeOf called on non-object</span></span></code></pre>
+<h3 id="reflectapplyfunc-thisarg-args">Reflect.apply(func, thisArg, args)</h3>
+<p><code>Reflect.apply</code>方法等同于<code>Function.prototype.apply.call(func, thisArg, args)</code>，用于绑定<code>this</code>对象后执行给定函数。</p>
+<p>一般来说，如果要绑定一个函数的<code>this</code>对象，可以这样写<code>fn.apply(obj, args)</code>，但是如果函数定义了自己的<code>apply</code>方法，就只能写成<code>Function.prototype.apply.call(fn, obj, args)</code>，采用<code>Reflect</code>对象可以简化这种操作。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ages</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">11</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">33</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">12</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">54</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">18</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">96</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">youngest</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Math.min.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(Math, ages);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">oldest</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Math.max.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(Math, ages);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">type</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.toString.</span><span style="color: #B392F0">call</span><span style="color: #E1E4E8">(youngest);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">youngest</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(Math.min, Math, ages);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">oldest</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(Math.max, Math, ages);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">type</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">apply</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.toString, youngest, []);</span></span></code></pre>
+<h3 id="reflectdefinepropertytarget-propertykey-attributes">Reflect.defineProperty(target, propertyKey, attributes)</h3>
+<p><code>Reflect.defineProperty</code>方法基本等同于<code>Object.defineProperty</code>，用来为对象定义属性。未来，后者会被逐渐废除，请从现在开始就使用<code>Reflect.defineProperty</code>代替它。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyDate</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">/*…*/</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(MyDate, </span><span style="color: #9ECBFF">"now"</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">value</span><span style="color: #E1E4E8">: () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> Date.</span><span style="color: #B392F0">now</span><span style="color: #E1E4E8">(),</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(MyDate, </span><span style="color: #9ECBFF">"now"</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">value</span><span style="color: #E1E4E8">: () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> Date.</span><span style="color: #B392F0">now</span><span style="color: #E1E4E8">(),</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>如果<code>Reflect.defineProperty</code>的第一个参数不是对象，就会抛出错误，比如<code>Reflect.defineProperty(1, 'foo')</code>。</p>
+<p>这个方法可以与<code>Proxy.defineProperty</code>配合使用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">p</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Proxy</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  {},</span></span>
+<span class="line"><span style="color: #E1E4E8">  {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">prop</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">descriptor</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(descriptor);</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(target, prop, descriptor);</span></span>
+<span class="line"><span style="color: #E1E4E8">    },</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">p.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// {value: "bar", writable: true, enumerable: true, configurable: true}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">p.foo; </span><span style="color: #6A737D">// "bar"</span></span></code></pre>
+<p>上面代码中，<code>Proxy.defineProperty</code>对属性赋值设置了拦截，然后使用<code>Reflect.defineProperty</code>完成了赋值。</p>
+<h3 id="reflectgetownpropertydescriptortarget-propertykey">Reflect.getOwnPropertyDescriptor(target, propertyKey)</h3>
+<p><code>Reflect.getOwnPropertyDescriptor</code>基本等同于<code>Object.getOwnPropertyDescriptor</code>，用于得到指定属性的描述对象，将来会替代掉后者。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"hidden"</span><span style="color: #E1E4E8">, {</span></span>
+<span class="line"><span style="color: #E1E4E8">  value: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  enumerable: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> theDescriptor </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"hidden"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> theDescriptor </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">getOwnPropertyDescriptor</span><span style="color: #E1E4E8">(myObject, </span><span style="color: #9ECBFF">"hidden"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p><code>Reflect.getOwnPropertyDescriptor</code>和<code>Object.getOwnPropertyDescriptor</code>的一个区别是，如果第一个参数不是对象，<code>Object.getOwnPropertyDescriptor(1, 'foo')</code>不报错，返回<code>undefined</code>，而<code>Reflect.getOwnPropertyDescriptor(1, 'foo')</code>会抛出错误，表示参数非法。</p>
+<h3 id="reflectisextensible-target">Reflect.isExtensible (target)</h3>
+<p><code>Reflect.isExtensible</code>方法对应<code>Object.isExtensible</code>，返回一个布尔值，表示当前对象是否可扩展。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myObject</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">isExtensible</span><span style="color: #E1E4E8">(myObject); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">isExtensible</span><span style="color: #E1E4E8">(myObject); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>如果参数不是对象，<code>Object.isExtensible</code>会返回<code>false</code>，因为非对象本来就是不可扩展的，而<code>Reflect.isExtensible</code>会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">isExtensible</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">isExtensible</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<h3 id="reflectpreventextensionstarget">Reflect.preventExtensions(target)</h3>
+<p><code>Reflect.preventExtensions</code>对应<code>Object.preventExtensions</code>方法，用于让一个对象变为不可扩展。它返回一个布尔值，表示是否操作成功。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">preventExtensions</span><span style="color: #E1E4E8">(myObject); </span><span style="color: #6A737D">// Object {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">preventExtensions</span><span style="color: #E1E4E8">(myObject); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>如果参数不是对象，<code>Object.preventExtensions</code>在 ES5 环境报错，在 ES6 环境返回传入的参数，而<code>Reflect.preventExtensions</code>会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// ES5 环境</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">preventExtensions</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// ES6 环境</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">preventExtensions</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">preventExtensions</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<h3 id="reflectownkeys-target">Reflect.ownKeys (target)</h3>
+<p><code>Reflect.ownKeys</code>方法用于返回对象的所有属性，基本等同于<code>Object.getOwnPropertyNames</code>与<code>Object.getOwnPropertySymbols</code>之和。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> myObject </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  bar: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">)]: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bing"</span><span style="color: #E1E4E8">)]: </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 旧写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyNames</span><span style="color: #E1E4E8">(myObject);</span></span>
+<span class="line"><span style="color: #6A737D">// ['foo', 'bar']</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertySymbols</span><span style="color: #E1E4E8">(myObject);</span></span>
+<span class="line"><span style="color: #6A737D">//[Symbol(baz), Symbol(bing)]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新写法</span></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">ownKeys</span><span style="color: #E1E4E8">(myObject);</span></span>
+<span class="line"><span style="color: #6A737D">// ['foo', 'bar', Symbol(baz), Symbol(bing)]</span></span></code></pre>
+<p>如果<code>Reflect.ownKeys()</code>方法的第一个参数不是对象，会报错。</p>
+<h2 id="实例使用-proxy-实现观察者模式">实例：使用 Proxy 实现观察者模式</h2>
+<p><strong>观察者模式（Observer mode）指的是函数自动观察数据对象，一旦对象有变化，函数就会自动执行</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">person</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">observable</span><span style="color: #E1E4E8">({</span></span>
+<span class="line"><span style="color: #E1E4E8">  name: </span><span style="color: #9ECBFF">"张三"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  age: </span><span style="color: #79B8FF">20</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">}); </span><span style="color: #6A737D">// 观察目标</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">print</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">`${</span><span style="color: #E1E4E8">person</span><span style="color: #9ECBFF">.</span><span style="color: #E1E4E8">name</span><span style="color: #9ECBFF">}, ${</span><span style="color: #E1E4E8">person</span><span style="color: #9ECBFF">.</span><span style="color: #E1E4E8">age</span><span style="color: #9ECBFF">}`</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">} </span><span style="color: #6A737D">// 观察者</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">observe</span><span style="color: #E1E4E8">(print); </span><span style="color: #6A737D">// 启动观察</span></span>
+<span class="line"><span style="color: #E1E4E8">person.name </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"李四"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// 输出</span></span>
+<span class="line"><span style="color: #6A737D">// 李四, 20</span></span></code></pre>
+<p>上面代码中，数据对象<code>person</code>是观察目标，函数<code>print</code>是观察者。一旦数据对象发生变化，<code>print</code>就会自动执行。</p>
+<p>下面，使用 Proxy 写一个观察者模式的最简单实现，即实现<code>observable</code>和<code>observe</code>这两个函数。思路是<code>observable</code>函数返回一个原始对象的 Proxy 代理，拦截赋值操作，触发充当观察者的各个函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">queuedObservers</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">observe</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">fn</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> queuedObservers.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(fn);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">observable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Proxy</span><span style="color: #E1E4E8">(obj, { set });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">target</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">receiver</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">result</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Reflect.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(target, key, value, receiver);</span></span>
+<span class="line"><span style="color: #E1E4E8">  queuedObservers.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">observer</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">observer</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> result;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，先定义了一个<code>Set</code>集合，所有观察者函数都放进这个集合。然后，<code>observable</code>函数返回原始对象的代理，拦截赋值操作。拦截函数<code>set</code>之中，会自动执行所有观察者。</p>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

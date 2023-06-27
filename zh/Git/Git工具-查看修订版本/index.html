@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/Git/Git%E5%B7%A5%E5%85%B7-%E6%9F%A5%E7%9C%8B%E4%BF%AE%E8%AE%A2%E7%89%88%E6%9C%AC/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="Git工具-查看修订版本 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/Git/Git%E5%B7%A5%E5%85%B7-%E6%9F%A5%E7%9C%8B%E4%BF%AE%E8%AE%A2%E7%89%88%E6%9C%AC/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			Git工具-查看修订版本 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">Git工具-查看修订版本</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<p>Git 能够以多种方式来指定单个提交、一组提交、或者一定范围内的提交。 了解它们并不是必需的，但是了解一下总没坏处。</p>
+<p>修订版本指的是：<strong>提交</strong></p>
+<h2 id="单个修订版本">单个修订版本</h2>
+<p>你可以通过任意一个提交的 40 个字符的完整 SHA-1 散列值来指定它， 不过还有很多更人性化的方式来做同样的事情。本节将会介绍获取单个提交的多种方法。</p>
+<h2 id="简短的-sha-1">简短的 SHA-1</h2>
+<p>Git 十分智能，你只需要提供 SHA-1 的前几个字符就可以获得对应的那次提交， 当然你提供的 SHA-1 字符数量<strong>不得少于 4 个</strong>，并且没有歧义——也就是说， 当前对象数据库中没有其它对象以这段 SHA-1 开头。</p>
+<p>例如，要查看你知道其中添加了某个功能的提交，首先运行 <code>git log</code> 命令来定位该提交：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">734713</span><span style="color: #9ECBFF">bc047d87bf7eac9674765ae793478c50d3</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Fri</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Jan</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">18</span><span style="color: #9ECBFF">:32:33</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2009</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">fixed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refs</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">handling,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">gc</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">auto,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">updated</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">tests</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">d921970aadf03b3cf0e71becdaab3147ba71cdef</span></span>
+<span class="line"><span style="color: #B392F0">Merge:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002dd...</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">35</span><span style="color: #9ECBFF">cfb2b...</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Thu</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Dec</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">11</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">15</span><span style="color: #9ECBFF">:08:43</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">Merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'phedders/rdocs'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002dd4b536e7479fe34593e72e6c6c1819e53b</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Thu</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Dec</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">11</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">14</span><span style="color: #9ECBFF">:58:32</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">some</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">blame</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">and</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">stuff</span></span></code></pre>
+<h3 id="查看给定-sha-1-值的提交">查看给定 SHA-1 值的提交</h3>
+<p>在本例中，假设你想要的提交其 SHA-1 以 <code>1c002dd....</code> 开头， 那么你可以用如下几种 <code>git show</code> 的变体来检视该提交（假设简短的版本没有歧义）：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002dd4b536e7479fe34593e72e6c6c1819e53b</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002dd4b536e7479f</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002d</span></span></code></pre>
+<p>Git 可以为 SHA-1 值生成出简短且唯一的缩写。 如果你在 <code>git log</code> 后加上 <code>--abbrev-commit</code> 参数，输出结果里就会显示简短且唯一的值； 默认使用七个字符，不过有时为了避免 SHA-1 的歧义，会增加字符数：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--abbrev-commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--pretty=oneline</span></span>
+<span class="line"><span style="color: #B392F0">ca82a6d</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">changed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">the</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">version</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">number</span></span>
+<span class="line"><span style="color: #B392F0">085bb3b</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">removed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">unnecessary</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">test</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">code</span></span>
+<span class="line"><span style="color: #B392F0">a11bef0</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">first</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit</span></span></code></pre>
+<p>通常 8 到 10 个字符就已经足够在一个项目中避免 SHA-1 的歧义。 例如，到 2019 年 2 月为止，Linux 内核这个相当大的 Git 项目， 其对象数据库中有超过 875,000 个提交，包含七百万个对象，也只需要前 12 个字符就能保证唯一性。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Note</th><th>关于 SHA-1 的简短说明许多人觉得他们的仓库里有可能出现两个不同的对象其 SHA-1 值相同。 然后呢？如果你真的向仓库里提交了一个对象，它跟之前的某个 <strong>不同</strong> 对象的 SHA-1 值相同， Git 会发现该对象的散列值已经存在于仓库里了，于是就会认为该对象被写入，然后直接使用它。 如果之后你想检出那个对象时，你将得到先前那个对象的数据。但是这种情况发生的概率十分渺小。 SHA-1 摘要长度是 20 字节，也就是 160 位。 2^80 个随机哈希对象才有 50% 的概率出现一次冲突 （计算冲突机率的公式是 <code>p = (n(n-1)/2) * (1/2^160))</code> ）。 2^80 是 1.2 x 10^24，也就是一亿亿亿，这是地球上沙粒总数的 1200 倍。举例说一下怎样才能产生一次 SHA-1 冲突。 如果地球上 65 亿个人类都在编程，每人每秒都在产生等价于整个 Linux 内核历史（650 万个 Git 对象）的代码， 并将之提交到一个巨大的 Git 仓库里面，这样持续两年的时间才会产生足够的对象， 使其拥有 50% 的概率产生一次 SHA-1 对象冲突， 这比你编程团队的成员同一个晚上在互不相干的意外中被狼袭击并杀死的机率还要小。</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table>
+<h2 id="分支引用">分支引用</h2>
+<p>引用特定提交的一种直接方法是，若它是一个分支的顶端的提交， 那么可以在任何需要引用该提交的 Git 命令中直接使用该分支的名称。</p>
+<h3 id="查看最后一次提交">查看最后一次提交</h3>
+<p>例如，你想要查看一个分支的最后一次提交的对象，假设 <code>topic1</code> 分支指向提交 <code>ca82a6d...</code> ， 那么以下的命令是等价的：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">ca82a6dff817ec66f44342007202690a93763949</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">topic1</span><span style="color: #E1E4E8">  </span><span style="color: #6A737D"># topic1是分支名</span></span></code></pre>
+<p>如果你想知道某个分支指向哪个特定的 SHA-1，或者想看任何一个例子中被简写的 SHA-1， 你可以使用一个叫做 <code>rev-parse</code> 的 Git 探测工具。 你可以在 <a href="https://git-scm.com/book/zh/v2/ch00/ch10-git-internals">Git 内部原理</a> 中查看更多关于探测工具的信息。 简单来说，<code>rev-parse</code> 是为了底层操作而不是日常操作设计的。 不过，有时你想看 Git 现在到底处于什么状态时，它可能会很有用。 你可以在你的分支上执行 <code>rev-parse</code></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rev-parse</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">topic1</span></span>
+<span class="line"><span style="color: #B392F0">ca82a6dff817ec66f44342007202690a93763949</span></span></code></pre>
+<h2 id="引用日志">引用日志</h2>
+<h3 id="head-的指向历史">HEAD 的指向历史</h3>
+<p>当你在工作时， Git 会在后台保存一个引用日志（reflog）， 引用日志记录了最近几个月你的 HEAD 和分支引用所指向的历史。</p>
+<p>你可以使用 <code>git reflog</code> 来查看引用日志</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">reflog</span></span>
+<span class="line"><span style="color: #B392F0">734713b</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">0</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">fixed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refs</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">handling,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">gc</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">auto,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">updated</span></span>
+<span class="line"><span style="color: #B392F0">d921970</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">phedders/rdocs:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">made</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">by</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">the</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'recursive'</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">strategy.</span></span>
+<span class="line"><span style="color: #B392F0">1c002dd</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">2</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">some</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">blame</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">and</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">stuff</span></span>
+<span class="line"><span style="color: #B392F0">1c36188</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">3</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-i</span><span style="color: #E1E4E8"> (squash): updating HEAD</span></span>
+<span class="line"><span style="color: #B392F0">95df984</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">4</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit:</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D"># This is a combination of two commits.</span></span>
+<span class="line"><span style="color: #B392F0">1c36188</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">5</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-i</span><span style="color: #E1E4E8"> (squash): updating HEAD</span></span>
+<span class="line"><span style="color: #B392F0">7e05da5</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">6</span><span style="color: #9ECBFF">}:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rebase</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-i</span><span style="color: #E1E4E8"> (pick): updating HEAD</span></span></code></pre>
+<p>每当你的 HEAD 所指向的位置发生了变化，Git 就会将这个信息存储到引用日志这个历史记录里。 你也可以通过 reflog 数据来获取之前的提交历史。 如果你想查看仓库中 HEAD 在五次前的所指向的提交，你可以使用 <code>@{n}</code> 来引用 reflog 中输出的提交记录。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD@{</span><span style="color: #79B8FF">5</span><span style="color: #9ECBFF">}</span></span></code></pre>
+<p>你同样可以使用这个语法来查看某个分支在一定时间前的位置。 例如，查看你的 <code>master</code> 分支在昨天的时候指向了哪个提交，你可以输入</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master@{yesterday}</span></span></code></pre>
+<p>就会显示昨天 <code>master</code> 分支的顶端指向了哪个提交。 这个方法只对还在你引用日志里的数据有用，所以不能用来查好几个月之前的提交。</p>
+<p>可以运行 <code>git log -g</code> 来查看类似于 <code>git log</code> 输出格式的引用日志信息：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-g</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">734713</span><span style="color: #9ECBFF">bc047d87bf7eac9674765ae793478c50d3</span></span>
+<span class="line"><span style="color: #B392F0">Reflog:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master@{</span><span style="color: #79B8FF">0</span><span style="color: #9ECBFF">}</span><span style="color: #E1E4E8"> (Scott </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span><span style="color: #E1E4E8">)</span></span>
+<span class="line"><span style="color: #B392F0">Reflog</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">message:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">fixed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refs</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">handling,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">gc</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">auto,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">updated</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Fri</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Jan</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">18</span><span style="color: #9ECBFF">:32:33</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2009</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">fixed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refs</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">handling,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">gc</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">auto,</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">updated</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">tests</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">d921970aadf03b3cf0e71becdaab3147ba71cdef</span></span>
+<span class="line"><span style="color: #B392F0">Reflog:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master@{</span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">}</span><span style="color: #E1E4E8"> (Scott </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span><span style="color: #E1E4E8">)</span></span>
+<span class="line"><span style="color: #B392F0">Reflog</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">message:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">phedders/rdocs:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">made</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">by</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">recursive.</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Thu</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Dec</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">11</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">15</span><span style="color: #9ECBFF">:08:43</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">Merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'phedders/rdocs'</span></span></code></pre>
+<p>值得注意的是，<strong>引用日志只存在于本地仓库，它只是一个记录你在 自己 的仓库里做过什么的日志</strong>。 其他人拷贝的仓库里的引用日志不会和你的相同，而你新克隆一个仓库的时候，引用日志是空的，因为你在仓库里还没有操作。 <code>git show HEAD@{2.months.ago}</code> 这条命令只有在你克隆了一个项目至少两个月时才会显示匹配的提交—— 如果你刚刚克隆了仓库，那么它将不会有任何结果返回。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tip</th><th>将引用日志想作 Git 版的 shell 历史记录如果你有 UNIX 或者 Linux 的背景，不妨将引用日志想作 Git 版的 shell 历史记录， 重点在于仅与你和你的会话相关，而与他人无关。</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table>
+<h2 id="祖先引用">祖先引用</h2>
+<p>祖先引用是另一种指明一个提交的方式。 如果你在引用的尾部加上一个 <code>^</code>（脱字符）， Git 会将其解析为该引用的上一个提交。 假设你的提交历史是：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--pretty=format:</span><span style="color: #9ECBFF">'%h %s'</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--graph</span></span>
+<span class="line"><span style="color: #F97583">*</span><span style="color: #E1E4E8"> 734713b fixed refs handling, added gc auto, updated tests</span></span>
+<span class="line"><span style="color: #F97583">*</span><span style="color: #E1E4E8">   d921970 Merge commit </span><span style="color: #9ECBFF">'phedders/rdocs'</span></span>
+<span class="line"><span style="color: #F97583">|</span><span style="color: #79B8FF">\</span></span>
+<span class="line"><span style="color: #F97583">|</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">35</span><span style="color: #9ECBFF">cfb2b</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Some</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rdoc</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">changes</span></span>
+<span class="line"><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">|</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">1c002dd</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">some</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">blame</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">and</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">stuff</span></span>
+<span class="line"><span style="color: #F97583">|</span><span style="color: #B392F0">/</span></span>
+<span class="line"><span style="color: #F97583">*</span><span style="color: #E1E4E8"> 1c36188 ignore </span><span style="color: #F97583">*</span><span style="color: #E1E4E8">.gem</span></span>
+<span class="line"><span style="color: #F97583">*</span><span style="color: #E1E4E8"> 9b29157 add open3_detach to gemspec file list</span></span></code></pre>
+<p>你可以使用 <code>HEAD^</code> 来查看上一个提交，也就是 “<strong>HEAD 的父提交</strong>”：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD^</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">d921970aadf03b3cf0e71becdaab3147ba71cdef</span></span>
+<span class="line"><span style="color: #B392F0">Merge:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002dd...</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">35</span><span style="color: #9ECBFF">cfb2b...</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Thu</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Dec</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">11</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">15</span><span style="color: #9ECBFF">:08:43</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">Merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">commit</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'phedders/rdocs'</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Note</th><th>在 Windows 上转义脱字符在 Windows 的 <code>cmd.exe</code> 中，<code>^</code> 是一个特殊字符，因此需要区别对待。 你可以双写它或者将提交引用放在引号中：<code>$ git show HEAD^ # 在 Windows 上无法工作 $ git show HEAD^^ # 可以 $ git show "HEAD^" # 可以</code></th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table>
+<p>你也可以在 <code>^</code> 后面添加一个数字来指明想要 <strong>哪一个</strong> 父提交——例如 <code>d921970^2</code> 代表 “d921970 的第二父提交” 这个语法只适用于合并的提交，因为合并提交会有多个父提交。 合并提交的第一父提交是你合并时所在分支（通常为 <code>master</code>），而第二父提交是你所合并的分支（例如 <code>topic</code>）：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">d921970^</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c002dd4b536e7479fe34593e72e6c6c1819e53b</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Scott</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Chacon</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">schacon@gmail.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Thu</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Dec</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">11</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">14</span><span style="color: #9ECBFF">:58:32</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0800</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">added</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">some</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">blame</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">and</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">merge</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">stuff</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">d921970^2</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">35</span><span style="color: #9ECBFF">cfb2b795a55793d7cc56a6cc2060b4bb732548</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Paul</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Hedderly</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">paul+git@mjr.or</span><span style="color: #E1E4E8">g</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Wed</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Dec</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">22</span><span style="color: #9ECBFF">:22:03</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">+0000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">Some</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">rdoc</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">changes</span></span></code></pre>
+<p>另一种指明祖先提交的方法是 <code>~</code>（波浪号）。 同样是指向第一父提交，因此 <code>HEAD~</code> 和 <code>HEAD^</code> 是等价的。 而区别在于你在后面加数字的时候。 <code>HEAD~2</code> 代表“第一父提交的第一父提交”，也就是“祖父提交”——Git 会根据你指定的次数获取对应的第一父提交。 例如，在之前的列出的提交历史中，<code>HEAD~3</code> 就是</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD~3</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c3618887afb5fbcbea25b7c013f4e2114448b8d</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Tom</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Preston-Werner</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">tom@mojombo.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Fri</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Nov</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">13</span><span style="color: #9ECBFF">:47:59</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0500</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">ignore</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">*</span><span style="color: #9ECBFF">.gem</span></span></code></pre>
+<p>也可以写成 <code>HEAD~~~</code>，也是第一父提交的第一父提交的第一父提交：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">show</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">HEAD~~~</span></span>
+<span class="line"><span style="color: #B392F0">commit</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #9ECBFF">c3618887afb5fbcbea25b7c013f4e2114448b8d</span></span>
+<span class="line"><span style="color: #B392F0">Author:</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Tom</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Preston-Werner</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #9ECBFF">tom@mojombo.co</span><span style="color: #E1E4E8">m</span><span style="color: #F97583">></span></span>
+<span class="line"><span style="color: #B392F0">Date:</span><span style="color: #E1E4E8">   </span><span style="color: #9ECBFF">Fri</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">Nov</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">13</span><span style="color: #9ECBFF">:47:59</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2008</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">-0500</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">ignore</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">*</span><span style="color: #9ECBFF">.gem</span></span></code></pre>
+<p>你也可以组合使用这两个语法——你可以通过 <code>HEAD~3^2</code> 来取得之前引用的第二父提交（假设它是一个合并提交）。</p>
+<h2 id="提交区间">提交区间</h2>
+<p>你已经学会如何单次的提交，现在来看看如何指明一定区间的提交。 当你有很多分支时，这对管理你的分支时十分有用， 你可以用提交区间来解决“这个分支还有哪些提交尚未合并到主分支？”的问题</p>
+<h3 id="双点">双点</h3>
+<p>最常用的指明提交区间语法是双点。 这种语法可以让 Git 选出在一个分支中而不在另一个分支中的提交。 例如，你有如下的提交历史 <a href="https://git-scm.com/book/zh/v2/ch00/double_dot">Example history for range selection.</a></p>
+<p><img src="https://git-scm.com/book/en/v2/images/double-dot.png" alt="Example history for range selection."></p>
+<p>Figure 137. Example history for range selection.</p>
+<p>你想要查看 experiment 分支中还有哪些提交尚未被合并入 master 分支。 你可以使用 <code>master..experiment</code> 来让 Git 显示这些提交。也就是“在 experiment 分支中而不在 master 分支中的提交”。 为了使例子简单明了，我使用了示意图中提交对象的字母来代替真实日志的输出，所以会显示：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master..experiment</span></span>
+<span class="line"><span style="color: #B392F0">D</span></span>
+<span class="line"><span style="color: #B392F0">C</span></span></code></pre>
+<p>反过来，如果你想查看在 <code>master</code> 分支中而不在 <code>experiment</code> 分支中的提交，你只要交换分支名即可。 <code>experiment..master</code> 会显示在 <code>master</code> 分支中而不在 <code>experiment</code> 分支中的提交：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">experiment..master</span></span>
+<span class="line"><span style="color: #B392F0">F</span></span>
+<span class="line"><span style="color: #B392F0">E</span></span></code></pre>
+<h4 id="查看即将推送到远端的内容">查看即将推送到远端的内容</h4>
+<p>这可以让你保持 <code>experiment</code> 分支跟随最新的进度以及查看你即将合并的内容。 另一个常用的场景是查看你即将推送到远端的内容：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">origin/master..HEAD</span></span></code></pre>
+<p>这个命令会输出在你当前分支中而不在远程 <code>origin</code> 中的提交。 如果你执行 <code>git push</code> 并且你的当前分支正在跟踪 <code>origin/master</code>，由 <code>git log origin/master..HEAD</code> 所输出的提交就是会被传输到远端服务器的提交。如果你留空了其中的一边， Git 会默认为 <code>HEAD</code>。 例如， <code>git log origin/master..</code> 将会输出与之前例子相同的结果 —— Git 使用 HEAD 来代替留空的一边。</p>
+<h3 id="多点">多点</h3>
+<p>双点语法很好用，但有时候你可能需要两个以上的分支才能确定你所需要的修订， 比如查看哪些提交是被包含在某些分支中的一个，但是不在你当前的分支上。 Git 允许你在任意引用前加上 <code>^</code> 字符或者 <code>--not</code> 来指明你不希望提交被包含其中的分支。 因此下列三个命令是等价的：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refA..refB</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">^refA</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refB</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refB</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--not</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refA</span></span></code></pre>
+<p>这个语法很好用，因为你可以在查询中指定超过两个的引用，这是双点语法无法实现的。 比如，你想查看所有被 <code>refA</code> 或 <code>refB</code> 包含的但是不被 <code>refC</code> 包含的提交，你可以使用以下任意一个命令：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refA</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refB</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">^refC</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refA</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refB</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--not</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">refC</span></span></code></pre>
+<p>这就构成了一个十分强大的修订查询系统，你可以通过它来查看你的分支里包含了哪些东西。</p>
+<h3 id="三点">三点</h3>
+<p>最后一种主要的区间选择语法是三点，这个语法可以选择出被两个引用 <strong>之一</strong> 包含但又不被两者同时包含的提交。 再看看之前双点例子中的提交历史。 如果你想看 <code>master</code> 或者 <code>experiment</code> 中包含的但不是两者共有的提交，你可以执行：</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master...experiment</span></span>
+<span class="line"><span style="color: #B392F0">F</span></span>
+<span class="line"><span style="color: #B392F0">E</span></span>
+<span class="line"><span style="color: #B392F0">D</span></span>
+<span class="line"><span style="color: #B392F0">C</span></span></code></pre>
+<p>这和通常 <code>log</code> 按日期排序的输出一样，仅仅给出了 4 个提交的信息。</p>
+<p>这种情形下，<code>log</code> 命令的一个常用参数是 <code>--left-right</code>，它会显示每个提交到底处于哪一侧的分支。 这会让输出数据更加清晰。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">$</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">log</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--left-right</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">master...experiment</span></span>
+<span class="line"><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> F</span></span>
+<span class="line"><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> E</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> D</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> C</span></span></code></pre>
+<p>有了这些工具，你就可以十分方便地查看你 Git 仓库中的提交。</p>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

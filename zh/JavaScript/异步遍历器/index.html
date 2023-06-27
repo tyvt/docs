@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%BC%82%E6%AD%A5%E9%81%8D%E5%8E%86%E5%99%A8/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="异步遍历器 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/%E5%BC%82%E6%AD%A5%E9%81%8D%E5%8E%86%E5%99%A8/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			异步遍历器 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">异步遍历器</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="同步遍历器的问题">同步遍历器的问题</h2>
+<p>《遍历器》一章说过，Iterator 接口是一种数据遍历的协议，只要调用遍历器对象的<code>next</code>方法，就会得到一个对象，表示当前遍历指针所在的那个位置的信息。<code>next</code>方法返回的对象的结构是<code>{value, done}</code>，其中<code>value</code>表示当前的数据的值，<code>done</code>是一个布尔值，表示遍历是否结束。</p>
+<!-- more -->
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">idMaker</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> index </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> { value: index</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">, done: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">    },</span></span>
+<span class="line"><span style="color: #E1E4E8">  };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">it</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">idMaker</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">it.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().value; </span><span style="color: #6A737D">// 0</span></span>
+<span class="line"><span style="color: #E1E4E8">it.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().value; </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">it.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().value; </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #6A737D">// ...</span></span></code></pre>
+<p>上面代码中，变量<code>it</code>是一个遍历器（iterator）。每次调用<code>it.next()</code>方法，就返回一个对象，表示当前遍历位置的信息。</p>
+<p>这里隐含着一个规定，<code>it.next()</code>方法必须是同步的，只要调用就必须立刻返回值。也就是说，一旦执行<code>it.next()</code>方法，就必须同步地得到<code>value</code>和<code>done</code>这两个属性。如果遍历指针正好指向同步操作，当然没有问题，但对于异步操作，就不太合适了。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">idMaker</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> index </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">          </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">({ value: index</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">, done: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #E1E4E8">        }, </span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">      });</span></span>
+<span class="line"><span style="color: #E1E4E8">    },</span></span>
+<span class="line"><span style="color: #E1E4E8">  };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>next()</code>方法返回的是一个 Promise 对象，这样就不行，不符合 Iterator 协议，只要代码里面包含异步操作都不行。也就是说，Iterator 协议里面<code>next()</code>方法只能包含同步操作。</p>
+<p>目前的解决方法是，将异步操作包装成 Thunk 函数或者 Promise 对象，即<code>next()</code>方法返回值的<code>value</code>属性是一个 Thunk 函数或者 Promise 对象，等待以后返回真正的值，而<code>done</code>属性则还是同步产生的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">idMaker</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> index </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">        value: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span></span>
+<span class="line"><span style="color: #E1E4E8">          </span><span style="color: #B392F0">setTimeout</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(index</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">), </span><span style="color: #79B8FF">1000</span><span style="color: #E1E4E8">)</span></span>
+<span class="line"><span style="color: #E1E4E8">        ),</span></span>
+<span class="line"><span style="color: #E1E4E8">        done: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">      };</span></span>
+<span class="line"><span style="color: #E1E4E8">    },</span></span>
+<span class="line"><span style="color: #E1E4E8">  };</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">it</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">idMaker</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">it.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().value.</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">o</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(o)); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">it.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().value.</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">o</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(o)); </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">it.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().value.</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">o</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(o)); </span><span style="color: #6A737D">// 3</span></span>
+<span class="line"><span style="color: #6A737D">// ...</span></span></code></pre>
+<p>上面代码中，<code>value</code>属性的返回值是一个 Promise 对象，用来放置异步操作。但是这样写很麻烦，不太符合直觉，语义也比较绕。</p>
+<p>ES2018 <a href="https://github.com/tc39/proposal-async-iteration">引入</a>了“异步遍历器”（Async Iterator），为异步操作提供原生的遍历器接口，即<code>value</code>和<code>done</code>这两个属性都是异步产生。</p>
+<h2 id="异步遍历的接口">异步遍历的接口</h2>
+<p>异步遍历器的最大的语法特点，就是调用遍历器的<code>next</code>方法，返回的是一个 Promise 对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">asyncIterator</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">    ({ </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">done</span><span style="color: #E1E4E8"> }) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #E1E4E8">  );</span></span></code></pre>
+<p>上面代码中，<code>asyncIterator</code>是一个异步遍历器，调用<code>next</code>方法以后，返回一个 Promise 对象。因此，可以使用<code>then</code>方法指定，这个 Promise 对象的状态变为<code>resolve</code>以后的回调函数。回调函数的参数，则是一个具有<code>value</code>和<code>done</code>两个属性的对象，这个跟同步遍历器是一样的。</p>
+<p>我们知道，一个对象的同步遍历器的接口，部署在<code>Symbol.iterator</code>属性上面。同样地，对象的异步遍历器接口，部署在<code>Symbol.asyncIterator</code>属性上面。不管是什么样的对象，只要它的<code>Symbol.asyncIterator</code>属性有值，就表示应该对它进行异步遍历。</p>
+<p>下面是一个异步遍历器的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">asyncIterable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">createAsyncIterable</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">asyncIterator</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> asyncIterable[Symbol.asyncIterator]();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">asyncIterator</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">iterResult1</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(iterResult1); </span><span style="color: #6A737D">// { value: 'a', done: false }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  })</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">iterResult2</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(iterResult2); </span><span style="color: #6A737D">// { value: 'b', done: false }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  })</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">iterResult3</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(iterResult3); </span><span style="color: #6A737D">// { value: undefined, done: true }</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span></code></pre>
+<p>上面代码中，异步遍历器其实返回了两次值。第一次调用的时候，返回一个 Promise 对象；等到 Promise 对象<code>resolve</code>了，再返回一个表示当前数据成员信息的对象。这就是说，异步遍历器与同步遍历器最终行为是一致的，只是会先返回 Promise 对象，作为中介。</p>
+<p>由于异步遍历器的<code>next</code>方法，返回的是一个 Promise 对象。因此，可以把它放在<code>await</code>命令后面。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">asyncIterable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">createAsyncIterable</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">asyncIterator</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> asyncIterable[Symbol.asyncIterator]();</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// { value: 'a', done: false }</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// { value: 'b', done: false }</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// { value: undefined, done: true }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>next</code>方法用<code>await</code>处理以后，就不必使用<code>then</code>方法了。整个流程已经很接近同步处理了。</p>
+<p>注意，异步遍历器的<code>next</code>方法是可以连续调用的，不必等到上一步产生的 Promise 对象<code>resolve</code>以后再调用。这种情况下，<code>next</code>方法会累积起来，自动按照每一步的顺序运行下去。下面是一个例子，把所有的<code>next</code>方法放在<code>Promise.all</code>方法里面。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">asyncIterable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">createAsyncIterable</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">asyncIterator</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> asyncIterable[Symbol.asyncIterator]();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> [{ </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">v1</span><span style="color: #E1E4E8"> }, { </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">v2</span><span style="color: #E1E4E8"> }] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">all</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(),</span></span>
+<span class="line"><span style="color: #E1E4E8">  asyncIterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(),</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(v1, v2); </span><span style="color: #6A737D">// a b</span></span></code></pre>
+<p>另一种用法是一次性调用所有的<code>next</code>方法，然后<code>await</code>最后一步操作。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">runner</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">writer</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">openFile</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"someFile.txt"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  writer.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  writer.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> writer.</span><span style="color: #B392F0">return</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">runner</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<h2 id="for-awaitof">for await…of</h2>
+<p>前面介绍过，<code>for...of</code>循环用于遍历同步的 Iterator 接口。新引入的<code>for await...of</code>循环，则是用于遍历异步的 Iterator 接口。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">createAsyncIterable</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">])) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// a</span></span>
+<span class="line"><span style="color: #6A737D">// b</span></span></code></pre>
+<p>上面代码中，<code>createAsyncIterable()</code>返回一个拥有异步遍历器接口的对象，<code>for...of</code>循环自动调用这个对象的异步遍历器的<code>next</code>方法，会得到一个 Promise 对象。<code>await</code>用来处理这个 Promise 对象，一旦<code>resolve</code>，就把得到的值（<code>x</code>）传入<code>for...of</code>的循环体。</p>
+<p><code>for await...of</code>循环的一个用途，是部署了 asyncIterable 操作的异步接口，可以直接放入这个循环。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> body </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">""</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> req) body </span><span style="color: #F97583">+=</span><span style="color: #E1E4E8"> data;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">parsed</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">JSON</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">parse</span><span style="color: #E1E4E8">(body);</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"got"</span><span style="color: #E1E4E8">, parsed);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>req</code>是一个 asyncIterable 对象，用来异步读取数据。可以看到，使用<code>for await...of</code>循环以后，代码会非常简洁。</p>
+<p>如果<code>next</code>方法返回的 Promise 对象被<code>reject</code>，<code>for await...of</code>就会报错，要用<code>try...catch</code>捕捉。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">createRejectingIterable</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x);</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">catch</span><span style="color: #E1E4E8"> (e) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">error</span><span style="color: #E1E4E8">(e);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>注意，<code>for await...of</code>循环也可以用于同步遍历器。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> [</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">]) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">})();</span></span>
+<span class="line"><span style="color: #6A737D">// a</span></span>
+<span class="line"><span style="color: #6A737D">// b</span></span></code></pre>
+<p>Node v10 支持异步遍历器，Stream 就部署了这个接口。下面是读取文件的传统写法与异步遍历器写法的差异。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 传统写法</span></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">main</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">inputFilePath</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">readStream</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> fs.</span><span style="color: #B392F0">createReadStream</span><span style="color: #E1E4E8">(inputFilePath, {</span></span>
+<span class="line"><span style="color: #E1E4E8">    encoding: </span><span style="color: #9ECBFF">"utf8"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    highWaterMark: </span><span style="color: #79B8FF">1024</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">  readStream.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"data"</span><span style="color: #E1E4E8">, (</span><span style="color: #FFAB70">chunk</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">">>> "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> chunk);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">  readStream.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"end"</span><span style="color: #E1E4E8">, () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"### DONE ###"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 异步遍历器写法</span></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">main</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">inputFilePath</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">readStream</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> fs.</span><span style="color: #B392F0">createReadStream</span><span style="color: #E1E4E8">(inputFilePath, {</span></span>
+<span class="line"><span style="color: #E1E4E8">    encoding: </span><span style="color: #9ECBFF">"utf8"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    highWaterMark: </span><span style="color: #79B8FF">1024</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">chunk</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> readStream) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">">>> "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> chunk);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"### DONE ###"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<h2 id="异步-generator-函数">异步 Generator 函数</h2>
+<p>就像 Generator 函数返回一个同步遍历器对象一样，异步 Generator 函数的作用，是返回一个异步遍历器对象。</p>
+<p>在语法上，异步 Generator 函数就是<code>async</code>函数与 Generator 函数的结合。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">genObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">genObj.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x));</span></span>
+<span class="line"><span style="color: #6A737D">// { value: 'hello', done: false }</span></span></code></pre>
+<p>上面代码中，<code>gen</code>是一个异步 Generator 函数，执行后返回一个异步 Iterator 对象。对该对象调用<code>next</code>方法，返回一个 Promise 对象。</p>
+<p>异步遍历器的设计目的之一，就是 Generator 函数处理同步操作和异步操作时，能够使用同一套接口。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 同步 Generator 函数</span></span>
+<span class="line"><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">iterable</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">func</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">iter</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> iterable[Symbol.iterator]();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">while</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">value</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">done</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> iter.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (done) </span><span style="color: #F97583">break</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">func</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 异步 Generator 函数</span></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">iterable</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">func</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">iter</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> iterable[Symbol.asyncIterator]();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">while</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">value</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">done</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> iter.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (done) </span><span style="color: #F97583">break</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">func</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>map</code>是一个 Generator 函数，第一个参数是可遍历对象<code>iterable</code>，第二个参数是一个回调函数<code>func</code>。<code>map</code>的作用是将<code>iterable</code>每一步返回的值，使用<code>func</code>进行处理。上面有两个版本的<code>map</code>，前一个处理同步遍历器，后一个处理异步遍历器，可以看到两个版本的写法基本上是一致的。</p>
+<p>下面是另一个异步 Generator 函数的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readLines</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">path</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> file </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fileOpen</span><span style="color: #E1E4E8">(path);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">try</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">while</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #E1E4E8">file.</span><span style="color: #79B8FF">EOF</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> file.</span><span style="color: #B392F0">readLine</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  } </span><span style="color: #F97583">finally</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> file.</span><span style="color: #B392F0">close</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，异步操作前面使用<code>await</code>关键字标明，即<code>await</code>后面的操作，应该返回 Promise 对象。凡是使用<code>yield</code>关键字的地方，就是<code>next</code>方法停下来的地方，它后面的表达式的值（即<code>await file.readLine()</code>的值），会作为<code>next()</code>返回对象的<code>value</code>属性，这一点是与同步 Generator 函数一致的。</p>
+<p>异步 Generator 函数内部，能够同时使用<code>await</code>和<code>yield</code>命令。可以这样理解，<code>await</code>命令用于将外部操作产生的值输入函数内部，<code>yield</code>命令用于将函数内部的值输出。</p>
+<p>上面代码定义的异步 Generator 函数的用法如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">line</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">readLines</span><span style="color: #E1E4E8">(filePath)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(line);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">})();</span></span></code></pre>
+<p>异步 Generator 函数可以与<code>for await...of</code>循环结合起来使用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">prefixLines</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">asyncIterable</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">line</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> asyncIterable) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"> "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> line;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>异步 Generator 函数的返回值是一个异步 Iterator，即每次调用它的<code>next</code>方法，会返回一个 Promise 对象，也就是说，跟在<code>yield</code>命令后面的，应该是一个 Promise 对象。如果像上面那个例子那样，<code>yield</code>命令后面是一个字符串，会被自动包装成一个 Promise 对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetchRandom</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">url</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #9ECBFF">"https://www.random.org/decimal-fractions/"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #9ECBFF">"?num=1&#x26;dec=10&#x26;col=1&#x26;format=plain&#x26;rnd=new"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(url);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">asyncGenerator</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Start"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">result</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetchRandom</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// (A)</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Result: "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> result.</span><span style="color: #B392F0">text</span><span style="color: #E1E4E8">()); </span><span style="color: #6A737D">// (B)</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Done"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ag</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">asyncGenerator</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">ag.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(({ </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">done</span><span style="color: #E1E4E8"> }) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>上面代码中，<code>ag</code>是<code>asyncGenerator</code>函数返回的异步遍历器对象。调用<code>ag.next()</code>以后，上面代码的执行顺序如下。</p>
+<ol>
+<li><code>ag.next()</code>立刻返回一个 Promise 对象。</li>
+<li><code>asyncGenerator</code>函数开始执行，打印出<code>Start</code>。</li>
+<li><code>await</code>命令返回一个 Promise 对象，<code>asyncGenerator</code>函数停在这里。</li>
+<li>A 处变成 fulfilled 状态，产生的值放入<code>result</code>变量，<code>asyncGenerator</code>函数继续往下执行。</li>
+<li>函数在 B 处的<code>yield</code>暂停执行，一旦<code>yield</code>命令取到值，<code>ag.next()</code>返回的那个 Promise 对象变成 fulfilled 状态。</li>
+<li><code>ag.next()</code>后面的<code>then</code>方法指定的回调函数开始执行。该回调函数的参数是一个对象<code>{value, done}</code>，其中<code>value</code>的值是<code>yield</code>命令后面的那个表达式的值，<code>done</code>的值是<code>false</code>。</li>
+</ol>
+<p>A 和 B 两行的作用类似于下面的代码。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">reject</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">fetchRandom</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">    .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">result</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> result.</span><span style="color: #B392F0">text</span><span style="color: #E1E4E8">())</span></span>
+<span class="line"><span style="color: #E1E4E8">    .</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">result</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">({</span></span>
+<span class="line"><span style="color: #E1E4E8">        value: </span><span style="color: #9ECBFF">"Result: "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> result,</span></span>
+<span class="line"><span style="color: #E1E4E8">        done: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">      });</span></span>
+<span class="line"><span style="color: #E1E4E8">    });</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>如果异步 Generator 函数抛出错误，会导致 Promise 对象的状态变为<code>reject</code>，然后抛出的错误被<code>catch</code>方法捕获。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">asyncGenerator</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Problem!"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">asyncGenerator</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  .</span><span style="color: #B392F0">catch</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">err</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(err)); </span><span style="color: #6A737D">// Error: Problem!</span></span></code></pre>
+<p>注意，普通的 async 函数返回的是一个 Promise 对象，而异步 Generator 函数返回的是一个异步 Iterator 对象。可以这样理解，async 函数和异步 Generator 函数，是封装异步操作的两种方法，都用来达到同一种目的。区别在于，前者自带执行器，后者通过<code>for await...of</code>执行，或者自己编写执行器。下面就是一个异步 Generator 函数的执行器。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">takeAsync</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">asyncIterable</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">count</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Infinity</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">result</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">iterator</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> asyncIterable[Symbol.asyncIterator]();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">while</span><span style="color: #E1E4E8"> (result.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> count) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">value</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">done</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> iterator.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (done) </span><span style="color: #F97583">break</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    result.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> result;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，异步 Generator 函数产生的异步遍历器，会通过<code>while</code>循环自动执行，每当<code>await iterator.next()</code>完成，就会进入下一轮循环。一旦<code>done</code>属性变为<code>true</code>，就会跳出循环，异步遍历器执行结束。</p>
+<p>下面是这个自动执行器的一个使用实例。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">f</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">takeAsync</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">gen</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">f</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">result</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(result); </span><span style="color: #6A737D">// ['a', 'b', 'c']</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p>异步 Generator 函数出现以后，JavaScript 就有了四种函数形式：普通函数、async 函数、Generator 函数和异步 Generator 函数。请注意区分每种函数的不同之处。基本上，如果是一系列按照顺序执行的异步操作（比如读取文件，然后写入新内容，再存入硬盘），可以使用 async 函数；如果是一系列产生相同数据结构的异步操作（比如一行一行读取文件），可以使用异步 Generator 函数。</p>
+<p>异步 Generator 函数也可以通过<code>next</code>方法的参数，接收外部传入的数据。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">writer</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">openFile</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"someFile.txt"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">writer.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 立即执行</span></span>
+<span class="line"><span style="color: #E1E4E8">writer.</span><span style="color: #B392F0">next</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 立即执行</span></span>
+<span class="line"><span style="color: #F97583">await</span><span style="color: #E1E4E8"> writer.</span><span style="color: #B392F0">return</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 等待写入结束</span></span></code></pre>
+<p>上面代码中，<code>openFile</code>是一个异步 Generator 函数。<code>next</code>方法的参数，向该函数内部的操作传入数据。每次<code>next</code>方法都是同步执行的，最后的<code>await</code>命令用于等待整个写入操作结束。</p>
+<p>最后，同步的数据结构，也可以使用异步 Generator 函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">createAsyncIterable</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">syncIterable</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">elem</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> syncIterable) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> elem;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，由于没有异步操作，所以也就没有使用<code>await</code>关键字。</p>
+<h2 id="yield-语句">yield* 语句</h2>
+<p><code>yield*</code>语句也可以跟一个异步遍历器。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen1</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen2</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// result 最终会等于 2</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">result</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">yield*</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen1</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，<code>gen2</code>函数里面的<code>result</code>变量，最后的值是<code>2</code>。</p>
+<p>与同步 Generator 函数一样，<code>for await...of</code>循环会展开<code>yield*</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">(</span><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">gen2</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">})();</span></span>
+<span class="line"><span style="color: #6A737D">// a</span></span>
+<span class="line"><span style="color: #6A737D">// b</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

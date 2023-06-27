@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/Symbol/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="Symbol 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/Symbol/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			Symbol 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" aria-current="page" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">Symbol</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="概述">概述</h2>
+<p>ES5 的对象属性名都是字符串，这容易造成属性名的冲突。比如，你使用了一个他人提供的对象，但又想为这个对象添加新的方法（mixin 模式），新方法的名字就有可能与现有方法产生冲突。如果有一种机制，<strong>保证每个属性的名字都是独一无二</strong>的就好了，这样就从根本上防止属性名的冲突。这就是 ES6 引入<code>Symbol</code>的原因。</p>
+<!-- more -->
+<p>ES6 引入了一种新的<strong>原始数据类型<code>Symbol</code>，表示独一无二的值</strong>。它是 JavaScript 语言的第七种数据类型，前六种是：<code>undefined</code>、<code>null</code>、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
+<p><strong>Symbol 值通过<code>Symbol</code>函数生成</strong>。这就是说，**对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。**凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">typeof</span><span style="color: #E1E4E8"> s;</span></span>
+<span class="line"><span style="color: #6A737D">// "symbol"</span></span></code></pre>
+<p>上面代码中，变量<code>s</code>就是一个独一无二的值。<code>typeof</code>运算符的结果，表明变量<code>s</code>是 Symbol 数据类型，而不是字符串之类的其他类型。</p>
+<p>注意，<strong><code>Symbol</code>函数前不能使用<code>new</code>命令，否则会报错</strong>。这是因为生成的 Symbol 是一个原始类型的值，不是对象。也就是说，由于 <strong>Symbol 值不是对象，所以不能添加属性</strong>。基本上，它是一种类似于字符串的数据类型。</p>
+<p><strong><code>Symbol</code>函数可以接受一个字符串作为参数</strong>，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s1; </span><span style="color: #6A737D">// Symbol(foo)</span></span>
+<span class="line"><span style="color: #E1E4E8">s2; </span><span style="color: #6A737D">// Symbol(bar)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s1.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// "Symbol(foo)"</span></span>
+<span class="line"><span style="color: #E1E4E8">s2.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// "Symbol(bar)"</span></span></code></pre>
+<p>上面代码中，<code>s1</code>和<code>s2</code>是两个 Symbol 值。如果不加参数，它们在控制台的输出都是<code>Symbol()</code>，不利于区分。有了参数以后，就等于为它们加上了描述，输出的时候就能够分清，到底是哪一个值。</p>
+<p>如果 <strong>Symbol 的参数是一个对象，就会调用该对象的<code>toString</code>方法，将其转为字符串</strong>，然后才生成一个 Symbol 值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">sym</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #E1E4E8">sym; </span><span style="color: #6A737D">// Symbol(abc)</span></span></code></pre>
+<p>注意，<strong><code>Symbol</code>函数的参数只是表示对当前 Symbol 值的描述，因此相同参数的<code>Symbol</code>函数的返回值是不相等的。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 没有参数的情况</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s1 </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> s2; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 有参数的情况</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s1 </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> s2; </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码中，<code>s1</code>和<code>s2</code>都是<code>Symbol</code>函数的返回值，而且参数相同，但是它们是<strong>不相等的</strong>。</p>
+<p>Symbol 值<strong>不能与其他类型的值进行运算</strong>，会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> sym </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"My symbol"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"your symbol is "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span></span>
+<span class="line"><span style="color: #E1E4E8">  sym</span><span style="color: #6A737D">// TypeError: can't convert symbol to string</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">`your symbol is ${</span><span style="color: #E1E4E8">sym</span><span style="color: #9ECBFF">}`</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: can't convert symbol to string</span></span></code></pre>
+<p>但是，<strong>Symbol 值可以显式转为字符串</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> sym </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"My symbol"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">String</span><span style="color: #E1E4E8">(sym); </span><span style="color: #6A737D">// 'Symbol(My symbol)'</span></span>
+<span class="line"><span style="color: #E1E4E8">sym.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 'Symbol(My symbol)'</span></span></code></pre>
+<p>另外，<strong>Symbol 值也可以转为布尔值，但是不能转为数值</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> sym </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #B392F0">Boolean</span><span style="color: #E1E4E8">(sym); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #F97583">!</span><span style="color: #E1E4E8">sym; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (sym) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ...</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">Number</span><span style="color: #E1E4E8">(sym); </span><span style="color: #6A737D">// TypeError</span></span>
+<span class="line"><span style="color: #E1E4E8">sym </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// TypeError</span></span></code></pre>
+<h2 id="symbolprototypedescription">Symbol.prototype.description</h2>
+<p>创建 Symbol 的时候，可以添加一个描述。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">sym</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码中，<code>sym</code>的描述就是字符串<code>foo</code>。</p>
+<p>但是，读取这个描述需要将 Symbol 显式转为字符串，即下面的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">sym</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">String</span><span style="color: #E1E4E8">(sym); </span><span style="color: #6A737D">// "Symbol(foo)"</span></span>
+<span class="line"><span style="color: #E1E4E8">sym.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// "Symbol(foo)"</span></span></code></pre>
+<p>上面的用法不是很方便。<a href="https://github.com/tc39/proposal-Symbol-description">ES2019</a> 提供了一个实例属性<code>description</code>，直接返回 Symbol 的描述。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">sym</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">sym.description; </span><span style="color: #6A737D">// "foo"</span></span></code></pre>
+<h2 id="作为属性名的-symbol">作为属性名的 Symbol</h2>
+<p>由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。这对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> mySymbol </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 第一种写法</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">a[mySymbol] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello!"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 第二种写法</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [mySymbol]: </span><span style="color: #9ECBFF">"Hello!"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 第三种写法</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">defineProperty</span><span style="color: #E1E4E8">(a, mySymbol, { value: </span><span style="color: #9ECBFF">"Hello!"</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 以上写法都得到同样结果</span></span>
+<span class="line"><span style="color: #E1E4E8">a[mySymbol]; </span><span style="color: #6A737D">// "Hello!"</span></span></code></pre>
+<p>上面代码<strong>通过方括号结构和<code>Object.defineProperty</code>，将对象的属性名指定为一个 Symbol 值</strong>。</p>
+<p>注意，Symbol 值作为对象属性名时，不能用点运算符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">mySymbol</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">a.mySymbol </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello!"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">a[mySymbol]; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #E1E4E8">a[</span><span style="color: #9ECBFF">"mySymbol"</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// "Hello!"</span></span></code></pre>
+<p>上面代码中，因为点运算符后面总是字符串，所以不会读取<code>mySymbol</code>作为标识名所指代的那个值，导致<code>a</code>的属性名实际上是一个字符串，而不是一个 Symbol 值。</p>
+<p>同理，在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [s]: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">arg</span><span style="color: #E1E4E8">) { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8"> }</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj[s](</span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码中，如果<code>s</code>不放在方括号中，该属性的键名就是字符串<code>s</code>，而不是<code>s</code>所代表的那个 Symbol 值。</p>
+<p>采用增强的对象写法，上面代码的<code>obj</code>对象可以写得更简洁一些。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [s](</span><span style="color: #FFAB70">arg</span><span style="color: #E1E4E8">) { </span><span style="color: #F97583">...</span><span style="color: #E1E4E8"> }</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>Symbol 类型还可以用于定义一组常量，保证这组常量的值都是不相等的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">log</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">log.levels </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  DEBUG: </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"debug"</span><span style="color: #E1E4E8">),</span></span>
+<span class="line"><span style="color: #E1E4E8">  INFO: </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"info"</span><span style="color: #E1E4E8">),</span></span>
+<span class="line"><span style="color: #E1E4E8">  WARN: </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"warn"</span><span style="color: #E1E4E8">),</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(log.levels.</span><span style="color: #79B8FF">DEBUG</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"debug message"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(log.levels.</span><span style="color: #79B8FF">INFO</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"info message"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>下面是另外一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">COLOR_RED</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">COLOR_GREEN</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getComplement</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">color</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">switch</span><span style="color: #E1E4E8"> (color) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">COLOR_RED</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">COLOR_GREEN</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">COLOR_GREEN</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">COLOR_RED</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">default</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Undefined color"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>常量使用 Symbol 值最大的好处，就是其他任何值都不可能有相同的值了，因此可以保证上面的<code>switch</code>语句会按设计的方式工作。</p>
+<p>还有一点需要注意，Symbol 值作为属性名时，该属性还是公开属性，不是私有属性。</p>
+<h2 id="实例消除魔术字符串">实例：消除魔术字符串</h2>
+<p><strong>魔术字符串指的是，在代码之中多次出现、与代码形成强耦合的某一个具体的字符串或者数值</strong>。风格良好的代码，应该尽量消除魔术字符串，改由含义清晰的变量代替。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getArea</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">shape</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">options</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> area </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">switch</span><span style="color: #E1E4E8"> (shape) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Triangle"</span><span style="color: #E1E4E8">: </span><span style="color: #6A737D">// 魔术字符串</span></span>
+<span class="line"><span style="color: #E1E4E8">      area </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0.5</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> options.width </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> options.height;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">break</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #6A737D">/* ... more code ... */</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> area;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">getArea</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Triangle"</span><span style="color: #E1E4E8">, { width: </span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">, height: </span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8"> }); </span><span style="color: #6A737D">// 魔术字符串</span></span></code></pre>
+<p>上面代码中，字符串<code>Triangle</code>就是一个魔术字符串。它多次出现，与代码形成“强耦合”，不利于将来的修改和维护。</p>
+<blockquote>
+<p>笔记：</p>
+<p><code>Triangle</code>字符串在代码中出现多次，如果后期想修改这个字符串需要修改很多处，不利于维护。</p>
+</blockquote>
+<p>常用的消除魔术字符串的方法，就是把它写成一个变量。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">shapeType</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  triangle: </span><span style="color: #9ECBFF">"Triangle"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getArea</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">shape</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">options</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> area </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">switch</span><span style="color: #E1E4E8"> (shape) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> shapeType.triangle:</span></span>
+<span class="line"><span style="color: #E1E4E8">      area </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0.5</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> options.width </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> options.height;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">break</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> area;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">getArea</span><span style="color: #E1E4E8">(shapeType.triangle, { width: </span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8">, height: </span><span style="color: #79B8FF">100</span><span style="color: #E1E4E8"> });</span></span></code></pre>
+<p>上面代码中，我们把<code>Triangle</code>写成<code>shapeType</code>对象的<code>triangle</code>属性，这样就消除了强耦合。</p>
+<p>如果仔细分析，可以发现<code>shapeType.triangle</code><strong>等于哪个值并不重要，只要确保不会跟其他<code>shapeType</code>属性的值冲突即可。因此，这里就很适合改用 Symbol 值</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">shapeType</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  triangle: </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(),</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
+<p>上面代码中，除了将<code>shapeType.triangle</code>的值设为一个 Symbol，其他地方都不用修改。</p>
+<h2 id="属性名的遍历">属性名的遍历</h2>
+<p><strong>Symbol 作为属性名，遍历对象的时候，该属性不会出现在<code>for...in</code>、<code>for...of</code>循环中，也不会被<code>Object.keys()</code>、<code>Object.getOwnPropertyNames()</code>、<code>JSON.stringify()</code>返回</strong>。</p>
+<p>但是，它也不是私有属性，有一个**<code>Object.getOwnPropertySymbols()</code>方法，可以获取指定对象的所有 Symbol 属性名**。该方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj[a] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"Hello"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">obj[b] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"World"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">objectSymbols</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">getOwnPropertySymbols</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">objectSymbols;</span></span>
+<span class="line"><span style="color: #6A737D">// [Symbol(a), Symbol(b)]</span></span></code></pre>
+<p>上面代码是<code>Object.getOwnPropertySymbols()</code>方法的示例，可以获取所有 Symbol 属性名。</p>
+<p>下面是另一个例子，<code>Object.getOwnPropertySymbols()</code>方法与<code>for...in</code>循环、<code>Object.getOwnPropertyNames</code>方法进行对比的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj[foo] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">in</span><span style="color: #E1E4E8"> obj) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(i); </span><span style="color: #6A737D">// 无输出</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyNames</span><span style="color: #E1E4E8">(obj); </span><span style="color: #6A737D">// []</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertySymbols</span><span style="color: #E1E4E8">(obj); </span><span style="color: #6A737D">// [Symbol(foo)]</span></span></code></pre>
+<p>上面代码中，使用<code>for...in</code>循环和<code>Object.getOwnPropertyNames()</code>方法都得不到 Symbol 键名，需要使用<code>Object.getOwnPropertySymbols()</code>方法。</p>
+<p>另一个新的 API，<code>Reflect.ownKeys()</code>方法可以返回所有类型的键名，包括常规键名和 Symbol 键名。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"my_key"</span><span style="color: #E1E4E8">)]: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  enum: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  nonEnum: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Reflect.</span><span style="color: #B392F0">ownKeys</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"><span style="color: #6A737D">//  ["enum", "nonEnum", Symbol(my_key)]</span></span></code></pre>
+<p>由于以 Symbol 值作为键名，不会被常规方法遍历得到。我们可以利用这个特性，<strong>为对象定义一些非私有的、但又希望只用于内部的方法</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> size </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"size"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Collection</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[size] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">item</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[size]] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> item;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[size]</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">sizeOf</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">instance</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> instance[size];</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Collection</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">Collection.</span><span style="color: #B392F0">sizeOf</span><span style="color: #E1E4E8">(x); </span><span style="color: #6A737D">// 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">x.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">Collection.</span><span style="color: #B392F0">sizeOf</span><span style="color: #E1E4E8">(x); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(x); </span><span style="color: #6A737D">// ['0']</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertyNames</span><span style="color: #E1E4E8">(x); </span><span style="color: #6A737D">// ['0']</span></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">getOwnPropertySymbols</span><span style="color: #E1E4E8">(x); </span><span style="color: #6A737D">// [Symbol(size)]</span></span></code></pre>
+<p>上面代码中，对象<code>x</code>的<code>size</code>属性是一个 Symbol 值，所以<code>Object.keys(x)</code>、<code>Object.getOwnPropertyNames(x)</code>都无法获取它。这就造成了一种非私有的内部方法的效果。</p>
+<h2 id="symbolforsymbolkeyfor">Symbol.for()，Symbol.keyFor()</h2>
+<p>有时，我们希望重新使用同一个 Symbol 值，<code>Symbol.for()</code>方法可以做到这一点。它接受一个字符串作为参数，然后搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建一个以该字符串为名称的 Symbol 值，并将其注册到全局。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s1 </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> s2; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>s1</code>和<code>s2</code>都是 Symbol 值，但是它们都是同样参数的<code>Symbol.for</code>方法生成的，所以实际上是同一个值。</p>
+<p><code>Symbol.for()</code>与<code>Symbol()</code>这两种写法，都会生成新的 Symbol。它们的区别是，前者会被登记在全局环境中供搜索，后者不会。<strong><code>Symbol.for()</code>不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的<code>key</code>是否已经存在，如果不存在才会新建一个值</strong>。比如，如果你调用<code>Symbol.for("cat")</code>30 次，每次都会返回同一个 Symbol 值，但是调用<code>Symbol("cat")</code>30 次，会返回 30 个不同的 Symbol 值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码中，由于<code>Symbol()</code>写法没有登记机制，所以每次调用都会返回一个不同的值。</p>
+<p><code>Symbol.keyFor()</code>方法返回一个已登记的 Symbol 类型值的<code>key</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">Symbol.</span><span style="color: #B392F0">keyFor</span><span style="color: #E1E4E8">(s1); </span><span style="color: #6A737D">// "foo"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> s2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">Symbol.</span><span style="color: #B392F0">keyFor</span><span style="color: #E1E4E8">(s2); </span><span style="color: #6A737D">// undefined</span></span></code></pre>
+<p>上面代码中，变量<code>s2</code>属于未登记的 Symbol 值，所以返回<code>undefined</code>。</p>
+<p>注意，<strong><code>Symbol.for()</code>为 Symbol 值登记的名字，是全局环境的，不管有没有在全局环境运行。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">y</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> y); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>Symbol.for('bar')</code>是函数内部运行的，但是生成的 Symbol 值是登记在全局环境的。所以，第二次运行<code>Symbol.for('bar')</code>可以取到这个 Symbol 值。</p>
+<p><code>Symbol.for()</code>的这个全局登记特性，可以用在不同的 iframe 或 service worker 中取到同一个值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">iframe </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">createElement</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"iframe"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">iframe.src </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">String</span><span style="color: #E1E4E8">(window.location);</span></span>
+<span class="line"><span style="color: #E1E4E8">document.body.</span><span style="color: #B392F0">appendChild</span><span style="color: #E1E4E8">(iframe);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">iframe.contentWindow.Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，iframe 窗口生成的 Symbol 值，可以在主页面得到。</p>
+<h2 id="实例模块的-singleton-模式">实例：模块的 Singleton 模式</h2>
+<p>Singleton 模式指的是调用一个类，任何时候返回的都是同一个实例。</p>
+<p>对于 Node 来说，模块文件可以看成是一个类。怎么保证每次执行这个模块文件，返回的都是同一个实例呢？</p>
+<p>很容易想到，可以把实例放到顶层对象<code>global</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// mod.js</span></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #E1E4E8">global._foo) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  global._foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">module</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">exports</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> global._foo;</span></span></code></pre>
+<p>然后，加载上面的<code>mod.js</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">require</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"./mod.js"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(a.foo);</span></span></code></pre>
+<p>上面代码中，变量<code>a</code>任何时候加载的都是<code>A</code>的同一个实例。</p>
+<p>但是，这里有一个问题，全局变量<code>global._foo</code>是可写的，任何文件都可以修改。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">global._foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">require</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"./mod.js"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(a.foo);</span></span></code></pre>
+<p>上面的代码，会使得加载<code>mod.js</code>的脚本都失真。</p>
+<p>为了防止这种情况出现，我们就可以使用 Symbol。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// mod.js</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">FOO_KEY</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.foo </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #E1E4E8">global[</span><span style="color: #79B8FF">FOO_KEY</span><span style="color: #E1E4E8">]) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  global[</span><span style="color: #79B8FF">FOO_KEY</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">module</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">exports</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> global[</span><span style="color: #79B8FF">FOO_KEY</span><span style="color: #E1E4E8">];</span></span></code></pre>
+<p>上面代码中，可以保证<code>global[FOO_KEY]</code>不会被无意间覆盖，但还是可以被改写。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">global[Symbol.</span><span style="color: #B392F0">for</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">)] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #9ECBFF">"world"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">require</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"./mod.js"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>如果键名使用<code>Symbol</code>方法生成，那么外部将无法引用这个值，当然也就无法改写。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// mod.js</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">FOO_KEY</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 后面代码相同 ……</span></span></code></pre>
+<p>上面代码将导致其他脚本都无法引用<code>FOO_KEY</code>。但这样也有一个问题，就是如果多次执行这个脚本，每次得到的<code>FOO_KEY</code>都是不一样的。虽然 Node 会将脚本的执行结果缓存，一般情况下，不会多次执行同一个脚本，但是用户可以手动清除缓存，所以也不是绝对可靠。</p>
+<h2 id="内置的-symbol-值">内置的 Symbol 值</h2>
+<p>除了定义自己使用的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法。</p>
+<h3 id="symbolhasinstance">Symbol.hasInstance</h3>
+<p>对象的<code>Symbol.hasInstance</code>属性，指向一个内部方法。当其他对象使用<code>instanceof</code>运算符，判断是否为该对象的实例时，会调用这个方法。比如，<code>foo instanceof Foo</code>在语言内部，实际调用的是<code>Foo[Symbol.hasInstance](foo)</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyClass</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.hasInstance](</span><span style="color: #FFAB70">foo</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> foo </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyClass</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>MyClass</code>是一个类，<code>new MyClass()</code>会返回一个实例。该实例的<code>Symbol.hasInstance</code>方法，会在进行<code>instanceof</code>运算时自动调用，判断左侧的运算子是否为<code>Array</code>的实例。</p>
+<p>下面是另一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Even</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> [Symbol.hasInstance](</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Number</span><span style="color: #E1E4E8">(obj) </span><span style="color: #F97583">%</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Even</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.hasInstance](</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Number</span><span style="color: #E1E4E8">(obj) </span><span style="color: #F97583">%</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Even</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Even</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">12345</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Even</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span></code></pre>
+<h3 id="symbolisconcatspreadable">Symbol.isConcatSpreadable</h3>
+<p>对象的<code>Symbol.isConcatSpreadable</code>属性等于一个布尔值，表示该对象用于<code>Array.prototype.concat()</code>时，是否可以展开。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> arr1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"d"</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">].</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(arr1, </span><span style="color: #9ECBFF">"e"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ['a', 'b', 'c', 'd', 'e']</span></span>
+<span class="line"><span style="color: #E1E4E8">arr1[Symbol.isConcatSpreadable]; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> arr2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"d"</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #E1E4E8">arr2[Symbol.isConcatSpreadable] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">].</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(arr2, </span><span style="color: #9ECBFF">"e"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ['a', 'b', ['c','d'], 'e']</span></span></code></pre>
+<p>上面代码说明，数组的默认行为是可以展开，<code>Symbol.isConcatSpreadable</code>默认等于<code>undefined</code>。该属性等于<code>true</code>时，也有展开的效果。</p>
+<p>类似数组的对象正好相反，默认不展开。它的<code>Symbol.isConcatSpreadable</code>属性设为<code>true</code>，才可以展开。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { length: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"d"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">].</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(obj, </span><span style="color: #9ECBFF">"e"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ['a', 'b', obj, 'e']</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">obj[Symbol.isConcatSpreadable] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">].</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(obj, </span><span style="color: #9ECBFF">"e"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ['a', 'b', 'c', 'd', 'e']</span></span></code></pre>
+<p><code>Symbol.isConcatSpreadable</code>属性也可以定义在类里面。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(args);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[Symbol.isConcatSpreadable] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">args</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">super</span><span style="color: #E1E4E8">(args);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> [Symbol.isConcatSpreadable]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a1 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A1</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">a1[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">a1[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a2 </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">A2</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">a2[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">a2[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">6</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">].</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(a1).</span><span style="color: #B392F0">concat</span><span style="color: #E1E4E8">(a2);</span></span>
+<span class="line"><span style="color: #6A737D">// [1, 2, 3, 4, [5, 6]]</span></span></code></pre>
+<p>上面代码中，类<code>A1</code>是可展开的，类<code>A2</code>是不可展开的，所以使用<code>concat</code>时有不一样的结果。</p>
+<p>注意，<code>Symbol.isConcatSpreadable</code>的位置差异，<code>A1</code>是定义在实例上，<code>A2</code>是定义在类本身，效果相同。</p>
+<h3 id="symbolspecies">Symbol.species</h3>
+<p>对象的<code>Symbol.species</code>属性，指向一个构造函数。创建衍生对象时，会使用该属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">b</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> a.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">c</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> a.</span><span style="color: #B392F0">filter</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">b </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">c </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，子类<code>MyArray</code>继承了父类<code>Array</code>，<code>a</code>是<code>MyArray</code>的实例，<code>b</code>和<code>c</code>是<code>a</code>的衍生对象。你可能会认为，<code>b</code>和<code>c</code>都是调用数组方法生成的，所以应该是数组（<code>Array</code>的实例），但实际上它们也是<code>MyArray</code>的实例。</p>
+<p><code>Symbol.species</code>属性就是为了解决这个问题而提供的。现在，我们可以为<code>MyArray</code>设置<code>Symbol.species</code>属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> [Symbol.species]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Array;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，由于定义了<code>Symbol.species</code>属性，创建衍生对象时就会使用这个属性返回的函数，作为构造函数。这个例子也说明，定义<code>Symbol.species</code>属性要采用<code>get</code>取值器。默认的<code>Symbol.species</code>属性等同于下面的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">static get [Symbol.species]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>现在，再来看前面的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> [Symbol.species]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Array;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">b</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> a.</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">b </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyArray</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">b </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>a.map(x => x)</code>生成的衍生对象，就不是<code>MyArray</code>的实例，而直接就是<code>Array</code>的实例。</p>
+<p>再看一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">T1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">T2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">extends</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">static</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> [Symbol.species]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">T1</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">r</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">r</span><span style="color: #E1E4E8">()).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> v) </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">T1</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">T2</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">r</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">r</span><span style="color: #E1E4E8">()).</span><span style="color: #B392F0">then</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> v) </span><span style="color: #F97583">instanceof</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">T2</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码中，<code>T2</code>定义了<code>Symbol.species</code>属性，<code>T1</code>没有。结果就导致了创建衍生对象时（<code>then</code>方法），<code>T1</code>调用的是自身的构造方法，而<code>T2</code>调用的是<code>Promise</code>的构造方法。</p>
+<p>总之，<code>Symbol.species</code>的作用在于，实例对象在运行过程中，需要再次调用自身的构造函数时，会调用该属性指定的构造函数。它主要的用途是，有些类库是在基类的基础上修改的，那么子类使用继承的方法时，作者可能希望返回基类的实例，而不是子类的实例。</p>
+<h3 id="symbolmatch">Symbol.match</h3>
+<p>对象的<code>Symbol.match</code>属性，指向一个函数。当执行<code>str.match(myObject)</code>时，如果该属性存在，会调用它，返回该方法的返回值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">String</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(regexp);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">regexp[Symbol.match](</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyMatcher</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.match](</span><span style="color: #FFAB70">string</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"hello world"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">indexOf</span><span style="color: #E1E4E8">(string);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"e"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyMatcher</span><span style="color: #E1E4E8">()); </span><span style="color: #6A737D">// 1</span></span></code></pre>
+<h3 id="symbolreplace">Symbol.replace</h3>
+<p>对象的<code>Symbol.replace</code>属性，指向一个方法，当该对象被<code>String.prototype.replace</code>方法调用时，会返回该方法的返回值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">String</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">replace</span><span style="color: #E1E4E8">(searchValue, replaceValue);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">searchValue[Symbol.replace](</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, replaceValue);</span></span></code></pre>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">x</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">x[Symbol.replace] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">...</span><span style="color: #FFAB70">s</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(s);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"Hello"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">replace</span><span style="color: #E1E4E8">(x, </span><span style="color: #9ECBFF">"World"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ["Hello", "World"]</span></span></code></pre>
+<p><code>Symbol.replace</code>方法会收到两个参数，第一个参数是<code>replace</code>方法正在作用的对象，上面例子是<code>Hello</code>，第二个参数是替换后的值，上面例子是<code>World</code>。</p>
+<h3 id="symbolsearch">Symbol.search</h3>
+<p>对象的<code>Symbol.search</code>属性，指向一个方法，当该对象被<code>String.prototype.search</code>方法调用时，会返回该方法的返回值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">String</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">search</span><span style="color: #E1E4E8">(regexp);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">regexp[Symbol.search](</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MySearch</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.value </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> value;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.search](</span><span style="color: #FFAB70">string</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> string.</span><span style="color: #B392F0">indexOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #9ECBFF">"foobar"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">search</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MySearch</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">)); </span><span style="color: #6A737D">// 0</span></span></code></pre>
+<h3 id="symbolsplit">Symbol.split</h3>
+<p>对象的<code>Symbol.split</code>属性，指向一个方法，当该对象被<code>String.prototype.split</code>方法调用时，会返回该方法的返回值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">String</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">split</span><span style="color: #E1E4E8">(separator, limit);</span></span>
+<span class="line"><span style="color: #6A737D">// 等同于</span></span>
+<span class="line"><span style="color: #E1E4E8">separator[Symbol.split](</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, limit);</span></span></code></pre>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MySplitter</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.value </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> value;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.split](</span><span style="color: #FFAB70">string</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> index </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> string.</span><span style="color: #B392F0">indexOf</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.value);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (index </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">-</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> string;</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> [string.</span><span style="color: #B392F0">substr</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, index), string.</span><span style="color: #B392F0">substr</span><span style="color: #E1E4E8">(index </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.value.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">)];</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"foobar"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">split</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MySplitter</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// ['', 'bar']</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"foobar"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">split</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MySplitter</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// ['foo', '']</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"foobar"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">split</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MySplitter</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// 'foobar'</span></span></code></pre>
+<p>上面方法使用<code>Symbol.split</code>方法，重新定义了字符串对象的<code>split</code>方法的行为，</p>
+<h3 id="symboliterator">Symbol.iterator</h3>
+<p>对象的<code>Symbol.iterator</code>属性，指向该对象的默认遍历器方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myIterable</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #E1E4E8">myIterable[Symbol.iterator] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function*</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">myIterable]; </span><span style="color: #6A737D">// [1, 2, 3]</span></span></code></pre>
+<p>对象进行<code>for...of</code>循环时，会调用<code>Symbol.iterator</code>方法，返回该对象的默认遍历器，详细介绍参见《Iterator 和 for…of 循环》一章。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Collection</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">*</span><span style="color: #E1E4E8">[Symbol.iterator]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">while</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[i] </span><span style="color: #F97583">!==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">yield</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">[i];</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">++</span><span style="color: #E1E4E8">i;</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> myCollection </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Collection</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">myCollection[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">myCollection[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> value </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> myCollection) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #6A737D">// 2</span></span></code></pre>
+<h3 id="symboltoprimitive">Symbol.toPrimitive</h3>
+<p>对象的<code>Symbol.toPrimitive</code>属性，指向一个方法。该对象被转为原始类型的值时，会调用这个方法，返回该对象对应的原始类型值。</p>
+<p><code>Symbol.toPrimitive</code>被调用时，会接受一个字符串参数，表示当前运算的模式，一共有三种模式。</p>
+<ul>
+<li>Number：该场合需要转成数值</li>
+<li>String：该场合需要转成字符串</li>
+<li>Default：该场合可以转成数值，也可以转成字符串</li>
+</ul>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  [Symbol.toPrimitive](</span><span style="color: #FFAB70">hint</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">switch</span><span style="color: #E1E4E8"> (hint) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"number"</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"string"</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"str"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">case</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"default"</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"default"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">default</span><span style="color: #E1E4E8">:</span></span>
+<span class="line"><span style="color: #E1E4E8">        </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Error</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> obj; </span><span style="color: #6A737D">// 246</span></span>
+<span class="line"><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> obj; </span><span style="color: #6A737D">// '3default'</span></span>
+<span class="line"><span style="color: #E1E4E8">obj </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"default"</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #B392F0">String</span><span style="color: #E1E4E8">(obj); </span><span style="color: #6A737D">// 'str'</span></span></code></pre>
+<h3 id="symboltostringtag">Symbol.toStringTag</h3>
+<p>对象的<code>Symbol.toStringTag</code>属性，指向一个方法。在该对象上面调用<code>Object.prototype.toString</code>方法时，如果这个属性存在，它的返回值会出现在<code>toString</code>方法返回的字符串之中，表示对象的类型。也就是说，这个属性可以用来定制<code>[object Object]</code>或<code>[object Array]</code>中<code>object</code>后面的那个字符串。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 例一</span></span>
+<span class="line"><span style="color: #E1E4E8">({ [Symbol.toStringTag]: </span><span style="color: #9ECBFF">"Foo"</span><span style="color: #E1E4E8"> }.</span><span style="color: #B392F0">toString</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #6A737D">// "[object Foo]"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 例二</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Collection</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> [Symbol.toStringTag]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"xxx"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Collection</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #79B8FF">Object</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.toString.</span><span style="color: #B392F0">call</span><span style="color: #E1E4E8">(x); </span><span style="color: #6A737D">// "[object xxx]"</span></span></code></pre>
+<p>ES6 新增内置对象的<code>Symbol.toStringTag</code>属性值如下。</p>
+<ul>
+<li><code>JSON[Symbol.toStringTag]</code>：‘JSON’</li>
+<li><code>Math[Symbol.toStringTag]</code>：‘Math’</li>
+<li>Module 对象<code>M[Symbol.toStringTag]</code>：‘Module’</li>
+<li><code>ArrayBuffer.prototype[Symbol.toStringTag]</code>：‘ArrayBuffer’</li>
+<li><code>DataView.prototype[Symbol.toStringTag]</code>：‘DataView’</li>
+<li><code>Map.prototype[Symbol.toStringTag]</code>：‘Map’</li>
+<li><code>Promise.prototype[Symbol.toStringTag]</code>：‘Promise’</li>
+<li><code>Set.prototype[Symbol.toStringTag]</code>：‘Set’</li>
+<li><code>%TypedArray%.prototype[Symbol.toStringTag]</code>：‘Uint8Array’等</li>
+<li><code>WeakMap.prototype[Symbol.toStringTag]</code>：‘WeakMap’</li>
+<li><code>WeakSet.prototype[Symbol.toStringTag]</code>：‘WeakSet’</li>
+<li><code>%MapIteratorPrototype%[Symbol.toStringTag]</code>：‘Map Iterator’</li>
+<li><code>%SetIteratorPrototype%[Symbol.toStringTag]</code>：‘Set Iterator’</li>
+<li><code>%StringIteratorPrototype%[Symbol.toStringTag]</code>：‘String Iterator’</li>
+<li><code>Symbol.prototype[Symbol.toStringTag]</code>：‘Symbol’</li>
+<li><code>Generator.prototype[Symbol.toStringTag]</code>：‘Generator’</li>
+<li><code>GeneratorFunction.prototype[Symbol.toStringTag]</code>：‘GeneratorFunction’</li>
+</ul>
+<h3 id="symbolunscopables">Symbol.unscopables</h3>
+<p>对象的<code>Symbol.unscopables</code>属性，指向一个对象。该对象指定了使用<code>with</code>关键字时，哪些属性会被<code>with</code>环境排除。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">Array</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">[Symbol.unscopables];</span></span>
+<span class="line"><span style="color: #6A737D">// {</span></span>
+<span class="line"><span style="color: #6A737D">//   copyWithin: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   entries: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   fill: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   find: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   findIndex: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   includes: true,</span></span>
+<span class="line"><span style="color: #6A737D">//   keys: true</span></span>
+<span class="line"><span style="color: #6A737D">// }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">Object.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">Array</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">[Symbol.unscopables]);</span></span>
+<span class="line"><span style="color: #6A737D">// ['copyWithin', 'entries', 'fill', 'find', 'findIndex', 'includes', 'keys']</span></span></code></pre>
+<p>上面代码说明，数组有 7 个属性，会被<code>with</code>命令排除。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 没有 unscopables 时</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyClass</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">with</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">MyClass</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 有 unscopables 时</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">MyClass</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">get</span><span style="color: #E1E4E8"> [Symbol.unscopables]() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">with</span><span style="color: #E1E4E8"> (</span><span style="color: #79B8FF">MyClass</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">foo</span><span style="color: #E1E4E8">(); </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码通过指定<code>Symbol.unscopables</code>属性，使得<code>with</code>语法块不会在当前作用域寻找<code>foo</code>属性，即<code>foo</code>将指向外层作用域的变量。</p>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

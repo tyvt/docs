@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/Set%20%E5%92%8C%20Map%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="Set 和 Map 数据结构 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/Set%20%E5%92%8C%20Map%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			Set 和 Map 数据结构 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">Set 和 Map 数据结构</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="set">Set</h2>
+<h3 id="基本用法">基本用法</h3>
+<p>ES6 提供了新的数据结构 Set。它<strong>类似于数组，但是成员的值都是唯一的，没有重复的值</strong>。</p>
+<p><strong><code>Set</code>本身是一个构造函数，用来生成 Set 数据结构</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">s</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">].</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> s.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(x));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> s) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(i);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// 2 3 5 4</span></span></code></pre>
+<!-- more -->
+<p>上面代码通过<code>add()</code>方法向 Set 结构加入成员，结果表明 Set 结构不会添加重复的值。</p>
+<p><strong><code>Set</code>函数可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数，用来初始化</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 例一</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">set</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">set];</span></span>
+<span class="line"><span style="color: #6A737D">// [1, 2, 3, 4]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 例二</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">items</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">items.size; </span><span style="color: #6A737D">// 5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 例三</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">set</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">(document.</span><span style="color: #B392F0">querySelectorAll</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"div"</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #E1E4E8">set.size; </span><span style="color: #6A737D">// 56</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 类似于</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">set</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">document.</span><span style="color: #B392F0">querySelectorAll</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"div"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">div</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> set.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(div));</span></span>
+<span class="line"><span style="color: #E1E4E8">set.size; </span><span style="color: #6A737D">// 56</span></span></code></pre>
+<p>上面代码中，例一和例二都是<code>Set</code>函数接受数组作为参数，例三是接受类似数组的对象作为参数。</p>
+<p>上面代码也展示了一种<strong>去除数组重复成员</strong>的方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 去除数组的重复成员</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">(array)];</span></span></code></pre>
+<p>上面的方法也可以用于，<strong>去除字符串里面的重复字符</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"ababbc"</span><span style="color: #E1E4E8">)].</span><span style="color: #B392F0">join</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">""</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// "abc"</span></span></code></pre>
+<p>向 Set 加入值的时候，不会发生类型转换，所以<code>5</code>和<code>"5"</code>是两个不同的值。Set 内部判断两个值是否不同，使用的算法叫做“Same-value-zero equality”，它类似于精确相等运算符（<code>===</code>），主要的区别是向 Set 加入值时认为<code>NaN</code>等于自身，而精确相等运算符认为<code>NaN</code>不等于自身。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">set.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(a);</span></span>
+<span class="line"><span style="color: #E1E4E8">set.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(b);</span></span>
+<span class="line"><span style="color: #E1E4E8">set; </span><span style="color: #6A737D">// Set {NaN}</span></span></code></pre>
+<p>上面代码向 Set 实例添加了两次<code>NaN</code>，但是只会加入一个。这表明，在 Set 内部，两个<code>NaN</code>是相等的。</p>
+<p>另外，<strong>两个对象总是不相等</strong>的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">set.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">({});</span></span>
+<span class="line"><span style="color: #E1E4E8">set.size; </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">set.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">({});</span></span>
+<span class="line"><span style="color: #E1E4E8">set.size; </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p>上面代码表示，由于两个空对象不相等，所以它们被视为两个值。</p>
+<h3 id="set-实例的属性和方法">Set 实例的属性和方法</h3>
+<p>Set 结构的实例有以下属性。</p>
+<ul>
+<li><code>Set.prototype.constructor</code>：构造函数，默认就是<code>Set</code>函数。</li>
+<li><code>Set.prototype.size</code>：返回<code>Set</code>实例的成员总数。</li>
+</ul>
+<p>Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。</p>
+<ul>
+<li><code>Set.prototype.add(value)</code>：添加某个值，返回 Set 结构本身。</li>
+<li><code>Set.prototype.delete(value)</code>：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+<li><code>Set.prototype.has(value)</code>：返回一个布尔值，表示该值是否为<code>Set</code>的成员。</li>
+<li><code>Set.prototype.clear()</code>：清除所有成员，没有返回值。</li>
+</ul>
+<p>上面这些属性和方法的实例如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// 注意2被加入了两次</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s.size; </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #B392F0">delete</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>下面是一个对比，看看在判断是否包括一个键上面，<code>Object</code>结构和<code>Set</code>结构的写法不同。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 对象的写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">properties</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  width: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  height: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (properties[someName]) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// do something</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// Set的写法</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">properties</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">properties.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"width"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">properties.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"height"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (properties.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(someName)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// do something</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p><code>Array.from</code>方法可以将 Set 结构转为数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">items</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">array</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Array.</span><span style="color: #B392F0">from</span><span style="color: #E1E4E8">(items);</span></span></code></pre>
+<p>这就提供了去除数组重复成员的另一种方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">dedupe</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">array</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> Array.</span><span style="color: #B392F0">from</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">(array));</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">dedupe</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]); </span><span style="color: #6A737D">// [1, 2, 3]</span></span></code></pre>
+<h3 id="遍历操作">遍历操作</h3>
+<p>Set 结构的实例有四个遍历方法，可以用于遍历成员。</p>
+<ul>
+<li><code>Set.prototype.keys()</code>：返回键名的遍历器</li>
+<li><code>Set.prototype.values()</code>：返回键值的遍历器</li>
+<li><code>Set.prototype.entries()</code>：返回键值对的遍历器</li>
+<li><code>Set.prototype.forEach()</code>：使用回调函数遍历每个成员</li>
+</ul>
+<p>需要特别指出的是，<strong><code>Set</code>的遍历顺序就是插入顺序</strong>。这个特性有时非常有用，比如使用 Set 保存一个回调函数列表，调用时就能保证按照添加顺序调用。</p>
+<p><strong>（1）<code>keys()</code>，<code>values()</code>，<code>entries()</code></strong></p>
+<p><code>keys</code>方法、<code>values</code>方法、<code>entries</code>方法返回的都是遍历器对象（详见《Iterator 对象》一章）。由于 Set 结构没有键名，只有键值（或者说键名和键值是同一个值），<strong>所以<code>keys</code>方法和<code>values</code>方法的行为完全一致</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"red"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"green"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"blue"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> item </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> set.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(item);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// red</span></span>
+<span class="line"><span style="color: #6A737D">// green</span></span>
+<span class="line"><span style="color: #6A737D">// blue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> item </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> set.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(item);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// red</span></span>
+<span class="line"><span style="color: #6A737D">// green</span></span>
+<span class="line"><span style="color: #6A737D">// blue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> item </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> set.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(item);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// ["red", "red"]</span></span>
+<span class="line"><span style="color: #6A737D">// ["green", "green"]</span></span>
+<span class="line"><span style="color: #6A737D">// ["blue", "blue"]</span></span></code></pre>
+<p>上面代码中，<code>entries</code>方法返回的遍历器，同时包括键名和键值，所以每次输出一个数组，它的两个成员完全相等。</p>
+<p>Set 结构的实例默认可遍历，它的默认遍历器生成函数就是它的<code>values</code>方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #79B8FF">Set</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">[Symbol.iterator] </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Set</span><span style="color: #E1E4E8">.</span><span style="color: #79B8FF">prototype</span><span style="color: #E1E4E8">.values;</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span></code></pre>
+<p>这意味着，可以<strong>省略<code>values</code>方法，直接用<code>for...of</code>循环遍历 Set</strong>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"red"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"green"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"blue"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> set) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(x);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// red</span></span>
+<span class="line"><span style="color: #6A737D">// green</span></span>
+<span class="line"><span style="color: #6A737D">// blue</span></span></code></pre>
+<p><strong>（2）<code>forEach()</code></strong></p>
+<p>Set 结构的实例与数组一样，也拥有<code>forEach</code>方法，用于对每个成员执行某种操作，没有返回值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">9</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">set.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(key </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">" : "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> value));</span></span>
+<span class="line"><span style="color: #6A737D">// 1 : 1</span></span>
+<span class="line"><span style="color: #6A737D">// 4 : 4</span></span>
+<span class="line"><span style="color: #6A737D">// 9 : 9</span></span></code></pre>
+<p>上面代码说明，<code>forEach</code>方法的参数就是一个处理函数。该函数的参数与数组的<code>forEach</code>一致，依次为键值、键名、集合本身（上例省略了该参数）。这里需要注意，Set 结构的键名就是键值（两者是同一个值），因此第一个参数与第二个参数的值永远都是一样的。</p>
+<p>另外，<code>forEach</code>方法还可以有第二个参数，表示绑定处理函数内部的<code>this</code>对象。</p>
+<p><strong>（3）遍历的应用</strong></p>
+<p>扩展运算符（<code>...</code>）内部使用<code>for...of</code>循环，所以也可以用于 Set 结构。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"red"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"green"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"blue"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> arr </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">set];</span></span>
+<span class="line"><span style="color: #6A737D">// ['red', 'green', 'blue']</span></span></code></pre>
+<p>扩展运算符和 Set 结构相结合，就可以去除数组的重复成员。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> arr </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> unique </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #F97583">...new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">(arr)];</span></span>
+<span class="line"><span style="color: #6A737D">// [3, 5, 2]</span></span></code></pre>
+<p>而且，数组的<code>map</code>和<code>filter</code>方法也可以间接用于 Set 了。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">set].</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// 返回Set结构：{2, 4, 6}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">set].</span><span style="color: #B392F0">filter</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> x </span><span style="color: #F97583">%</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">==</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// 返回Set结构：{2, 4}</span></span></code></pre>
+<p>因此使用 Set 可以很容易地实现并集（Union）、交集（Intersect）和差集（Difference）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> a </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> b </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 并集</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> union </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a, </span><span style="color: #F97583">...</span><span style="color: #E1E4E8">b]);</span></span>
+<span class="line"><span style="color: #6A737D">// Set {1, 2, 3, 4}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 交集</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> intersect </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a].</span><span style="color: #B392F0">filter</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> b.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(x)));</span></span>
+<span class="line"><span style="color: #6A737D">// set {2, 3}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 差集</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> difference </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">a].</span><span style="color: #B392F0">filter</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">x</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> </span><span style="color: #F97583">!</span><span style="color: #E1E4E8">b.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(x)));</span></span>
+<span class="line"><span style="color: #6A737D">// Set {1}</span></span></code></pre>
+<p>如果想在遍历操作中，同步改变原来的 Set 结构，目前没有直接的方法，但有两种变通方法。一种是利用原 Set 结构映射出一个新的结构，然后赋值给原来的 Set 结构；另一种是利用<code>Array.from</code>方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 方法一</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">set].</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">val</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> val </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// set的值是2, 4, 6</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 方法二</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">set </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">(Array.</span><span style="color: #B392F0">from</span><span style="color: #E1E4E8">(set, (</span><span style="color: #FFAB70">val</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> val </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// set的值是2, 4, 6</span></span></code></pre>
+<p>上面代码提供了两种方法，直接在遍历操作中改变原来的 Set 结构。</p>
+<h2 id="weakset">WeakSet</h2>
+<h3 id="含义">含义</h3>
+<p>WeakSet 结构与 Set 类似，也是<strong>不重复的值的集合</strong>。但是，它与 Set 有两个区别。</p>
+<p>首先，<strong>WeakSet 的成员只能是对象</strong>，而不能是其他类型的值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ws</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakSet</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Invalid value used in weak set</span></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">());</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: invalid value used in weak set</span></span></code></pre>
+<p>上面代码试图向 WeakSet 添加一个数值和<code>Symbol</code>值，结果报错，因为 WeakSet 只能放置对象。</p>
+<p>其次，<strong>WeakSet 中的对象都是弱引用</strong>，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。</p>
+<p>这是因为垃圾回收机制依赖引用计数，如果一个值的引用次数不为<code>0</code>，垃圾回收机制就不会释放这块内存。结束使用该值之后，有时会忘记取消引用，导致内存无法释放，进而可能会引发内存泄漏。WeakSet 里面的引用，都不计入垃圾回收机制，所以就不存在这个问题。因此，<strong>WeakSet 适合临时存放一组对象，以及存放跟对象绑定的信息</strong>。只要这些对象在外部消失，它在 WeakSet 里面的引用就会自动消失。</p>
+<p>由于上面这个特点，<strong>WeakSet 的成员是不适合引用的，因为它会随时消失</strong>。另外，由于 WeakSet 内部有多少个成员，取决于垃圾回收机制有没有运行，运行前后很可能成员个数是不一样的，而垃圾回收机制何时运行是不可预测的，因此 <strong>ES6 规定 WeakSet 不可遍历</strong>。</p>
+<p>这些特点同样适用于本章后面要介绍的 WeakMap 结构。</p>
+<h3 id="语法">语法</h3>
+<p>WeakSet 是一个构造函数，可以使用<code>new</code>命令，创建 WeakSet 数据结构。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ws</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakSet</span><span style="color: #E1E4E8">();</span></span></code></pre>
+<p>作为构造函数，<strong>WeakSet 可以接受一个数组或类似数组的对象作为参数</strong>。（实际上，任何具有 Iterable 接口的对象，都可以作为 WeakSet 的参数。）该数组的所有成员，都会自动成为 WeakSet 实例对象的成员。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">a</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ws</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakSet</span><span style="color: #E1E4E8">(a);</span></span>
+<span class="line"><span style="color: #6A737D">// WeakSet {[1, 2], [3, 4]}</span></span></code></pre>
+<p>上面代码中，<code>a</code>是一个数组，它有两个成员，也都是数组。将<code>a</code>作为 WeakSet 构造函数的参数，<code>a</code>的成员会自动成为 WeakSet 的成员。</p>
+<p><strong>注意，是<code>a</code>数组的成员成为 WeakSet 的成员，而不是<code>a</code>数组本身。这意味着，数组的成员只能是对象。</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">b</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ws</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakSet</span><span style="color: #E1E4E8">(b);</span></span>
+<span class="line"><span style="color: #6A737D">// Uncaught TypeError: Invalid value used in weak set(…)</span></span></code></pre>
+<p>上面代码中，数组<code>b</code>的成员不是对象，加入 WeakSet 就会报错。</p>
+<p>WeakSet 结构有以下三个方法。</p>
+<ul>
+<li><strong>WeakSet.prototype.add(value)</strong>：向 WeakSet 实例添加一个新成员。</li>
+<li><strong>WeakSet.prototype.delete(value)</strong>：清除 WeakSet 实例的指定成员。</li>
+<li><strong>WeakSet.prototype.has(value)</strong>：返回一个布尔值，表示某个值是否在 WeakSet 实例之中。</li>
+</ul>
+<p>下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">ws</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakSet</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">obj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">foo</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(window);</span></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(obj);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(window); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(foo); </span><span style="color: #6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">delete</span><span style="color: #E1E4E8">(window);</span></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(window); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p><strong>WeakSet 没有<code>size</code>属性</strong>，没有办法遍历它的成员。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">ws.size; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #E1E4E8">ws.forEach; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">ws.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">item</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"WeakSet has "</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> item);</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: undefined is not a function</span></span></code></pre>
+<p>上面代码试图获取<code>size</code>和<code>forEach</code>属性，结果都不能成功。</p>
+<p>WeakSet 不能遍历，是因为成员都是弱引用，随时可能消失，遍历机制无法保证成员的存在，很可能刚刚遍历结束，成员就取不到了。WeakSet 的一个用处，是储存 DOM 节点，而不用担心这些节点从文档移除时，会引发内存泄漏。</p>
+<p>下面是 WeakSet 的另一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">foos</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakSet</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Foo</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    foos.</span><span style="color: #B392F0">add</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">method</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">!</span><span style="color: #E1E4E8">foos.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">throw</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">TypeError</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Foo.prototype.method 只能在Foo的实例上调用！"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码保证了<code>Foo</code>的实例方法，只能在<code>Foo</code>的实例上调用。这里使用 WeakSet 的好处是，<code>foos</code>对实例的引用，不会被计入内存回收机制，所以删除实例的时候，不用考虑<code>foos</code>，也不会出现内存泄漏。</p>
+<h2 id="map">Map</h2>
+<h3 id="含义和基本用法">含义和基本用法</h3>
+<p>JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">element</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">getElementById</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"myDiv"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">data[element] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"metadata"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">data[</span><span style="color: #9ECBFF">"[object HTMLDivElement]"</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// "metadata"</span></span></code></pre>
+<p>上面代码原意是将一个 DOM 节点作为对象<code>data</code>的键，但是由于对象只接受字符串作为键名，所以<code>element</code>被自动转为字符串<code>[object HTMLDivElement]</code>。</p>
+<p>为了解决这个问题，ES6 提供了 <strong>Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键</strong>。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">o</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { p: </span><span style="color: #9ECBFF">"Hello World"</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(o, </span><span style="color: #9ECBFF">"content"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(o); </span><span style="color: #6A737D">// "content"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(o); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">delete</span><span style="color: #E1E4E8">(o); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(o); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码使用 Map 结构的<code>set</code>方法，将对象<code>o</code>当作<code>m</code>的一个键，然后又使用<code>get</code>方法读取这个键，接着使用<code>delete</code>方法删除了这个键。</p>
+<p>上面的例子展示了如何向 Map 添加成员。作为构造函数，Map 也可以接受一个数组作为参数。该数组的成员是一个个表示键值对的数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"name"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"张三"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"title"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"Author"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.size; </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"name"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"name"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// "张三"</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"title"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"title"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// "Author"</span></span></code></pre>
+<p>上面代码在新建 Map 实例时，就指定了两个键<code>name</code>和<code>title</code>。</p>
+<p><code>Map</code>构造函数接受数组作为参数，实际上执行的是下面的算法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">items</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"name"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"张三"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"title"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"Author"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">items.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">(([</span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">]) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(key, value));</span></span></code></pre>
+<p>事实上，不仅仅是数组，任何具有 Iterator 接口、且每个成员都是一个双元素的数组的数据结构（详见《Iterator》一章）都可以当作<code>Map</code>构造函数的参数。这就是说，<code>Set</code>和<code>Map</code>都可以用来生成新的 Map。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">set</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Set</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">(set);</span></span>
+<span class="line"><span style="color: #E1E4E8">m1.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([[</span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]]);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m3</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">(m2);</span></span>
+<span class="line"><span style="color: #E1E4E8">m3.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"baz"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 3</span></span></code></pre>
+<p>上面代码中，我们分别使用 Set 对象和 Map 对象，当作<code>Map</code>构造函数的参数，结果都生成了新的 Map 对象。</p>
+<p>如果对同一个键多次赋值，后面的值将覆盖前面的值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"aaa"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"bbb"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// "bbb"</span></span></code></pre>
+<p>上面代码对键<code>1</code>连续赋值两次，后一次的值覆盖前一次的值。</p>
+<p>如果读取一个未知的键，则返回<code>undefined</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"asfddfsasadf"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// undefined</span></span></code></pre>
+<p>注意，<strong>只有对同一个对象的引用，Map 结构才将其视为同一个键</strong>。这一点要非常小心。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">], </span><span style="color: #79B8FF">555</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">([</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">]); </span><span style="color: #6A737D">// undefined</span></span></code></pre>
+<p>上面代码的<code>set</code>和<code>get</code>方法，表面是针对同一个键，但实际上这是两个不同的数组实例，内存地址是不一样的，因此<code>get</code>方法无法读取该键，返回<code>undefined</code>。</p>
+<p>同理，同样的值的两个实例，在 Map 结构中被视为两个键。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">k1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">k2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(k1, </span><span style="color: #79B8FF">111</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(k2, </span><span style="color: #79B8FF">222</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(k1); </span><span style="color: #6A737D">// 111</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(k2); </span><span style="color: #6A737D">// 222</span></span></code></pre>
+<p>上面代码中，变量<code>k1</code>和<code>k2</code>的值是一样的，但是它们在 Map 结构中被视为两个键。</p>
+<p>由上可知，<strong>Map 的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键</strong>。这就解决了同名属性碰撞（clash）的问题，我们扩展别人的库的时候，如果使用对象作为键名，就不用担心自己的属性与原作者的属性同名。</p>
+<p>如果 Map 的键是一个简单类型的值（数字、字符串、布尔值），则只要两个值严格相等，Map 将其视为一个键，比如<code>0</code>和<code>-0</code>就是一个键，布尔值<code>true</code>和字符串<code>true</code>则是两个不同的键。另外，<code>undefined</code>和<code>null</code>也是两个不同的键。虽然<code>NaN</code>不严格相等于自身，但 Map 将其视为同一个键。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> map </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">-</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">+</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 123</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"true"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">123</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">NaN</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 123</span></span></code></pre>
+<h3 id="实例的属性和操作方法">实例的属性和操作方法</h3>
+<p>Map 结构的实例有以下属性和操作方法。</p>
+<p><strong>（1）size 属性</strong></p>
+<p><code>size</code>属性返回 Map 结构的成员总数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.size; </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p><strong>（2）Map.prototype.set(key, value)</strong></p>
+<p><code>set</code>方法设置键名<code>key</code>对应的键值为<code>value</code>，然后返回整个 Map 结构。如果<code>key</code>已经有值，则键值会被更新，否则就新生成该键。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"edition"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">6</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 键是字符串</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">262</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"standard"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 键是数值</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"nah"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 键是 undefined</span></span></code></pre>
+<p><code>set</code>方法返回的是当前的<code>Map</code>对象，因此可以采用链式写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> map </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">);</span></span></code></pre>
+<p><strong>（3）Map.prototype.get(key)</strong></p>
+<p><code>get</code>方法读取<code>key</code>对应的键值，如果找不到<code>key</code>，返回<code>undefined</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">hello</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"hello"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(hello, </span><span style="color: #9ECBFF">"Hello ES6!"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// 键是函数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(hello); </span><span style="color: #6A737D">// Hello ES6!</span></span></code></pre>
+<p><strong>（4）Map.prototype.has(key)</strong></p>
+<p><code>has</code>方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"edition"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">6</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">262</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"standard"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"nah"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"edition"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"years"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">262</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p><strong>（5）Map.prototype.delete(key)</strong></p>
+<p><code>delete</code>方法删除某个键，返回<code>true</code>。如果删除失败，返回<code>false</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">m</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"nah"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">delete</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">m.</span><span style="color: #B392F0">has</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p><strong>（6）Map.prototype.clear()</strong></p>
+<p><code>clear</code>方法清除所有成员，没有返回值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> map </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.size; </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">clear</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">map.size; </span><span style="color: #6A737D">// 0</span></span></code></pre>
+<h3 id="遍历方法">遍历方法</h3>
+<p>Map 结构原生提供三个遍历器生成函数和一个遍历方法。</p>
+<ul>
+<li><code>Map.prototype.keys()</code>：返回键名的遍历器。</li>
+<li><code>Map.prototype.values()</code>：返回键值的遍历器。</li>
+<li><code>Map.prototype.entries()</code>：返回所有成员的遍历器。</li>
+<li><code>Map.prototype.forEach()</code>：遍历 Map 的所有成员。</li>
+</ul>
+<p>需要特别注意的是，Map 的遍历顺序就是插入顺序。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"F"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"no"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #9ECBFF">"T"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"yes"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> map.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(key);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// "F"</span></span>
+<span class="line"><span style="color: #6A737D">// "T"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> value </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> map.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// "no"</span></span>
+<span class="line"><span style="color: #6A737D">// "yes"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> item </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> map.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(item[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">], item[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// "F" "no"</span></span>
+<span class="line"><span style="color: #6A737D">// "T" "yes"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 或者</span></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> [key, value] </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> map.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">()) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(key, value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// "F" "no"</span></span>
+<span class="line"><span style="color: #6A737D">// "T" "yes"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 等同于使用map.entries()</span></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> [key, value] </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> map) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(key, value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// "F" "no"</span></span>
+<span class="line"><span style="color: #6A737D">// "T" "yes"</span></span></code></pre>
+<p>上面代码最后的那个例子，表示 Map 结构的默认遍历器接口（<code>Symbol.iterator</code>属性），就是<code>entries</code>方法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">map[Symbol.iterator] </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> map.entries;</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span></code></pre>
+<p>Map 结构转为数组结构，比较快速的方法是使用扩展运算符（<code>...</code>）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">'one'</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">'two'</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">'three'</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">()]</span></span>
+<span class="line"><span style="color: #6A737D">// [1, 2, 3]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">values</span><span style="color: #E1E4E8">()]</span></span>
+<span class="line"><span style="color: #6A737D">// ['one', 'two', 'three']</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">entries</span><span style="color: #E1E4E8">()]</span></span>
+<span class="line"><span style="color: #6A737D">// [[1,'one'], [2, 'two'], [3, 'three']]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map]</span></span>
+<span class="line"><span style="color: #6A737D">// [[1,'one'], [2, 'two'], [3, 'three']]</span></span></code></pre>
+<p>结合数组的<code>map</code>方法、<code>filter</code>方法，可以实现 Map 的遍历和过滤（Map 本身没有<code>map</code>和<code>filter</code>方法）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map0</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"b"</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"c"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map0].</span><span style="color: #B392F0">filter</span><span style="color: #E1E4E8">(([</span><span style="color: #FFAB70">k</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">]) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> k </span><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"><span style="color: #6A737D">// 产生 Map 结构 {1 => 'a', 2 => 'b'}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map0].</span><span style="color: #B392F0">map</span><span style="color: #E1E4E8">(([</span><span style="color: #FFAB70">k</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">v</span><span style="color: #E1E4E8">]) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> [k </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"_"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">+</span><span style="color: #E1E4E8"> v]));</span></span>
+<span class="line"><span style="color: #6A737D">// 产生 Map 结构 {2 => '_a', 4 => '_b', 6 => '_c'}</span></span></code></pre>
+<p>此外，Map 还有一个<code>forEach</code>方法，与数组的<code>forEach</code>方法类似，也可以实现遍历。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">map</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Key: %s, Value: %s"</span><span style="color: #E1E4E8">, key, value);</span></span>
+<span class="line"><span style="color: #E1E4E8">});</span></span></code></pre>
+<p><code>forEach</code>方法还可以接受第二个参数，用来绑定<code>this</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">reporter</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">report</span><span style="color: #E1E4E8">: </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Key: %s, Value: %s"</span><span style="color: #E1E4E8">, key, value);</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">forEach</span><span style="color: #E1E4E8">(</span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> (</span><span style="color: #FFAB70">value</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">key</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">map</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">report</span><span style="color: #E1E4E8">(key, value);</span></span>
+<span class="line"><span style="color: #E1E4E8">}, reporter);</span></span></code></pre>
+<p>上面代码中，<code>forEach</code>方法的回调函数的<code>this</code>，就指向<code>reporter</code>。</p>
+<h3 id="与其他数据结构的互相转换">与其他数据结构的互相转换</h3>
+<p><strong>（1）Map 转为数组</strong></p>
+<p>前面已经提过，Map 转为数组最方便的方法，就是使用扩展运算符（<code>...</code>）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myMap</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">({ foo: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> }, [</span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">myMap];</span></span>
+<span class="line"><span style="color: #6A737D">// [ [ true, 7 ], [ { foo: 3 }, [ 'abc' ] ] ]</span></span></code></pre>
+<p><strong>（2）数组 转为 Map</strong></p>
+<p>将数组传入 Map 构造函数，就可以转为 Map。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [{ foo: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> }, [</span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">]],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #6A737D">// Map {</span></span>
+<span class="line"><span style="color: #6A737D">//   true => 7,</span></span>
+<span class="line"><span style="color: #6A737D">//   Object {foo: 3} => ['abc']</span></span>
+<span class="line"><span style="color: #6A737D">// }</span></span></code></pre>
+<p><strong>（3）Map 转为对象</strong></p>
+<p>如果所有 Map 的键都是字符串，它可以无损地转为对象。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">strMapToObj</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">strMap</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">create</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> [k, v] </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> strMap) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    obj[k] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> v;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> obj;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">myMap</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"yes"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"no"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #B392F0">strMapToObj</span><span style="color: #E1E4E8">(myMap);</span></span>
+<span class="line"><span style="color: #6A737D">// { yes: true, no: false }</span></span></code></pre>
+<p>如果有非字符串的键名，那么这个键名会被转成字符串，再作为对象的键名。</p>
+<p><strong>（4）对象转为 Map</strong></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">objToStrMap</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">obj</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> strMap </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> k </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> Object.</span><span style="color: #B392F0">keys</span><span style="color: #E1E4E8">(obj)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    strMap.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(k, obj[k]);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> strMap;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">objToStrMap</span><span style="color: #E1E4E8">({ yes: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">, no: </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"><span style="color: #6A737D">// Map {"yes" => true, "no" => false}</span></span></code></pre>
+<p><strong>（5）Map 转为 JSON</strong></p>
+<p>Map 转为 JSON 要区分两种情况。一种情况是，Map 的键名都是字符串，这时可以选择转为对象 JSON。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">strMapToJson</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">strMap</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">JSON</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">stringify</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">strMapToObj</span><span style="color: #E1E4E8">(strMap));</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> myMap </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"yes"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"no"</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">false</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #B392F0">strMapToJson</span><span style="color: #E1E4E8">(myMap);</span></span>
+<span class="line"><span style="color: #6A737D">// '{"yes":true,"no":false}'</span></span></code></pre>
+<p>另一种情况是，Map 的键名有非字符串，这时可以选择转为数组 JSON。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">mapToArrayJson</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">map</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">JSON</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">stringify</span><span style="color: #E1E4E8">([</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">map]);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> myMap </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">().</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">7</span><span style="color: #E1E4E8">).</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">({ foo: </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8"> }, [</span><span style="color: #9ECBFF">"abc"</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #B392F0">mapToArrayJson</span><span style="color: #E1E4E8">(myMap);</span></span>
+<span class="line"><span style="color: #6A737D">// '[[true,7],[{"foo":3},["abc"]]]'</span></span></code></pre>
+<p><strong>（6）JSON 转为 Map</strong></p>
+<p>JSON 转为 Map，正常情况下，所有键名都是字符串。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">jsonToStrMap</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">jsonStr</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">objToStrMap</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">JSON</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">parse</span><span style="color: #E1E4E8">(jsonStr));</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">jsonToStrMap</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'{"yes": true, "no": false}'</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// Map {'yes' => true, 'no' => false}</span></span></code></pre>
+<p>但是，有一种特殊情况，整个 JSON 就是一个数组，且每个数组成员本身，又是一个有两个成员的数组。这时，它可以一一对应地转为 Map。这往往是 Map 转为数组 JSON 的逆操作。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">jsonToMap</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">jsonStr</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Map</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">JSON</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">parse</span><span style="color: #E1E4E8">(jsonStr));</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">jsonToMap</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'[[true,7],[{"foo":3},["abc"]]]'</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// Map {true => 7, Object {foo: 3} => ['abc']}</span></span></code></pre>
+<h2 id="weakmap">WeakMap</h2>
+<h3 id="含义-1">含义</h3>
+<p><code>WeakMap</code>结构与<code>Map</code>结构类似，也是用于生成键值对的集合。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// WeakMap 可以使用 set 方法添加成员</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">wm1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">key</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"><span style="color: #E1E4E8">wm1.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(key, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">wm1.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(key); </span><span style="color: #6A737D">// 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// WeakMap 也可以接受一个数组，</span></span>
+<span class="line"><span style="color: #6A737D">// 作为构造函数的参数</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">k1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">k2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">4</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">6</span><span style="color: #E1E4E8">];</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">wm2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">([</span></span>
+<span class="line"><span style="color: #E1E4E8">  [k1, </span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [k2, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">wm2.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(k2); </span><span style="color: #6A737D">// "bar"</span></span></code></pre>
+<p><code>WeakMap</code>与<code>Map</code>的区别有两点。</p>
+<p>首先，<code>WeakMap</code>只接受对象作为键名（<code>null</code>除外），不接受其他类型的值作为键名。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">map</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: 1 is not an object!</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #B392F0">Symbol</span><span style="color: #E1E4E8">(), </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Invalid value used as weak map key</span></span>
+<span class="line"><span style="color: #E1E4E8">map.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// TypeError: Invalid value used as weak map key</span></span></code></pre>
+<p>上面代码中，如果将数值<code>1</code>和<code>Symbol</code>值作为 WeakMap 的键名，都会报错。</p>
+<p>其次，<code>WeakMap</code>的键名所指向的对象，不计入垃圾回收机制。</p>
+<p><code>WeakMap</code>的设计目的在于，有时我们想在某个对象上面存放一些数据，但是这会形成对于这个对象的引用。请看下面的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">e1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">getElementById</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">e2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">getElementById</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">arr</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [</span></span>
+<span class="line"><span style="color: #E1E4E8">  [e1, </span><span style="color: #9ECBFF">"foo 元素"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">  [e2, </span><span style="color: #9ECBFF">"bar 元素"</span><span style="color: #E1E4E8">],</span></span>
+<span class="line"><span style="color: #E1E4E8">];</span></span></code></pre>
+<p>上面代码中，<code>e1</code>和<code>e2</code>是两个对象，我们通过<code>arr</code>数组对这两个对象添加一些文字说明。这就形成了<code>arr</code>对<code>e1</code>和<code>e2</code>的引用。</p>
+<p>一旦不再需要这两个对象，我们就必须手动删除这个引用，否则垃圾回收机制就不会释放<code>e1</code>和<code>e2</code>占用的内存。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 不需要 e1 和 e2 的时候</span></span>
+<span class="line"><span style="color: #6A737D">// 必须手动删除引用</span></span>
+<span class="line"><span style="color: #E1E4E8">arr[</span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">arr[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>上面这样的写法显然很不方便。一旦忘了写，就会造成内存泄露。</p>
+<p>WeakMap 就是为了解决这个问题而诞生的，它的键名所引用的对象都是弱引用，即垃圾回收机制不将该引用考虑在内。因此，只要所引用的对象的其他引用都被清除，垃圾回收机制就会释放该对象所占用的内存。也就是说，一旦不再需要，WeakMap 里面的键名对象和所对应的键值对会自动消失，不用手动删除引用。</p>
+<p>基本上，如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。一个典型应用场景是，在网页的 DOM 元素上添加数据，就可以使用<code>WeakMap</code>结构。当该 DOM 元素被清除，其所对应的<code>WeakMap</code>记录就会自动被移除。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">wm</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">element</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">getElementById</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"example"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">wm.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(element, </span><span style="color: #9ECBFF">"some information"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">wm.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(element); </span><span style="color: #6A737D">// "some information"</span></span></code></pre>
+<p>上面代码中，先新建一个 Weakmap 实例。然后，将一个 DOM 节点作为键名存入该实例，并将一些附加信息作为键值，一起存放在 WeakMap 里面。这时，WeakMap 里面对<code>element</code>的引用就是弱引用，不会被计入垃圾回收机制。</p>
+<p>也就是说，上面的 DOM 节点对象的引用计数是<code>1</code>，而不是<code>2</code>。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。Weakmap 保存的这个键值对，也会自动消失。</p>
+<p>总之，<code>WeakMap</code>的专用场合就是，它的键所对应的对象，可能会在将来消失。<code>WeakMap</code>结构有助于防止内存泄漏。</p>
+<p>注意，WeakMap 弱引用的只是键名，而不是键值。键值依然是正常引用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">wm</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> {};</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { foo: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">wm.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(key, obj);</span></span>
+<span class="line"><span style="color: #E1E4E8">obj </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">wm.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(key);</span></span>
+<span class="line"><span style="color: #6A737D">// Object {foo: 1}</span></span></code></pre>
+<p>上面代码中，键值<code>obj</code>是正常引用。所以，即使在 WeakMap 外部消除了<code>obj</code>的引用，WeakMap 内部的引用依然存在。</p>
+<h3 id="weakmap-的语法">WeakMap 的语法</h3>
+<p>WeakMap 与 Map 在 API 上的区别主要是两个，一是没有遍历操作（即没有<code>keys()</code>、<code>values()</code>和<code>entries()</code>方法），也没有<code>size</code>属性。因为没有办法列出所有键名，某个键名是否存在完全不可预测，跟垃圾回收机制是否运行相关。这一刻可以取到键名，下一刻垃圾回收机制突然运行了，这个键名就没了，为了防止出现不确定性，就统一规定不能取到键名。二是无法清空，即不支持<code>clear</code>方法。因此，<code>WeakMap</code>只有四个方法可用：<code>get()</code>、<code>set()</code>、<code>has()</code>、<code>delete()</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">wm</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// size、forEach、clear 方法都不存在</span></span>
+<span class="line"><span style="color: #E1E4E8">wm.size; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #E1E4E8">wm.forEach; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #E1E4E8">wm.clear; </span><span style="color: #6A737D">// undefined</span></span></code></pre>
+<h3 id="weakmap-的示例">WeakMap 的示例</h3>
+<p>WeakMap 的例子很难演示，因为无法观察它里面的引用会自动消失。此时，其他引用都解除了，已经没有引用指向 WeakMap 的键名了，导致无法证实那个键名是不是存在。</p>
+<p>贺师俊老师<a href="https://github.com/ruanyf/es6tutorial/issues/362#issuecomment-292109104">提示</a>，如果引用所指向的值占用特别多的内存，就可以通过 Node 的<code>process.memoryUsage</code>方法看出来。根据这个思路，网友<a href="https://github.com/ruanyf/es6tutorial/issues/362#issuecomment-292451925">vtxf</a>补充了下面的例子。</p>
+<p>首先，打开 Node 命令行。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">node</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--expose-gc</span></span></code></pre>
+<p>上面代码中，<code>--expose-gc</code>参数表示允许手动执行垃圾回收机制。</p>
+<p>然后，执行下面的代码。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 手动执行一次垃圾回收，保证获取的内存使用状态准确</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> global.</span><span style="color: #B392F0">gc</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #79B8FF">undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 查看内存占用的初始状态，heapUsed 为 4M 左右</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> process.</span><span style="color: #B392F0">memoryUsage</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">{ </span><span style="color: #B392F0">rss</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">21106688</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">heapTotal</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">7376896</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">heapUsed</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">4153936</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">external</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">9059</span><span style="color: #E1E4E8"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> wm </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #79B8FF">undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 新建一个变量 key，指向一个 5*1024*1024 的数组</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Array</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1024</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1024</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #79B8FF">undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 设置 WeakMap 实例的键名，也指向 key 数组</span></span>
+<span class="line"><span style="color: #6A737D">// 这时，key 数组实际被引用了两次，</span></span>
+<span class="line"><span style="color: #6A737D">// 变量 key 引用一次，WeakMap 的键名引用了第二次</span></span>
+<span class="line"><span style="color: #6A737D">// 但是，WeakMap 是弱引用，对于引擎来说，引用计数还是1</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> wm.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(key, </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">WeakMap {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> global.</span><span style="color: #B392F0">gc</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #79B8FF">undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 这时内存占用 heapUsed 增加到 45M 了</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> process.</span><span style="color: #B392F0">memoryUsage</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">{ </span><span style="color: #B392F0">rss</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">67538944</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">heapTotal</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">7376896</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">heapUsed</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">45782816</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">external</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">8945</span><span style="color: #E1E4E8"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 清除变量 key 对数组的引用，</span></span>
+<span class="line"><span style="color: #6A737D">// 但没有手动清除 WeakMap 实例的键名对数组的引用</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> key </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #79B8FF">null</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 再次执行垃圾回收</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> global.</span><span style="color: #B392F0">gc</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #79B8FF">undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 内存占用 heapUsed 变回 4M 左右，</span></span>
+<span class="line"><span style="color: #6A737D">// 可以看到 WeakMap 的键名引用没有阻止 gc 对内存的回收</span></span>
+<span class="line"><span style="color: #F97583">></span><span style="color: #E1E4E8"> process.</span><span style="color: #B392F0">memoryUsage</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">{ </span><span style="color: #B392F0">rss</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">20639744</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">heapTotal</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">8425472</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">heapUsed</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">3979792</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">external</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">8956</span><span style="color: #E1E4E8"> }</span></span></code></pre>
+<p>上面代码中，只要外部的引用消失，WeakMap 内部的引用，就会自动被垃圾回收清除。由此可见，有了 WeakMap 的帮助，解决内存泄漏就会简单很多。</p>
+<h3 id="weakmap-的用途">WeakMap 的用途</h3>
+<p>前文说过，WeakMap 应用的典型场合就是 DOM 节点作为键名。下面是一个例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> myElement </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">getElementById</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"logo"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> myWeakmap </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">myWeakmap.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(myElement, { timesClicked: </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8"> });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">myElement.</span><span style="color: #B392F0">addEventListener</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"click"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> () {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> logoData </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> myWeakmap.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(myElement);</span></span>
+<span class="line"><span style="color: #E1E4E8">    logoData.timesClicked</span><span style="color: #F97583">++</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  },</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">false</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>上面代码中，<code>myElement</code>是一个 DOM 节点，每当发生<code>click</code>事件，就更新一下状态。我们将这个状态作为键值放在 WeakMap 里，对应的键名就是<code>myElement</code>。一旦这个 DOM 节点删除，该状态就会自动消失，不存在内存泄漏风险。</p>
+<p>WeakMap 的另一个用处是部署私有属性。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">_counter</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">_action</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">WeakMap</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">class</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Countdown</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">constructor</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">counter</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">action</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    _counter.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, counter);</span></span>
+<span class="line"><span style="color: #E1E4E8">    _action.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, action);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #B392F0">dec</span><span style="color: #E1E4E8">() {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> counter </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> _counter.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (counter </span><span style="color: #F97583">&#x3C;</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">return</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    counter</span><span style="color: #F97583">--</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">    _counter.</span><span style="color: #B392F0">set</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">, counter);</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">if</span><span style="color: #E1E4E8"> (counter </span><span style="color: #F97583">===</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">      _action.</span><span style="color: #B392F0">get</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">this</span><span style="color: #E1E4E8">)();</span></span>
+<span class="line"><span style="color: #E1E4E8">    }</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">c</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">Countdown</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"DONE"</span><span style="color: #E1E4E8">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">c.</span><span style="color: #B392F0">dec</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">c.</span><span style="color: #B392F0">dec</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #6A737D">// DONE</span></span></code></pre>
+<p>上面代码中，<code>Countdown</code>类的两个内部属性<code>_counter</code>和<code>_action</code>，是实例的弱引用，所以如果删除实例，它们也就随之消失，不会造成内存泄漏。</p>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us" class="initial astro-OUAMJN2I">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v2.7.0">
+
+<link rel="icon" type="image/svg+xml" href="/docs/favicon.svg">
+
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Scrollable a11y code helper -->
+<script>
+	Array.from(document.getElementsByTagName('pre')).forEach((element) => {
+	element.setAttribute('tabindex', '0');
+});
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+</script>
+		<!-- Page Metadata --><link rel="canonical" href="https://javascriptfield.github.io/docs/zh/JavaScript/%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95/">
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="正则的扩展 🚀 Documentation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://javascriptfield.github.io/docs/zh/JavaScript/%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true">
+<meta property="og:image:alt" content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+<meta name="description" property="og:description" content="Your website description.">
+<meta property="og:site_name" content="Documentation">
+		<title>
+			正则的扩展 🚀 Documentation
+		</title>
+		
+		
+	<link rel="stylesheet" href="/docs/assets/CSS-CSS深色模式.css" /><script type="module">const e="light";switch(e){case"light":document.getElementById("path-light").classList.remove("hide"),document.documentElement.classList.remove("theme-dark");break;case"dark":document.getElementById("path-dark").classList.remove("hide"),document.documentElement.classList.add("theme-dark");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches&&(document.documentElement.classList.add("theme-dark"),document.getElementById("path-dark").classList.remove("hide"));break}function t(){document.documentElement.classList.toggle("theme-dark"),document.getElementById("path-light").classList.toggle("hide"),document.getElementById("path-dark").classList.toggle("hide")}document.getElementById("themeIcon").addEventListener("click",t);function d(){document.querySelector("body").classList.toggle("mobile-sidebar-toggle")}document.getElementById("menu-toggle").addEventListener("click",d);
+</script></head>
+
+	<body class="astro-OUAMJN2I">
+		<header class="astro-2W66RQV5">
+	<a href="#article" class="sr-only focus:not-sr-only skiplink astro-DMGOOZ7Y"><span class="astro-DMGOOZ7Y">Skip to Content</span></a>
+	<nav class="nav-wrapper astro-2W66RQV5" title="Top Navigation">
+		<div class="menu-toggle astro-2W66RQV5">
+			
+<button type="button" id="menu-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <span class="sr-only">Toggle sidebar</span>
+</button>
+		</div>
+		<div class="logo flex astro-2W66RQV5">
+			<a href="/docs/zh/Introduction/introduction" class="astro-2W66RQV5">
+				<svg class="logo" width="40" height="40" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#flame {
+			fill: var(--theme-text-accent);
+		}
+
+		#a {
+			fill: var(--theme-text-accent);
+		}
+	</style>
+	<title>Logo</title>
+	<path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z">
+	</path>
+	<path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z">
+	</path>
+</svg>
+				<h1 class="astro-2W66RQV5">Documentation</h1>
+			</a>
+		</div>
+		<div style="flex-grow: 1;" class="astro-2W66RQV5"></div>
+		
+
+
+<svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="astro-N5CD7LW7">
+  <path id="path-light" class="hide astro-N5CD7LW7" fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  <path id="path-dark" class="hide astro-N5CD7LW7" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+	</nav>
+</header>
+		<main class="layout astro-OUAMJN2I">
+			<aside id="grid-left" class="grid-sidebar astro-OUAMJN2I" title="Site Navigation">
+				<nav aria-labelledby="grid-left" class="astro-KQNE5HRN">
+	<ul class="nav-groups astro-KQNE5HRN">
+		<li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Introduction</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Introduction/introduction" class="astro-KQNE5HRN">
+											Introduction
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">CSS</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/CSS深色模式" class="astro-KQNE5HRN">
+											CSS深色模式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-content 属性" class="astro-KQNE5HRN">
+											align-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-items 属性" class="astro-KQNE5HRN">
+											align-items 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/align-self 属性" class="astro-KQNE5HRN">
+											align-self 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-direction 属性" class="astro-KQNE5HRN">
+											flex-direction 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/flex-wrap 属性" class="astro-KQNE5HRN">
+											flex-wrap 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/justify-content 属性" class="astro-KQNE5HRN">
+											justify-content 属性
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/不规则卡片" class="astro-KQNE5HRN">
+											不规则卡片
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/使用hover和attr()定制悬浮提示" class="astro-KQNE5HRN">
+											使用hover和attr()定制悬浮提示
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/切角效果" class="astro-KQNE5HRN">
+											切角效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/半透明边框" class="astro-KQNE5HRN">
+											半透明边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/圆与椭圆" class="astro-KQNE5HRN">
+											圆与椭圆
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多边形" class="astro-KQNE5HRN">
+											多边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/多重边框" class="astro-KQNE5HRN">
+											多重边框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/常见投影" class="astro-KQNE5HRN">
+											常见投影
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/平行四边形" class="astro-KQNE5HRN">
+											平行四边形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/打字效果" class="astro-KQNE5HRN">
+											打字效果
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/插入换行" class="astro-KQNE5HRN">
+											插入换行
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/文本行斑马条纹" class="astro-KQNE5HRN">
+											文本行斑马条纹
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/条纹进度条" class="astro-KQNE5HRN">
+											条纹进度条
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/水平垂直居中的几种方式" class="astro-KQNE5HRN">
+											水平垂直居中的几种方式
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/环形文字" class="astro-KQNE5HRN">
+											环形文字
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/盒子模型" class="astro-KQNE5HRN">
+											盒子模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/直角梯形" class="astro-KQNE5HRN">
+											直角梯形
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/绝对底部（Sticky Footer）" class="astro-KQNE5HRN">
+											绝对底部（Sticky Footer）
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义单选框" class="astro-KQNE5HRN">
+											自定义单选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义复选框" class="astro-KQNE5HRN">
+											自定义复选框
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/自定义开关选择器" class="astro-KQNE5HRN">
+											自定义开关选择器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/通过模糊弱化背景" class="astro-KQNE5HRN">
+											通过模糊弱化背景
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/CSS/鼠标光标" class="astro-KQNE5HRN">
+											鼠标光标
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Git</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-分支原理" class="astro-KQNE5HRN">
+											Git分支-分支原理
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-变基" class="astro-KQNE5HRN">
+											Git分支-变基
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支-远程分支" class="astro-KQNE5HRN">
+											Git分支-远程分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支开发工作流" class="astro-KQNE5HRN">
+											Git分支开发工作流
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支的新建与合并" class="astro-KQNE5HRN">
+											Git分支的新建与合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git分支管理-查看分支" class="astro-KQNE5HRN">
+											Git分支管理-查看分支
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git变基合并" class="astro-KQNE5HRN">
+											Git变基合并
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git基础与命令" class="astro-KQNE5HRN">
+											Git基础与命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-交互式暂存" class="astro-KQNE5HRN">
+											Git工具-交互式暂存
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-查看修订版本" class="astro-KQNE5HRN">
+											Git工具-查看修订版本
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重写历史" class="astro-KQNE5HRN">
+											Git工具-重写历史
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/Git工具-重置揭密" class="astro-KQNE5HRN">
+											Git工具-重置揭密
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Git/常用Git命令清单" class="astro-KQNE5HRN">
+											常用Git命令清单
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Guide</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码审查" class="astro-KQNE5HRN">
+											代码审查
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/代码整洁" class="astro-KQNE5HRN">
+											代码整洁
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Guide/点击约束方案" class="astro-KQNE5HRN">
+											点击约束方案
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">Interview</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/Interview/面试问题集锦" class="astro-KQNE5HRN">
+											面试问题集锦
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li><li class="astro-KQNE5HRN">
+					<div class="nav-group astro-KQNE5HRN">
+						<h2 class="astro-KQNE5HRN">JavaScript</h2>
+						<ul class="astro-KQNE5HRN">
+							<li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ArrayBuffer" class="astro-KQNE5HRN">
+											ArrayBuffer
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的基本语法" class="astro-KQNE5HRN">
+											Class 的基本语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Class 的继承" class="astro-KQNE5HRN">
+											Class 的继承
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/DOM" class="astro-KQNE5HRN">
+											DOM
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/ECMAScript 6 简介" class="astro-KQNE5HRN">
+											ECMAScript 6 简介
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的异步应用" class="astro-KQNE5HRN">
+											Generator 函数的异步应用
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Generator 函数的语法" class="astro-KQNE5HRN">
+											Generator 函数的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Iterator 和 for-of 循环" class="astro-KQNE5HRN">
+											Iterator 和 for-of 循环
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Mixin" class="astro-KQNE5HRN">
+											Mixin
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的加载实现" class="astro-KQNE5HRN">
+											Module 的加载实现
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Module 的语法" class="astro-KQNE5HRN">
+											Module 的语法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Promise 对象" class="astro-KQNE5HRN">
+											Promise 对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Proxy" class="astro-KQNE5HRN">
+											Proxy
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Reflect" class="astro-KQNE5HRN">
+											Reflect
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/SIMD" class="astro-KQNE5HRN">
+											SIMD
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Set 和 Map 数据结构" class="astro-KQNE5HRN">
+											Set 和 Map 数据结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/Symbol" class="astro-KQNE5HRN">
+											Symbol
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/async 函数" class="astro-KQNE5HRN">
+											async 函数
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/let 和 const 命令" class="astro-KQNE5HRN">
+											let 和 const 命令
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/事件" class="astro-KQNE5HRN">
+											事件
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/内置对象" class="astro-KQNE5HRN">
+											内置对象
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数式编程" class="astro-KQNE5HRN">
+											函数式编程
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/函数的扩展" class="astro-KQNE5HRN">
+											函数的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/变量的解构赋值" class="astro-KQNE5HRN">
+											变量的解构赋值
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的扩展" class="astro-KQNE5HRN">
+											字符串的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/字符串的新增方法" class="astro-KQNE5HRN">
+											字符串的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的扩展" class="astro-KQNE5HRN">
+											对象的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/对象的新增方法" class="astro-KQNE5HRN">
+											对象的新增方法
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步操作" class="astro-KQNE5HRN">
+											异步操作
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/异步遍历器" class="astro-KQNE5HRN">
+											异步遍历器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/微信小程序" class="astro-KQNE5HRN">
+											微信小程序
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数值的扩展" class="astro-KQNE5HRN">
+											数值的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/数组的扩展" class="astro-KQNE5HRN">
+											数组的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/概念" class="astro-KQNE5HRN">
+											概念
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/正则的扩展" class="astro-KQNE5HRN">
+											正则的扩展
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/浏览器模型" class="astro-KQNE5HRN">
+											浏览器模型
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/管理系统项目结构" class="astro-KQNE5HRN">
+											管理系统项目结构
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/编程风格" class="astro-KQNE5HRN">
+											编程风格
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/装饰器" class="astro-KQNE5HRN">
+											装饰器
+										</a>
+									</li><li class="nav-link astro-KQNE5HRN">
+										<a href="/docs/zh/JavaScript/面向对象" class="astro-KQNE5HRN">
+											面向对象
+										</a>
+									</li>
+						</ul>
+					</div>
+				</li>
+	</ul>
+</nav>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+			</aside>
+			<div id="grid-main" class="astro-OUAMJN2I">
+				<article id="article" class="content astro-J75B3YUS">
+	<section class="main-section astro-J75B3YUS">
+		<h1 class="content-title astro-J75B3YUS" id="overview">正则的扩展</h1>
+		<nav class="block sm:hidden astro-J75B3YUS">
+			<!-- <TableOfContents client:media="(max-width: 50em)" headings={headings} /> -->
+		</nav>
+		
+					<h2 id="regexp-构造函数">RegExp 构造函数</h2>
+<p>在 ES5 中，<code>RegExp</code>构造函数的参数有两种情况。</p>
+<p>第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> regex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">RegExp</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"xyz"</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"i"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// 等价于</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> regex </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">xyz</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">i</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<!-- more -->
+<p>第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> regex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">RegExp</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">xyz</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">i</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// 等价于</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> regex </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">xyz</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">i</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>但是，ES5 不允许此时使用第二个参数添加修饰符，否则会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> regex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">RegExp</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">xyz</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"i"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// Uncaught TypeError: Cannot supply flags when constructing one RegExp from another</span></span></code></pre>
+<p>ES6 改变了这种行为。如果<code>RegExp</code>构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">RegExp</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">abc</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">gi</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"i"</span><span style="color: #E1E4E8">).flags;</span></span>
+<span class="line"><span style="color: #6A737D">// "i"</span></span></code></pre>
+<p>上面代码中，原有正则对象的修饰符是<code>ig</code>，它会被第二个参数<code>i</code>覆盖。</p>
+<h2 id="字符串的正则方法">字符串的正则方法</h2>
+<p>字符串对象共有 4 个方法，可以使用正则表达式：<code>match()</code>、<code>replace()</code>、<code>search()</code>和<code>split()</code>。</p>
+<p>ES6 将这 4 个方法，在语言内部全部调用<code>RegExp</code>的实例方法，从而做到所有与正则相关的方法，全都定义在<code>RegExp</code>对象上。</p>
+<ul>
+<li><code>String.prototype.match</code> 调用 <code>RegExp.prototype[Symbol.match]</code></li>
+<li><code>String.prototype.replace</code> 调用 <code>RegExp.prototype[Symbol.replace]</code></li>
+<li><code>String.prototype.search</code> 调用 <code>RegExp.prototype[Symbol.search]</code></li>
+<li><code>String.prototype.split</code> 调用 <code>RegExp.prototype[Symbol.split]</code></li>
+</ul>
+<h2 id="u-修饰符">u 修饰符</h2>
+<p>ES6 对正则表达式添加了<code>u</code>修饰符，含义为“Unicode 模式”，用来正确处理大于<code>\uFFFF</code>的 Unicode 字符。也就是说，会正确处理四个字节的 UTF-16 编码。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #79B8FF">\uD83D</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'</span><span style="color: #79B8FF">\uD83D\uDC2A</span><span style="color: #9ECBFF">'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #79B8FF">\uD83D</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'</span><span style="color: #79B8FF">\uD83D\uDC2A</span><span style="color: #9ECBFF">'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>\uD83D\uDC2A</code>是一个四个字节的 UTF-16 编码，代表一个字符。但是，ES5 不支持四个字节的 UTF-16 编码，会将其识别为两个字符，导致第二行代码结果为<code>true</code>。加了<code>u</code>修饰符以后，ES6 就会识别其为一个字符，所以第一行代码结果为<code>false</code>。</p>
+<p>一旦加上<code>u</code>修饰符号，就会修改下面这些正则表达式的行为。</p>
+<p><strong>（1）点字符</strong></p>
+<p>点（<code>.</code>）字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于<code>0xFFFF</code>的 Unicode 字符，点字符不能识别，必须加上<code>u</code>修饰符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> s </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">'𠮷'</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #79B8FF">.</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(s) </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #79B8FF">.</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(s) </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码表示，如果不添加<code>u</code>修饰符，正则表达式就会认为字符串为两个字符，从而匹配失败。</p>
+<p><strong>（2）Unicode 字符表示法</strong></p>
+<p>ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上<code>u</code>修饰符，才能识别当中的大括号，否则会被解读为量词。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #85E89D; font-weight: bold">\u</span><span style="color: #F97583">{61}</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">/</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">  a </span><span style="color: #F97583">/</span></span>
+<span class="line"><span style="color: #E1E4E8">  u.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"a"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">/</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">  𠮷 </span><span style="color: #F97583">/</span></span>
+<span class="line"><span style="color: #E1E4E8">  u.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"𠮷"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码表示，如果不加<code>u</code>修饰符，正则表达式无法识别<code>\u{61}</code>这种表示法，只会认为这匹配 61 个连续的<code>u</code>。</p>
+<p><strong>（3）量词</strong></p>
+<p>使用<code>u</code>修饰符后，所有量词都会正确识别码点大于<code>0xFFFF</code>的 Unicode 字符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #F97583">{2}</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'aa'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #F97583">{2}</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'aa'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">𠮷</span><span style="color: #F97583">{2}</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'𠮷𠮷'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">𠮷</span><span style="color: #F97583">{2}</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'𠮷𠮷'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p><strong>（4）预定义模式</strong></p>
+<p><code>u</code>修饰符也影响到预定义模式，能否正确识别码点大于<code>0xFFFF</code>的 Unicode 字符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #79B8FF">\S</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'𠮷'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #79B8FF">\S</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'𠮷'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码的<code>\S</code>是预定义模式，匹配所有非空白字符。只有加了<code>u</code>修饰符，它才能正确匹配码点大于<code>0xFFFF</code>的 Unicode 字符。</p>
+<p>利用这一点，可以写出一个正确返回字符串长度的函数。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">codePointLength</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">text</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">var</span><span style="color: #E1E4E8"> result </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> text.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #79B8FF">[\s\S]</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">gu</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> result </span><span style="color: #F97583">?</span><span style="color: #E1E4E8"> result.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">:</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">0</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> s </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"𠮷𠮷"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">s.</span><span style="color: #79B8FF">length</span><span style="color: #E1E4E8">; </span><span style="color: #6A737D">// 4</span></span>
+<span class="line"><span style="color: #B392F0">codePointLength</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// 2</span></span></code></pre>
+<p><strong>（5）i 修饰符</strong></p>
+<p>有些 Unicode 字符的编码不同，但是字型很相近，比如，<code>\u004B</code>与<code>\u212A</code>都是大写的<code>K</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #79B8FF">[a-z]</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">i</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"</span><span style="color: #79B8FF">\u212A</span><span style="color: #9ECBFF">"</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">/</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">  [a </span><span style="color: #F97583">-</span><span style="color: #E1E4E8"> z] </span><span style="color: #F97583">/</span></span>
+<span class="line"><span style="color: #E1E4E8">  iu.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"</span><span style="color: #79B8FF">\u212A</span><span style="color: #9ECBFF">"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，不加<code>u</code>修饰符，就无法识别非规范的<code>K</code>字符。</p>
+<p><strong>（6）转义</strong></p>
+<p>没有<code>u</code>修饰符的情况下，正则中没有定义的转义（如逗号的转义<code>\,</code>）无效，而在<code>u</code>模式会报错。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #85E89D; font-weight: bold">\,</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D">// /\,/</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #85E89D; font-weight: bold">\,</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8"> </span><span style="color: #6A737D">// 报错</span></span></code></pre>
+<p>上面代码中，没有<code>u</code>修饰符时，逗号前面的反斜杠是无效的，加了<code>u</code>修饰符就报错。</p>
+<h2 id="regexpprototypeunicode-属性">RegExp.prototype.unicode 属性</h2>
+<p>正则实例对象新增<code>unicode</code>属性，表示是否设置了<code>u</code>修饰符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">r1</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">hello</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">r2</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">hello</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">r1.unicode; </span><span style="color: #6A737D">// false</span></span>
+<span class="line"><span style="color: #E1E4E8">r2.unicode; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，正则表达式是否设置了<code>u</code>修饰符，可以从<code>unicode</code>属性看出来。</p>
+<h2 id="y-修饰符">y 修饰符</h2>
+<p>除了<code>u</code>修饰符，ES6 还为正则表达式添加了<code>y</code>修饰符，叫做“粘连”（sticky）修饰符。</p>
+<p><code>y</code>修饰符的作用与<code>g</code>修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，<code>g</code>修饰符只要剩余位置中存在匹配就可，而<code>y</code>修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的涵义。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> s </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"aaa_aa_a"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> r1 </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #F97583">+</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">g</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> r2 </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #F97583">+</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">r1.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// ["aaa"]</span></span>
+<span class="line"><span style="color: #E1E4E8">r2.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// ["aaa"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">r1.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// ["aa"]</span></span>
+<span class="line"><span style="color: #E1E4E8">r2.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// null</span></span></code></pre>
+<p>上面代码有两个正则表达式，一个使用<code>g</code>修饰符，另一个使用<code>y</code>修饰符。这两个正则表达式各执行了两次，第一次执行的时候，两者行为相同，剩余字符串都是<code>_aa_a</code>。由于<code>g</code>修饰没有位置要求，所以第二次执行会返回结果，而<code>y</code>修饰符要求匹配必须从头部开始，所以返回<code>null</code>。</p>
+<p>如果改一下正则表达式，保证每次都能头部匹配，<code>y</code>修饰符就会返回结果了。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> s </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"aaa_aa_a"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> r </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">_</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">r.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// ["aaa_"]</span></span>
+<span class="line"><span style="color: #E1E4E8">r.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(s); </span><span style="color: #6A737D">// ["aa_"]</span></span></code></pre>
+<p>上面代码每次匹配，都是从剩余字符串的头部开始。</p>
+<p>使用<code>lastIndex</code>属性，可以更好地说明<code>y</code>修饰符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">g</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 指定从2号位置（y）开始匹配</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.lastIndex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 匹配成功</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">match</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"xaya"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 在3号位置匹配成功</span></span>
+<span class="line"><span style="color: #E1E4E8">match.index; </span><span style="color: #6A737D">// 3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 下一次匹配从4号位开始</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.lastIndex; </span><span style="color: #6A737D">// 4</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 4号位开始匹配失败</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"xaya"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// null</span></span></code></pre>
+<p>上面代码中，<code>lastIndex</code>属性指定每次搜索的开始位置，<code>g</code>修饰符从这个位置开始向后搜索，直到发现匹配为止。</p>
+<p><code>y</code>修饰符同样遵守<code>lastIndex</code>属性，但是要求必须在<code>lastIndex</code>指定的位置发现匹配。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 指定从2号位置开始匹配</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.lastIndex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 不是粘连，匹配失败</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"xaya"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// null</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 指定从3号位置开始匹配</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.lastIndex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 3号位置是粘连，匹配成功</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">match</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"xaya"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">match.index; </span><span style="color: #6A737D">// 3</span></span>
+<span class="line"><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">.lastIndex; </span><span style="color: #6A737D">// 4</span></span></code></pre>
+<p>实际上，<code>y</code>修饰符号隐含了头部匹配的标志<code>^</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">b</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"aba"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// null</span></span></code></pre>
+<p>上面代码由于不能保证头部匹配，所以返回<code>null</code>。<code>y</code>修饰符的设计本意，就是让头部匹配的标志<code>^</code>在全局匹配中都有效。</p>
+<p>下面是字符串对象的<code>replace</code>方法的例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">gy</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #9ECBFF">"aaxa"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">replace</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">REGEX</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"-"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// '--xa'</span></span></code></pre>
+<p>上面代码中，最后一个<code>a</code>因为不是出现在下一次匹配的头部，所以不会被替换。</p>
+<p>单单一个<code>y</code>修饰符对<code>match</code>方法，只能返回第一个匹配，必须与<code>g</code>修饰符联用，才能返回所有匹配。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">"a1a2a3"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #79B8FF">\d</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ["a1"]</span></span>
+<span class="line"><span style="color: #9ECBFF">"a1a2a3"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">match</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">a</span><span style="color: #79B8FF">\d</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">gy</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// ["a1", "a2", "a3"]</span></span></code></pre>
+<p><code>y</code>修饰符的一个应用，是从字符串提取 token（词元），<code>y</code>修饰符确保了匹配之间不会有漏掉的字符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">TOKEN_Y</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #79B8FF">\s</span><span style="color: #F97583">*</span><span style="color: #DBEDFF">(</span><span style="color: #85E89D; font-weight: bold">\+</span><span style="color: #F97583">|</span><span style="color: #79B8FF">[0-9]</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)</span><span style="color: #79B8FF">\s</span><span style="color: #F97583">*</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">TOKEN_G</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #79B8FF">\s</span><span style="color: #F97583">*</span><span style="color: #DBEDFF">(</span><span style="color: #85E89D; font-weight: bold">\+</span><span style="color: #F97583">|</span><span style="color: #79B8FF">[0-9]</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)</span><span style="color: #79B8FF">\s</span><span style="color: #F97583">*</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">g</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #B392F0">tokenize</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">TOKEN_Y</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"3 + 4"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// [ '3', '+', '4' ]</span></span>
+<span class="line"><span style="color: #B392F0">tokenize</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">TOKEN_G</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"3 + 4"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// [ '3', '+', '4' ]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">tokenize</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">TOKEN_REGEX</span><span style="color: #E1E4E8">, </span><span style="color: #FFAB70">str</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> result </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> match;</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">while</span><span style="color: #E1E4E8"> ((match </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">TOKEN_REGEX</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(str))) {</span></span>
+<span class="line"><span style="color: #E1E4E8">    result.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(match[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">]);</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> result;</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>上面代码中，如果字符串里面没有非法字符，<code>y</code>修饰符与<code>g</code>修饰符的提取结果是一样的。但是，一旦出现非法字符，两者的行为就不一样了。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">tokenize</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">TOKEN_Y</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"3x + 4"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// [ '3' ]</span></span>
+<span class="line"><span style="color: #B392F0">tokenize</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">TOKEN_G</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"3x + 4"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// [ '3', '+', '4' ]</span></span></code></pre>
+<p>上面代码中，<code>g</code>修饰符会忽略非法字符，而<code>y</code>修饰符不会，这样就很容易发现错误。</p>
+<h2 id="regexpprototypesticky-属性">RegExp.prototype.sticky 属性</h2>
+<p>与<code>y</code>修饰符相匹配，ES6 的正则实例对象多了<code>sticky</code>属性，表示是否设置了<code>y</code>修饰符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> r </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">hello</span><span style="color: #79B8FF">\d</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">y</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">r.sticky; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<h2 id="regexpprototypeflags-属性">RegExp.prototype.flags 属性</h2>
+<p>ES6 为正则表达式新增了<code>flags</code>属性，会返回正则表达式的修饰符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// ES5 的 source 属性</span></span>
+<span class="line"><span style="color: #6A737D">// 返回正则表达式的正文</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">abc</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">gi</span><span style="color: #E1E4E8">.source </span><span style="color: #F97583">/</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// "abc"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// ES6 的 flags 属性</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// 返回正则表达式的修饰符</span></span>
+<span class="line"><span style="color: #E1E4E8">  abc </span><span style="color: #F97583">/</span></span>
+<span class="line"><span style="color: #E1E4E8">  ig.flags;</span></span>
+<span class="line"><span style="color: #6A737D">// 'gi'</span></span></code></pre>
+<h2 id="s-修饰符dotall-模式">s 修饰符：dotAll 模式</h2>
+<p>正则表达式中，点（<code>.</code>）是一个特殊字符，代表任意的单个字符，但是有两个例外。一个是四个字节的 UTF-16 字符，这个可以用<code>u</code>修饰符解决；另一个是行终止符（line terminator character）。</p>
+<p>所谓行终止符，就是该字符表示一行的终结。以下四个字符属于“行终止符”。</p>
+<ul>
+<li>U+000A 换行符（<code>\n</code>）</li>
+<li>U+000D 回车符（<code>\r</code>）</li>
+<li>U+2028 行分隔符（line separator）</li>
+<li>U+2029 段分隔符（paragraph separator）</li>
+</ul>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">foo</span><span style="color: #79B8FF">.</span><span style="color: #DBEDFF">bar</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo</span><span style="color: #79B8FF">\n</span><span style="color: #9ECBFF">bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// false</span></span></code></pre>
+<p>上面代码中，因为<code>.</code>不匹配<code>\n</code>，所以正则表达式返回<code>false</code>。</p>
+<p>但是，很多时候我们希望匹配的是任意单个字符，这时有一种变通的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">foo</span><span style="color: #79B8FF">[</span><span style="color: #F97583">^</span><span style="color: #79B8FF">]</span><span style="color: #DBEDFF">bar</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo</span><span style="color: #79B8FF">\n</span><span style="color: #9ECBFF">bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// true</span></span></code></pre>
+<p>这种解决方案毕竟不太符合直觉，ES2018 <a href="https://github.com/tc39/proposal-regexp-dotall-flag">引入</a><code>s</code>修饰符，使得<code>.</code>可以匹配任意单个字符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">foo</span><span style="color: #79B8FF">.</span><span style="color: #DBEDFF">bar</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">s</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo</span><span style="color: #79B8FF">\n</span><span style="color: #9ECBFF">bar"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>这被称为<code>dotAll</code>模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个<code>dotAll</code>属性，返回一个布尔值，表示该正则表达式是否处在<code>dotAll</code>模式。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">re</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">foo</span><span style="color: #79B8FF">.</span><span style="color: #DBEDFF">bar</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">s</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #6A737D">// 另一种写法</span></span>
+<span class="line"><span style="color: #6A737D">// const re = new RegExp('foo.bar', 's');</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">re.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo</span><span style="color: #79B8FF">\n</span><span style="color: #9ECBFF">bar"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">re.dotAll; </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">re.flags; </span><span style="color: #6A737D">// 's'</span></span></code></pre>
+<p><code>/s</code>修饰符和多行修饰符<code>/m</code>不冲突，两者一起使用的情况下，<code>.</code>匹配所有字符，而<code>^</code>和<code>$</code>匹配每一行的行首和行尾。</p>
+<h2 id="后行断言">后行断言</h2>
+<p>JavaScript 语言的正则表达式，只支持先行断言（lookahead）和先行否定断言（negative lookahead），不支持后行断言（lookbehind）和后行否定断言（negative lookbehind）。ES2018 引入<a href="https://github.com/tc39/proposal-regexp-lookbehind">后行断言</a>，V8 引擎 4.9 版（Chrome 62）已经支持。</p>
+<p>“先行断言”指的是，<code>x</code>只有在<code>y</code>前面才匹配，必须写成<code>/x(?=y)/</code>。比如，只匹配百分号之前的数字，要写成<code>/\d+(?=%)/</code>。“先行否定断言”指的是，<code>x</code>只有不在<code>y</code>前面才匹配，必须写成<code>/x(?!y)/</code>。比如，只匹配不在百分号之前的数字，要写成<code>/\d+(?!%)/</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">(?=%)</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'100% of US presidents have been male'</span><span style="color: #E1E4E8">)  </span><span style="color: #6A737D">// ["100"]</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">(?!%)</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'that’s all 44 of them'</span><span style="color: #E1E4E8">)                 </span><span style="color: #6A737D">// ["44"]</span></span></code></pre>
+<p>上面两个字符串，如果互换正则表达式，就不会得到相同结果。另外，还可以看到，“先行断言”括号之中的部分（<code>(?=%)</code>），是不计入返回结果的。</p>
+<p>“后行断言”正好与“先行断言”相反，<code>x</code>只有在<code>y</code>后面才匹配，必须写成<code>/(?&#x3C;=y)x/</code>。比如，只匹配美元符号之后的数字，要写成<code>/(?&#x3C;=\$)\d+/</code>。“后行否定断言”则与“先行否定断言”相反，<code>x</code>只有不在<code>y</code>后面才匹配，必须写成<code>/(?&#x3C;!y)x/</code>。比如，只匹配不在美元符号后面的数字，要写成<code>/(?&#x3C;!\$)\d+/</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;=</span><span style="color: #85E89D; font-weight: bold">\$</span><span style="color: #DBEDFF">)</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'Benjamin Franklin is on the $100 bill'</span><span style="color: #E1E4E8">)  </span><span style="color: #6A737D">// ["100"]</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;!</span><span style="color: #85E89D; font-weight: bold">\$</span><span style="color: #DBEDFF">)</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'it’s is worth about €90'</span><span style="color: #E1E4E8">)                </span><span style="color: #6A737D">// ["90"]</span></span></code></pre>
+<p>上面的例子中，“后行断言”的括号之中的部分（<code>(?&#x3C;=\$)</code>），也是不计入返回结果。</p>
+<p>下面的例子是使用后行断言进行字符串替换。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_DOLLAR_PREFIX</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;=</span><span style="color: #85E89D; font-weight: bold">\$</span><span style="color: #DBEDFF">)foo</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">g</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #9ECBFF">"$foo %foo foo"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">replace</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">RE_DOLLAR_PREFIX</span><span style="color: #E1E4E8">, </span><span style="color: #9ECBFF">"bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// '$bar %foo foo'</span></span></code></pre>
+<p>上面代码中，只有在美元符号后面的<code>foo</code>才会被替换。</p>
+<p>“后行断言”的实现，需要先匹配<code>/(?&#x3C;=y)x/</code>的<code>x</code>，然后再回到左边，匹配<code>y</code>的部分。这种“先右后左”的执行顺序，与所有其他正则操作相反，导致了一些不符合预期的行为。</p>
+<p>首先，后行断言的组匹配，与正常情况下结果是不一样的。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;=(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">))</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'1053'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// ["", "1", "053"]</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #DBEDFF">(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'1053'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// ["1053", "105", "3"]</span></span></code></pre>
+<p>上面代码中，需要捕捉两个组匹配。没有“后行断言”时，第一个括号是贪婪模式，第二个括号只能捕获一个字符，所以结果是<code>105</code>和<code>3</code>。而“后行断言”时，由于执行顺序是从右到左，第二个括号是贪婪模式，第一个括号只能捕获一个字符，所以结果是<code>1</code>和<code>053</code>。</p>
+<p>其次，“后行断言”的反斜杠引用，也与通常的顺序相反，必须放在对应的那个括号之前。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;=(o)d</span><span style="color: #F97583">\1</span><span style="color: #DBEDFF">)r</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'hodor'</span><span style="color: #E1E4E8">)  </span><span style="color: #6A737D">// null</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;=</span><span style="color: #F97583">\1</span><span style="color: #DBEDFF">d(o))r</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'hodor'</span><span style="color: #E1E4E8">)  </span><span style="color: #6A737D">// ["r", "o"]</span></span></code></pre>
+<p>上面代码中，如果后行断言的反斜杠引用（<code>\1</code>）放在括号的后面，就不会得到匹配结果，必须放在前面才可以。因为后行断言是先从左到右扫描，发现匹配以后再回过头，从右到左完成反斜杠引用。</p>
+<h2 id="unicode-属性类">Unicode 属性类</h2>
+<p>ES2018 <a href="https://github.com/tc39/proposal-regexp-unicode-property-escapes">引入</a>了一种新的类的写法<code>\p{...}</code>和<code>\P{...}</code>，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">regexGreekSymbol</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Script=Greek}</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">regexGreekSymbol.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"π"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，<code>\p{Script=Greek}</code>指定匹配一个希腊文字母，所以匹配<code>π</code>成功。</p>
+<p>Unicode 属性类要指定属性名和属性值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">\p{UnicodePropertyName</span><span style="color: #F97583">=</span><span style="color: #E1E4E8">UnicodePropertyValue}</span></span></code></pre>
+<p>对于某些属性，可以只写属性名，或者只写属性值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">\p{UnicodePropertyName}</span></span>
+<span class="line"><span style="color: #E1E4E8">\p{UnicodePropertyValue}</span></span></code></pre>
+<p><code>\P{…}</code>是<code>\p{…}</code>的反向匹配，即匹配不满足条件的字符。</p>
+<p>注意，这两种类只对 Unicode 有效，所以使用的时候一定要加上<code>u</code>修饰符。如果不加<code>u</code>修饰符，正则表达式使用<code>\p</code>和<code>\P</code>会报错，ECMAScript 预留了这两个类。</p>
+<p>由于 Unicode 的各种属性非常多，所以这种新的类的表达能力非常强。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">regex</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Decimal_Number}</span><span style="color: #F97583">+$</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">regex.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"𝟏𝟐𝟑𝟜𝟝𝟞𝟩𝟪𝟫𝟬𝟭𝟮𝟯𝟺𝟻𝟼"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，属性类指定匹配所有十进制字符，可以看到各种字型的十进制字符都会匹配成功。</p>
+<p><code>\p{Number}</code>甚至能匹配罗马数字。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 匹配所有数字</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">regex</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Number}</span><span style="color: #F97583">+$</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">regex.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"²³¹¼½¾"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">regex.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"㉛㉜㉝"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #E1E4E8">regex.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>下面是其他一些例子。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 匹配所有空格</span></span>
+<span class="line"><span style="color: #E1E4E8">\p{White_Space}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 匹配各种文字的所有字母，等同于 Unicode 版的 \w</span></span>
+<span class="line"><span style="color: #E1E4E8">[\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 匹配各种文字的所有非字母的字符，等同于 Unicode 版的 \W</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">^</span><span style="color: #E1E4E8">\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 匹配 Emoji</span></span>
+<span class="line"><span style="color: #9ECBFF">/</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Emoji_Modifier_Base}</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Emoji_Modifier}</span><span style="color: #F97583">?|</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Emoji_Presentation}</span><span style="color: #F97583">|</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Emoji}</span><span style="color: #79B8FF">\uFE0F</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">gu</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 匹配所有的箭头字符</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">regexArrows</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #85E89D; font-weight: bold">\p</span><span style="color: #DBEDFF">{Block=Arrows}</span><span style="color: #F97583">+$</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">regexArrows.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩'</span><span style="color: #E1E4E8">) </span><span style="color: #6A737D">// true</span></span></code></pre>
+<h2 id="具名组匹配">具名组匹配</h2>
+<h3 id="简介">简介</h3>
+<p>正则表达式使用圆括号进行组匹配。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_DATE</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{4}</span><span style="color: #DBEDFF">)-(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)-(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span></code></pre>
+<p>上面代码中，正则表达式里面有三组圆括号。使用<code>exec</code>方法，就可以将这三组匹配结果提取出来。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_DATE</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{4}</span><span style="color: #DBEDFF">)-(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)-(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">matchObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_DATE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"1999-12-31"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">year</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> matchObj[</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// 1999</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">month</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> matchObj[</span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// 12</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">day</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> matchObj[</span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">]; </span><span style="color: #6A737D">// 31</span></span></code></pre>
+<p>组匹配的一个问题是，每一组的匹配含义不容易看出来，而且只能用数字序号（比如<code>matchObj[1]</code>）引用，要是组的顺序变了，引用的时候就必须修改序号。</p>
+<p>ES2018 引入了<a href="https://github.com/tc39/proposal-regexp-named-groups">具名组匹配</a>（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_DATE</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">year</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{4}</span><span style="color: #DBEDFF">)-(?&#x3C;</span><span style="color: #E1E4E8">month</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)-(?&#x3C;</span><span style="color: #E1E4E8">day</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">matchObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_DATE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"1999-12-31"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">year</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> matchObj.groups.year; </span><span style="color: #6A737D">// 1999</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">month</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> matchObj.groups.month; </span><span style="color: #6A737D">// 12</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">day</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> matchObj.groups.day; </span><span style="color: #6A737D">// 31</span></span></code></pre>
+<p>上面代码中，“具名组匹配”在圆括号内部，模式的头部添加“问号 + 尖括号 + 组名”（<code>?&#x3C;year></code>），然后就可以在<code>exec</code>方法返回结果的<code>groups</code>属性上引用该组名。同时，数字序号（<code>matchObj[1]</code>）依然有效。</p>
+<p>具名组匹配等于为每一组匹配加上了 ID，便于描述匹配的目的。如果组的顺序变了，也不用改变匹配后的处理代码。</p>
+<p>如果具名组没有匹配，那么对应的<code>groups</code>对象属性会是<code>undefined</code>。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_OPT_A</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">as</span><span style="color: #DBEDFF">>a</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)</span><span style="color: #F97583">?$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">matchObj</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_OPT_A</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">""</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">matchObj.groups.as; </span><span style="color: #6A737D">// undefined</span></span>
+<span class="line"><span style="color: #9ECBFF">"as"</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">in</span><span style="color: #E1E4E8"> matchObj.groups; </span><span style="color: #6A737D">// true</span></span></code></pre>
+<p>上面代码中，具名组<code>as</code>没有找到匹配，那么<code>matchObj.groups.as</code>属性值就是<code>undefined</code>，并且<code>as</code>这个键名在<code>groups</code>是始终存在的。</p>
+<h3 id="解构赋值和替换">解构赋值和替换</h3>
+<p>有了具名组匹配以后，可以使用解构赋值直接从匹配结果上为变量赋值。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #FFAB70">groups</span><span style="color: #E1E4E8">: { one, two },</span></span>
+<span class="line"><span style="color: #E1E4E8">} </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">one</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">.</span><span style="color: #F97583">*</span><span style="color: #DBEDFF">):(?&#x3C;</span><span style="color: #E1E4E8">two</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">.</span><span style="color: #F97583">*</span><span style="color: #DBEDFF">)</span><span style="color: #F97583">$</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"foo:bar"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">one; </span><span style="color: #6A737D">// foo</span></span>
+<span class="line"><span style="color: #E1E4E8">two; </span><span style="color: #6A737D">// bar</span></span></code></pre>
+<p>字符串替换时，使用<code>$&#x3C;组名></code>引用具名组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> re </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">year</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{4}</span><span style="color: #DBEDFF">)-(?&#x3C;</span><span style="color: #E1E4E8">month</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)-(?&#x3C;</span><span style="color: #E1E4E8">day</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">\d</span><span style="color: #F97583">{2}</span><span style="color: #DBEDFF">)</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">u</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #9ECBFF">"2015-01-02"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">replace</span><span style="color: #E1E4E8">(re, </span><span style="color: #9ECBFF">"$&#x3C;day>/$&#x3C;month>/$&#x3C;year>"</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #6A737D">// '02/01/2015'</span></span></code></pre>
+<p>上面代码中，<code>replace</code>方法的第二个参数是一个字符串，而不是正则表达式。</p>
+<p><code>replace</code>方法的第二个参数也可以是函数，该函数的参数序列如下。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #9ECBFF">"2015-01-02"</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">replace</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">  re,</span></span>
+<span class="line"><span style="color: #E1E4E8">  (</span></span>
+<span class="line"><span style="color: #E1E4E8">    matched, </span><span style="color: #6A737D">// 整个匹配结果 2015-01-02</span></span>
+<span class="line"><span style="color: #E1E4E8">    capture1, </span><span style="color: #6A737D">// 第一个组匹配 2015</span></span>
+<span class="line"><span style="color: #E1E4E8">    capture2, </span><span style="color: #6A737D">// 第二个组匹配 01</span></span>
+<span class="line"><span style="color: #E1E4E8">    capture3, </span><span style="color: #6A737D">// 第三个组匹配 02</span></span>
+<span class="line"><span style="color: #E1E4E8">    position, </span><span style="color: #6A737D">// 匹配开始的位置 0</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">S</span><span style="color: #E1E4E8">, </span><span style="color: #6A737D">// 原字符串 2015-01-02</span></span>
+<span class="line"><span style="color: #E1E4E8">    groups </span><span style="color: #6A737D">// 具名组构成的一个对象 {year, month, day}</span></span>
+<span class="line"><span style="color: #E1E4E8">  ) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">let</span><span style="color: #E1E4E8"> { day, month, year } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> groups;</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">`${</span><span style="color: #E1E4E8">day</span><span style="color: #9ECBFF">}/${</span><span style="color: #E1E4E8">month</span><span style="color: #9ECBFF">}/${</span><span style="color: #E1E4E8">year</span><span style="color: #9ECBFF">}`</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">);</span></span></code></pre>
+<p>具名组匹配在原来的基础上，新增了最后一个函数参数：具名组构成的一个对象。函数内部可以直接对这个对象进行解构赋值。</p>
+<h3 id="引用">引用</h3>
+<p>如果要在正则表达式内部引用某个“具名组匹配”，可以使用<code>\k&#x3C;组名></code>的写法。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">word</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">[a-z]</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)!</span><span style="color: #F97583">\k&#x3C;</span><span style="color: #E1E4E8">word</span><span style="color: #F97583">>$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc!abc"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc!ab"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>数字引用（<code>\1</code>）依然有效。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">word</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">[a-z]</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)!</span><span style="color: #F97583">\1$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc!abc"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc!ab"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<p>这两种引用语法还可以同时使用。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #DBEDFF"> </span><span style="color: #9ECBFF">/</span><span style="color: #F97583">^</span><span style="color: #DBEDFF">(?&#x3C;</span><span style="color: #E1E4E8">word</span><span style="color: #DBEDFF">></span><span style="color: #79B8FF">[a-z]</span><span style="color: #F97583">+</span><span style="color: #DBEDFF">)!</span><span style="color: #F97583">\k&#x3C;</span><span style="color: #E1E4E8">word</span><span style="color: #F97583">></span><span style="color: #DBEDFF">!</span><span style="color: #F97583">\1$</span><span style="color: #9ECBFF">/</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc!abc!abc"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// true</span></span>
+<span class="line"><span style="color: #79B8FF">RE_TWICE</span><span style="color: #E1E4E8">.</span><span style="color: #B392F0">test</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abc!abc!ab"</span><span style="color: #E1E4E8">); </span><span style="color: #6A737D">// false</span></span></code></pre>
+<h2 id="stringprototypematchall">String.prototype.matchAll()</h2>
+<p>如果一个正则表达式在字符串里面有多个匹配，现在一般使用<code>g</code>修饰符或<code>y</code>修饰符，在循环里面逐一取出。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> regex </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">t(e)(st(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">?</span><span style="color: #DBEDFF">))</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">g</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> string </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"test1test2test3"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> matches </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> [];</span></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> match;</span></span>
+<span class="line"><span style="color: #F97583">while</span><span style="color: #E1E4E8"> ((match </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> regex.</span><span style="color: #B392F0">exec</span><span style="color: #E1E4E8">(string))) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  matches.</span><span style="color: #B392F0">push</span><span style="color: #E1E4E8">(match);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">matches;</span></span>
+<span class="line"><span style="color: #6A737D">// [</span></span>
+<span class="line"><span style="color: #6A737D">//   ["test1", "e", "st1", "1", index: 0, input: "test1test2test3"],</span></span>
+<span class="line"><span style="color: #6A737D">//   ["test2", "e", "st2", "2", index: 5, input: "test1test2test3"],</span></span>
+<span class="line"><span style="color: #6A737D">//   ["test3", "e", "st3", "3", index: 10, input: "test1test2test3"]</span></span>
+<span class="line"><span style="color: #6A737D">// ]</span></span></code></pre>
+<p>上面代码中，<code>while</code>循环取出每一轮的正则匹配，一共三轮。</p>
+<p><a href="https://github.com/tc39/proposal-string-matchall">ES2020</a> 增加了<code>String.prototype.matchAll()</code>方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">string</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">"test1test2test3"</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// g 修饰符加不加都可以</span></span>
+<span class="line"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">regex</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">/</span><span style="color: #DBEDFF">t(e)(st(</span><span style="color: #79B8FF">\d</span><span style="color: #F97583">?</span><span style="color: #DBEDFF">))</span><span style="color: #9ECBFF">/</span><span style="color: #F97583">g</span><span style="color: #E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> (</span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">match</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">of</span><span style="color: #E1E4E8"> string.</span><span style="color: #B392F0">matchAll</span><span style="color: #E1E4E8">(regex)) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(match);</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"><span style="color: #6A737D">// ["test1", "e", "st1", "1", index: 0, input: "test1test2test3"]</span></span>
+<span class="line"><span style="color: #6A737D">// ["test2", "e", "st2", "2", index: 5, input: "test1test2test3"]</span></span>
+<span class="line"><span style="color: #6A737D">// ["test3", "e", "st3", "3", index: 10, input: "test1test2test3"]</span></span></code></pre>
+<p>上面代码中，由于<code>string.matchAll(regex)</code>返回的是遍历器，所以可以用<code>for...of</code>循环取出。相对于返回数组，返回遍历器的好处在于，如果匹配结果是一个很大的数组，那么遍历器比较节省资源。</p>
+<p>遍历器转为数组是非常简单的，使用<code>...</code>运算符和<code>Array.from()</code>方法就可以了。</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// 转为数组方法一</span></span>
+<span class="line"><span style="color: #E1E4E8">[</span><span style="color: #F97583">...</span><span style="color: #E1E4E8">string.</span><span style="color: #B392F0">matchAll</span><span style="color: #E1E4E8">(regex)];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// 转为数组方法二</span></span>
+<span class="line"><span style="color: #E1E4E8">Array.</span><span style="color: #B392F0">from</span><span style="color: #E1E4E8">(string.</span><span style="color: #B392F0">matchAll</span><span style="color: #E1E4E8">(regex));</span></span></code></pre>
+				
+	</section>
+</article>
+			</div>
+		</main>
+	</body></html>
