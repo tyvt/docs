@@ -13,6 +13,6 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
-    "astro": "2.7.0"
+    "astro": "3.3.0"
   }
 }
