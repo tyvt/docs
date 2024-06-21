@@ -21,13 +21,6 @@ export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES)
 
 export const GITHUB_EDIT_URL = `https://github.com/javascriptfield/docs/edit/master`
 
-// See "Algolia" section of the README for more information.
-export const ALGOLIA = {
-	indexName: 'XXXXXXXXXX',
-	appId: 'XXXXXXXXXX',
-	apiKey: 'XXXXXXXXXX',
-}
-
 
 export const SIDEBAR = {
 	zh: {

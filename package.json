@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
     "build": "astro build",
@@ -13,6 +12,6 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
-    "astro": "3.3.0"
+    "astro": "4.11.0"
   }
 }

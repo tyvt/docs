@@ -1,22 +1,30 @@
 ---
-import HeadCommon from '../components/HeadCommon.astro';
-import HeadSEO from '../components/HeadSEO.astro';
-import Header from '../components/Header/Header.astro';
-import PageContent from '../components/PageContent/PageContent.astro';
-import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-import * as CONFIG from '../config.js';
+import HeadCommon from "../components/HeadCommon.astro";
+import HeadSEO from "../components/HeadSEO.astro";
+import Header from "../components/Header/Header.astro";
+import PageContent from "../components/PageContent/PageContent.astro";
+import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
+import * as CONFIG from "../config.js";
 
 const { frontmatter } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
 ---
 
-<html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
+<html
+	dir={frontmatter.dir ?? "ltr"}
+	lang={frontmatter.lang ?? "en-us"}
+	class="initial"
+>
 	<head>
 		<HeadCommon />
 		<HeadSEO frontmatter={frontmatter} canonicalUrl={canonicalURL} />
 		<title>
-			{frontmatter.title ? `${frontmatter.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}
+			{
+				frontmatter.title
+					? `${frontmatter.title} 🚀 ${CONFIG.SITE.title}`
+					: CONFIG.SITE.title
+			}
 		</title>
 		<style>
 			body {
@@ -30,10 +38,10 @@ const currentPage = Astro.url.pathname;
 			.layout {
 				display: grid;
 				grid-auto-flow: column;
-				grid-template-columns: minmax(var(--gutter), 1fr) minmax(0, var(--max-width)) minmax(
-						var(--gutter),
-						1fr
-					);
+				grid-template-columns: minmax(var(--gutter), 1fr) minmax(
+						0,
+						var(--max-width)
+					) minmax(var(--gutter), 1fr);
 				overflow-x: hidden;
 			}
 
@@ -59,7 +67,6 @@ const currentPage = Astro.url.pathname;
 				height: 100%;
 			}
 
-
 			@media (min-width: 50em) {
 				.layout {
 					overflow: initial;
@@ -82,7 +89,6 @@ const currentPage = Astro.url.pathname;
 					padding-right: 0;
 					margin: 0 auto;
 				}
-
 			}
 		</style>
 		<style is:global>
@@ -96,7 +102,7 @@ const currentPage = Astro.url.pathname;
 			}
 
 			.mobile-sidebar-toggle #grid-left {
-				display: block;
+				display: block !important;
 				top: 2rem;
 			}
 		</style>
@@ -109,7 +115,7 @@ const currentPage = Astro.url.pathname;
 				<LeftSidebar currentPage={currentPage} />
 			</aside>
 			<div id="grid-main">
-				<PageContent frontmatter={frontmatter} >
+				<PageContent frontmatter={frontmatter}>
 					<slot />
 				</PageContent>
 			</div>
